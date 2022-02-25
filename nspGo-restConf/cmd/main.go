@@ -1,10 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"sync"
 	"time"
+
+	// "github.com/rifflock/lfshook"
+	// "github.com/sirupsen/logrus"
 
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
@@ -13,29 +15,46 @@ import (
 	nspgosession "local.com/nspgo/nspGo-session"
 )
 
+// var log *logrus.Logger
+
+// func NewLogger() *logrus.Logger {
+// 	if log != nil {
+// 		return log
+// 	}
+
+// 	pathMap := lfshook.PathMap{
+// 		logrus.InfoLevel: "./nspGo-restConf/resconf-inventory-payload.log",
+// 	}
+
+// 	log = logrus.New()
+// 	log.Hooks.Add(lfshook.NewHook(
+// 		pathMap,
+// 		&logrus.TextFormatter{
+// 			FullTimestamp: true},
+// 	))
+// 	return log
+// }
+
 func main() {
+
 	// init class session
 	p := nspgosession.Session{}
 	p.LoadConfig()
 
-	fmt.Println("nsp.nspOsIP :", p.IpAdressNspOs)
-	fmt.Println("nsp.nspIprcIP :", p.IpAdressIprc)
-	fmt.Println("nsp.Username :", p.Username)
-	fmt.Println("nsp.Password :", p.Password)
-	fmt.Println("nsp.linetoken :", p.Token)
+	log.Info("nsp.nspOsIP :", p.IpAdressNspOs)
+	log.Info("nsp.nspIprcIP :", p.IpAdressIprc)
+	log.Info("nsp.Username :", p.Username)
+	log.Info("nsp.Password :", p.Password)
+	log.Info("nsp.linetoken :", p.Token)
 
 	p.EncodeUserName()
-	fmt.Println(p.EncodeUserName())
+	log.Info(p.EncodeUserName())
 
 	p.GetRestToken()
-	fmt.Println("nsp.linetoken_NEW :", p.Token)
+	log.Info("nsp.linetoken_NEW :", p.Token)
 
 	// init class RestConf
 	rc := nspgorestconf.RestConf{}
-
-	//measure the start time
-	start := time.Now()
-	log.Info("Start Time: ", start)
 
 	//get list NE
 	rc.ReadRestConfPayload("./nspGo-restConf/resconf-inventory-payload.json")
@@ -64,6 +83,10 @@ func main() {
 	restconfPayloadCreate := rc.Payload
 
 	// Running Restconf Request In Sequence
+	//measure the start time
+	startRestconfSequence := time.Now()
+	log.Info("Start Sequence: ", startRestconfSequence)
+
 	log.Info("Running Sequence: ", len(listOfNeId))
 	value.ForEach(func(key, value gjson.Result) bool {
 		//println(value.String())
@@ -71,6 +94,11 @@ func main() {
 		return true // keep iterating
 	})
 
+	log.Info("Finished Sequence")
+	log.Info("Elapsed Time For Sequence: ", time.Since(startRestconfSequence))
+
+	startRestconfConcurrent := time.Now()
+	log.Info("Start Sequence: ", startRestconfConcurrent)
 	// Running Restconf Request In Concurrent
 	log.Info("Running Concurrency: ", len(listOfNeId))
 	var waitingGroupNeList sync.WaitGroup
@@ -85,8 +113,8 @@ func main() {
 	}
 	waitingGroupNeList.Wait()
 
-	log.Info("Finished")
-	log.Info("Elapsed Time: ", time.Since(start))
+	log.Info("Finished Concurrent")
+	log.Info("Elapsed Time For Concurrent: ", time.Since(startRestconfConcurrent))
 
 	p.RevokeRestToken()
 }
