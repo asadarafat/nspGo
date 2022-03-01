@@ -108,7 +108,12 @@ func GenerateIpOptimGoCode() {
 			functionTitle := (strings.Title(
 				strings.Replace(
 					strings.Replace(
-						strings.Title(strings.Replace(strings.Title(strings.Replace(strings.Replace(strings.Replace(path.String(), "=", "", 10), "?", "", 10), "-", "", 10)), "/", "", 10)), "{", "", 10), "}", "", 10)) + strings.Title(method.String()))
+						strings.Title(
+							strings.Replace(
+								strings.Title(
+									strings.Replace(
+										strings.Replace(
+											strings.Replace(path.String(), "=", "", 10), "?", "", 10), "-", "", 10)), "/", "", 10)), "{", "", 10), "}", "", 10)) + strings.Title(method.String()))
 			switch method.String() {
 			case "post":
 				tpl, err := gonja.FromString(ipOptimJinjaTemplate)

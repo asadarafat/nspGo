@@ -1,7 +1,6 @@
 package main
 
 import (
-	"math"
 	"os"
 	"sync"
 	"time"
@@ -56,11 +55,11 @@ func main() {
 	// get RestConf payload
 	// pathToPayload := "./nspGo-restConf/resconf-payload.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-100-svc.json"
-	pathToPayload := "./nspGo-restConf/resconf-payload-500-svc.json"
+	// pathToPayload := "./nspGo-restConf/resconf-payload-500-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-700-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-1k-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-2k-svc.json"
-	// pathToPayload := "./nspGo-restConf/resconf-payload-4k-svc.json"
+	pathToPayload := "./nspGo-restConf/resconf-payload-4k-svc.json"
 
 	file, err := os.Stat(pathToPayload)
 	if err != nil {
@@ -118,8 +117,8 @@ func main() {
 	// log.Info("Elapsed Time: ", time.Since(startConcurrenct))
 
 	listOfExecutionTime := []time.Duration{}
-	iteration := int(math.Ceil(10000000 / float64(file.Size())))
-	// iteration := 2
+	// iteration := int(math.Ceil(10000000 / float64(file.Size())))
+	iteration := 1
 	log.Info("Iteration: ", iteration)
 
 	for i := 1; i <= iteration; i++ {
