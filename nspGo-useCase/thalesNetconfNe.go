@@ -1,6 +1,8 @@
 package nspgousecase
 
 import (
+	"math"
+	"os"
 	"sync"
 	"time"
 
@@ -31,7 +33,7 @@ func ThalesNetconfNe() {
 					<far-end>
 						<ip-address>99.99.99.1</ip-address>
 					</far-end>
-				</sdp>{% for n in range(1,10) %}
+				</sdp>{% for n in range(1,4091) %}
 				<vpls>
 					<service-name>service-{{n}}</service-name>
 					<description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
@@ -51,6 +53,22 @@ func ThalesNetconfNe() {
 		</config>
 		`)
 	t.LoadTemplateJinja(template)
+
+	// Write the generated payload to file, then get the size
+	pathToPayload := "./nspGo-useCase/netconf-payload.xml"
+	f, err := os.Create(pathToPayload)
+	if err != nil {
+		log.Error("Failed to create netconf payload file")
+	}
+	defer f.Close()
+	f.WriteString((t.JinjaOutput))
+	f.Sync()
+	file, err := os.Stat(pathToPayload)
+	if err != nil {
+		return
+	}
+
+	// log.Info("Payload Size(bytes): ", file.Size())
 
 	// templateManual := (`
 	// 	<config>
@@ -143,8 +161,8 @@ func ThalesNetconfNe() {
 	}
 
 	listOfExecutionTime := []time.Duration{}
-	// iteration := int(math.Ceil(10000000 / float64(file.Size())))
-	iteration := 1
+	iteration := int(math.Ceil(10000000 / float64(file.Size())))
+	// iteration := 1
 	log.Info("Iteration: ", iteration)
 
 	for i := 1; i <= iteration; i++ {
@@ -168,9 +186,9 @@ func ThalesNetconfNe() {
 		log.Info("Iteration: ", i)
 		log.Info("Number of Targeted NE: ", len(listOfNeId))
 		log.Info("Finished Concurrent Request")
-		// log.Info("Payload Size Per NE (Bytes): ", float64(file.Size()))
-		// log.Info("Payload Size Per NE (KiloBytes): ", float64(file.Size())/1000)
-		// log.Info("Payload Size Per NE (MegaBytes): ", float64(file.Size())/1000000)
+		log.Info("Payload Size Per NE (KiloBytes): ", float64(file.Size()))
+		log.Info("Payload Size Per NE (KiloBytes): ", float64(file.Size())/1000)
+		log.Info("Payload Size Per NE (MegaBytes): ", float64(file.Size())/1000000)
 		log.Info("Elapsed Time(Iteration): ", time.Since(startConcurrentIteration))
 		log.Info("####################################")
 
@@ -197,7 +215,10 @@ func ThalesNetconfNe() {
 	log.Info("Test-Case : Netconf NE")
 	log.Info("Number of Targeted NE: ", len(listOfNeId))
 	log.Info("Total Iteration: ", (float64(iteration)))
-	// log.Info("Total Payload Size Per NE(MegaBytes): ", (float64(iteration) * float64(file.Size()) / 1000000))
+	log.Info("Total Payload Size Per NE(MegaBytes): ", (float64(iteration) * float64(file.Size()) / 1000000))
+	log.Info("Payload Size Per NE Per Iteration (KiloBytes): ", float64(file.Size()))
+	log.Info("Payload Size Per NE Per Iteration  (KiloBytes): ", float64(file.Size())/1000)
+	log.Info("Payload Size Per NE Per Iteration  (MegaBytes): ", float64(file.Size())/1000000)
 	log.Info("Total Elapsed Time(seconds) : ", totalElapsed.Seconds())
 	log.Info("Total Elapsed Time : ", totalElapsed)
 	log.Info("Average Elapsed Time (seconds): ", totalElapsed.Seconds()/float64(iteration))
