@@ -118,9 +118,10 @@ func ThalesNetconfNe() {
 
 	// fmt.Println(t.JinjaOutput)
 	// t.NetconfClientEditConfig("10.2.31.2", "admin", "admin", templateManual)
-	log.Info("Start Time")
-	t.NetconfClientEditConfig("10.2.31.2", "admin", "admin", t.JinjaOutput)
-	t.NetconfClientEditCommit("10.2.31.2", "admin", "admin")
+	// log.Info("Start Time")
+
+	// t.NetconfClientEditConfig("10.2.31.2", "admin", "admin", t.JinjaOutput)
+	// t.NetconfClientEditCommit("10.2.31.2", "admin", "admin")
 
 	p := nspgosession.Session{}
 	p.LoadConfig()
@@ -212,10 +213,10 @@ func ThalesNetconfNe() {
 
 	log.Info("##################################")
 	log.Info("##################################")
-	log.Info("Test-Case : Netconf NE")
+	log.Info("Test-Case : Netconf NE edit-config - only sending netconf payload to ne without commit")
 	log.Info("Number of Targeted NE: ", len(listOfNeId))
 	log.Info("Total Iteration: ", (float64(iteration)))
-	log.Info("Total Payload Size Per NE(MegaBytes): ", (float64(iteration) * float64(file.Size()) / 1000000))
+	log.Info("Payload Size Per NE Total (MegaBytes): ", (float64(iteration) * float64(file.Size()) / 1000000))
 	log.Info("Payload Size Per NE Per Iteration (KiloBytes): ", float64(file.Size()))
 	log.Info("Payload Size Per NE Per Iteration  (KiloBytes): ", float64(file.Size())/1000)
 	log.Info("Payload Size Per NE Per Iteration  (MegaBytes): ", float64(file.Size())/1000000)
