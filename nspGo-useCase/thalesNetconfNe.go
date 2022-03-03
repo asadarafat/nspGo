@@ -1,7 +1,6 @@
 package nspgousecase
 
 import (
-	"math"
 	"os"
 	"sync"
 	"time"
@@ -162,8 +161,8 @@ func ThalesNetconfNe() {
 	}
 
 	listOfExecutionTime := []time.Duration{}
-	iteration := int(math.Ceil(10000000 / float64(file.Size())))
-	// iteration := 1
+	// iteration := int(math.Ceil(10000000 / float64(file.Size())))
+	iteration := 1
 	log.Info("Iteration: ", iteration)
 
 	for i := 1; i <= iteration; i++ {
