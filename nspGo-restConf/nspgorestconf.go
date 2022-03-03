@@ -19,7 +19,7 @@ type RestConf struct {
 func init() {
 	// init logConfig
 	toolLogger := nspgotools.Tools{}
-	toolLogger.InitLogger("./logs/nspGo-restconf.log")
+	toolLogger.InitLogger("./logs/nspGo-restconf.log", 5)
 }
 
 func (rConf *RestConf) ReadRestConfPayload(file string) {

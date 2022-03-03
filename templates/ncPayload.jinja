@@ -15,13 +15,13 @@
 </sdp>
 </service>
 </configure>
-{% for n in range(1,100) %}
+{% for n in range(1,4090) %}
 <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
 <service>
 <vpls>
-    <service-name>service-1{{n}}</service-name>
+    <service-name>service-{{n}}</service-name>
     <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
-    <service-id>10{{n}}</service-id>
+    <service-id>{{n}}</service-id>
     <customer>1</customer>
     <spoke-sdp>
         <sdp-bind-id>1:1{{n}}</sdp-bind-id>

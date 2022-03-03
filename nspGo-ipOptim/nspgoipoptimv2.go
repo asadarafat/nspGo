@@ -14,7 +14,7 @@ import (
 func init() {
 	// init logConfig
 	toolLogger := nspgotools.Tools{}
-	toolLogger.InitLogger("./logs/nspGo-ipOptim.log")
+	toolLogger.InitLogger("./logs/nspGo-ipOptim.log", 3)
 }
 
 // Find an object by Application ID
