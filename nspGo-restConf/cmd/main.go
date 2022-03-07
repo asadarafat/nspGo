@@ -55,11 +55,11 @@ func main() {
 	// get RestConf payload
 	// pathToPayload := "./nspGo-restConf/resconf-payload.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-100-svc.json"
-	// pathToPayload := "./nspGo-restConf/resconf-payload-500-svc.json"
+	pathToPayload := "./nspGo-restConf/resconf-payload-500-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-700-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-1k-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-2k-svc.json"
-	pathToPayload := "./nspGo-restConf/resconf-payload-4k-svc.json"
+	// pathToPayload := "./nspGo-restConf/resconf-payload-4k-svc.json"
 
 	file, err := os.Stat(pathToPayload)
 	if err != nil {
@@ -96,7 +96,7 @@ func main() {
 	// var waitingGroupNeList sync.WaitGroup
 	// waitingGroupNeList.Add(len(listOfNeId))
 
-	restconfAsync := false
+	restconfAsync := true
 
 	// for j := 0; j < len(listOfNeId); j++ {
 	// 	go func(j int) {
@@ -172,7 +172,9 @@ func main() {
 	log.Info("Number of Targeted NE: ", len(listOfNeId))
 	log.Info("RestConf Async: ", restconfAsync)
 	log.Info("Total Iteration: ", (float64(iteration)))
-	log.Info("Total Payload Size Per NE(MegaBytes): ", (float64(iteration) * float64(file.Size()) / 1000000))
+	log.Info("Total Payload Size Per NE (MegaBytes): ", (float64(iteration) * float64(file.Size()) / 1000000))
+	log.Info("Payload Size Per NE Per Iteration (KiloBytes): ", float64(file.Size())/1000)
+	log.Info("Payload Size Per NE Per Iteration (MegaBytes): ", float64(file.Size())/1000000)
 	log.Info("Total Elapsed Time(seconds) : ", totalElapsed.Seconds())
 	log.Info("Total Elapsed Time : ", totalElapsed)
 	log.Info("Average Elapsed Time (seconds): ", totalElapsed.Seconds()/float64(iteration))
