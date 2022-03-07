@@ -1,4 +1,4 @@
-package main
+package nspgousecase
 
 import (
 	"math"
@@ -13,8 +13,8 @@ import (
 	nspgosession "local.com/nspgo/nspGo-session"
 )
 
-func main() {
-	// init class session
+func ThalesRestConf8545() {
+
 	p := nspgosession.Session{}
 	p.LoadConfig()
 
@@ -55,10 +55,10 @@ func main() {
 
 	// get RestConf payload
 	// pathToPayload := "./nspGo-restConf/resconf-payload.json"
-	pathToPayload := "./nspGo-restConf/resconf-payload-100-svc.json"
+	// pathToPayload := "./nspGo-restConf/resconf-payload-100-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-500-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-700-svc.json"
-	// pathToPayload := "./nspGo-restConf/resconf-payload-1k-svc.json"
+	pathToPayload := "./nspGo-restConf/resconf-payload-1k-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-2k-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-4k-svc.json"
 
@@ -133,7 +133,7 @@ func main() {
 		for j := 0; j < len(listOfNeId); j++ {
 			go func(j int) {
 				// fmt.Println(listOfNeId[j])
-				rc.PatchRestConfMdc(p.IpAdressIprc, p.Token, p.Proxy.Enable, p.Proxy.ProxyAddress, listOfNeId[j], "/root", restconfPayloadCreate, restconfAsync)
+				rc.PatchRestConfNetworkDevice(p.IpAdressIprc, p.Token, p.Proxy.Enable, p.Proxy.ProxyAddress, listOfNeId[j], "/root", restconfPayloadCreate, restconfAsync)
 				waitingGroupNeListIteration.Done()
 			}(j)
 		}
@@ -170,21 +170,23 @@ func main() {
 
 	log.Info("##################################")
 	log.Info("##################################")
+	log.Info("Test-Case : RestConf Device Admin (8545) Call")
 	log.Info("Number of Targeted NE: ", len(listOfNeId))
 	log.Info("RestConf Async: ", restconfAsync)
 	log.Info("Total Iteration: ", (float64(iteration)))
+	log.Info("Payload Size Per NE Per Interation (MegaBytes): ", float64(file.Size())/1000000)
+	log.Info("Average Elapsed Time Per Interation (seconds): ", totalElapsed.Seconds()/float64(iteration))
+	log.Info("Average Elapsed Time Per Interation(minutes): ", totalElapsed.Minutes()/float64(iteration))
+	log.Info("Min Elapsed Time Per Interation: ", min.Seconds())
+	log.Info("Max Elapsed Time Per Interation: ", max.Seconds())
+	log.Info("##################################")
 	log.Info("Total Payload Size Per NE (MegaBytes): ", (float64(iteration) * float64(file.Size()) / 1000000))
-	log.Info("Payload Size Per NE Per Iteration (KiloBytes): ", float64(file.Size())/1000)
-	log.Info("Payload Size Per NE Per Iteration (MegaBytes): ", float64(file.Size())/1000000)
 	log.Info("Total Elapsed Time(seconds) : ", totalElapsed.Seconds())
 	log.Info("Total Elapsed Time : ", totalElapsed)
-	log.Info("Average Elapsed Time (seconds): ", totalElapsed.Seconds()/float64(iteration))
-	log.Info("Average Elapsed Time (minutes): ", totalElapsed.Minutes()/float64(iteration))
-	log.Info("Min Elapsed Time : ", min.Seconds())
-	log.Info("Max Elapsed Time : ", max.Seconds())
 	// log.Info("Time Per Iteration :", listOfExecutionTime)
 	log.Info("##################################")
 	log.Info("##################################")
 
 	p.RevokeRestToken()
+
 }
