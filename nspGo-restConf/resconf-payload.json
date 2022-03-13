@@ -1,0 +1,240 @@
+
+	{
+		"ietf-yang-patch:yang-patch": {
+		  "patch-id": "as",
+		  "edit": [
+			{
+			  "edit-id": "svc-01",
+			  "operation": "merge",
+			  "target": "nokia-conf:configure",
+			  "value": {
+				"nokia-conf:configure": {
+				  "port": [
+					{
+					  "port-id": "1/1/c1/1",
+					  "ethernet": [
+						{
+						  "mode": "hybrid"
+						}
+					  ]
+					},
+					{
+					  "port-id": "1/1/c2/1",
+					  "ethernet": [
+						{
+						  "mode": "hybrid"
+						}
+					  ]
+					}
+				  ],
+				  "service": {
+					"sdp": [
+					  {
+						"sdp-id": "1",
+						"admin-state": "enable",
+						"delivery-type": "mpls",
+						"ldp": "true",
+						"far-end": {
+						  "ip-address": "99.99.99.1"
+						}
+					  }
+					],
+					"vpls":[
+					   
+					   {
+						"service-name": "service1",
+						"service-id": 1,
+						"description": "aa",
+						"customer": "1",
+						"spoke-sdp": [
+						  {
+							"sdp-bind-id": "1:1",
+							"description": "This Is MPLS-Params-01 PlaceHolder-1-"
+						  }
+						],
+						"sap": [
+						  {
+							"sap-id": "1/1/c2/1:1",
+							"description": "This Is MPLS-Params-02 PlaceHolder-1-"
+						  }
+						]
+					  },
+					
+					   {
+						"service-name": "service2",
+						"service-id": 2,
+						"description": "aa",
+						"customer": "1",
+						"spoke-sdp": [
+						  {
+							"sdp-bind-id": "1:2",
+							"description": "This Is MPLS-Params-01 PlaceHolder-2-"
+						  }
+						],
+						"sap": [
+						  {
+							"sap-id": "1/1/c2/1:2",
+							"description": "This Is MPLS-Params-02 PlaceHolder-2-"
+						  }
+						]
+					  },
+					
+					   {
+						"service-name": "service3",
+						"service-id": 3,
+						"description": "aa",
+						"customer": "1",
+						"spoke-sdp": [
+						  {
+							"sdp-bind-id": "1:3",
+							"description": "This Is MPLS-Params-01 PlaceHolder-3-"
+						  }
+						],
+						"sap": [
+						  {
+							"sap-id": "1/1/c2/1:3",
+							"description": "This Is MPLS-Params-02 PlaceHolder-3-"
+						  }
+						]
+					  },
+					
+					   {
+						"service-name": "service4",
+						"service-id": 4,
+						"description": "aa",
+						"customer": "1",
+						"spoke-sdp": [
+						  {
+							"sdp-bind-id": "1:4",
+							"description": "This Is MPLS-Params-01 PlaceHolder-4-"
+						  }
+						],
+						"sap": [
+						  {
+							"sap-id": "1/1/c2/1:4",
+							"description": "This Is MPLS-Params-02 PlaceHolder-4-"
+						  }
+						]
+					  },
+					
+					   {
+						"service-name": "service5",
+						"service-id": 5,
+						"description": "aa",
+						"customer": "1",
+						"spoke-sdp": [
+						  {
+							"sdp-bind-id": "1:5",
+							"description": "This Is MPLS-Params-01 PlaceHolder-5-"
+						  }
+						],
+						"sap": [
+						  {
+							"sap-id": "1/1/c2/1:5",
+							"description": "This Is MPLS-Params-02 PlaceHolder-5-"
+						  }
+						]
+					  },
+					
+					   {
+						"service-name": "service6",
+						"service-id": 6,
+						"description": "aa",
+						"customer": "1",
+						"spoke-sdp": [
+						  {
+							"sdp-bind-id": "1:6",
+							"description": "This Is MPLS-Params-01 PlaceHolder-6-"
+						  }
+						],
+						"sap": [
+						  {
+							"sap-id": "1/1/c2/1:6",
+							"description": "This Is MPLS-Params-02 PlaceHolder-6-"
+						  }
+						]
+					  },
+					
+					   {
+						"service-name": "service7",
+						"service-id": 7,
+						"description": "aa",
+						"customer": "1",
+						"spoke-sdp": [
+						  {
+							"sdp-bind-id": "1:7",
+							"description": "This Is MPLS-Params-01 PlaceHolder-7-"
+						  }
+						],
+						"sap": [
+						  {
+							"sap-id": "1/1/c2/1:7",
+							"description": "This Is MPLS-Params-02 PlaceHolder-7-"
+						  }
+						]
+					  },
+					
+					   {
+						"service-name": "service8",
+						"service-id": 8,
+						"description": "aa",
+						"customer": "1",
+						"spoke-sdp": [
+						  {
+							"sdp-bind-id": "1:8",
+							"description": "This Is MPLS-Params-01 PlaceHolder-8-"
+						  }
+						],
+						"sap": [
+						  {
+							"sap-id": "1/1/c2/1:8",
+							"description": "This Is MPLS-Params-02 PlaceHolder-8-"
+						  }
+						]
+					  },
+					
+					   {
+						"service-name": "service9",
+						"service-id": 9,
+						"description": "aa",
+						"customer": "1",
+						"spoke-sdp": [
+						  {
+							"sdp-bind-id": "1:9",
+							"description": "This Is MPLS-Params-01 PlaceHolder-9-"
+						  }
+						],
+						"sap": [
+						  {
+							"sap-id": "1/1/c2/1:9",
+							"description": "This Is MPLS-Params-02 PlaceHolder-9-"
+						  }
+						]
+					  },
+					
+					   {
+						"service-name": "service10",
+						"service-id": 10,
+						"description": "aa",
+						"customer": "1",
+						"spoke-sdp": [
+						  {
+							"sdp-bind-id": "1:10",
+							"description": "This Is MPLS-Params-01 PlaceHolder-10-"
+						  }
+						],
+						"sap": [
+						  {
+							"sap-id": "1/1/c2/1:10",
+							"description": "This Is MPLS-Params-02 PlaceHolder-10-"
+						  }
+						]
+					  }
+					]
+				  }
+				}
+			  }
+			}
+		  ]
+		}
+	  }

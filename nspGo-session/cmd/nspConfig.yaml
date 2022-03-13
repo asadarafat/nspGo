@@ -7,10 +7,15 @@ app:
 nsp:
   # nspOsIP:  "172.23.160.37"    # API gateway
   # nspIprcIP: "172.23.160.30"   # API gateway
-  nspOsIP:    "192.168.0.11"    # API gateway
-  nspIprcIP:  "192.168.0.11"   # API gateway
+  nspOsIP:    "thalesnsp.ion.de.alcatel-lucent.com"    # API gateway
+  nspIprcIP:  "thalesnsp.ion.de.alcatel-lucent.com"   # API gateway
   username:   "admin"
   password:   "NokiaNsp1!"
+  # nspOsIP:    "147.75.102.178"    # API gateway
+  # nspIprcIP:  "147.75.102.178"   # API gateway
+  # username:   "admin"
+  # password:   "zkw3VSs6"
+
   proxy:   
-    enable: "true"
+    enable: "false"
     proxyAddress: "http://138.203.39.123:80" # API proxy Gateway

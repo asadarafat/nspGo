@@ -1,0 +1,48 @@
+
+	{
+		"ietf-yang-patch:yang-patch": {
+		  "patch-id": "as",
+		  "edit": [
+			{
+			  "edit-id": "svc-01",
+			  "operation": "merge",
+			  "target": "nokia-conf:configure",
+			  "value": {
+				"nokia-conf:configure": {
+				  "port": [
+					{
+					  "port-id": "1/1/c1/1",
+					  "ethernet": [
+						{
+						  "mode": "hybrid"
+						}
+					  ]
+					},
+					{
+					  "port-id": "1/1/c2/1",
+					  "ethernet": [
+						{
+						  "mode": "hybrid"
+						}
+					  ]
+					}
+				  ],
+				  "service": {
+					"sdp": [
+					  {
+						"sdp-id": "1",
+						"admin-state": "enable",
+						"delivery-type": "mpls",
+						"ldp": "true",
+						"far-end": {
+						  "ip-address": "99.99.99.1"
+						}
+					  }
+					]
+				  }
+				}
+			  }
+			}
+		  ]
+		}
+	  }

@@ -1,0 +1,5 @@
+{
+    "input": {
+      "xpath-filter": "/nsp-ne-control:ne-control/discovered-ne"
+    }
+  }

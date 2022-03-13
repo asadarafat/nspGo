@@ -1,0 +1,3796 @@
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+      <service>
+      <sdp>
+      <sdp-id>1</sdp-id>
+      <admin-state>enable</admin-state>
+      <delivery-type>mpls</delivery-type>
+      <ldp>true</ldp>
+      <far-end>
+          <ip-address>99.99.99.1</ip-address>
+      </far-end>
+  </sdp> 
+  </service>
+  </configure>
+
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service1</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>1</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:1</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:1</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service2</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>2</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:2</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:2</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service3</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>3</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:3</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:3</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service4</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>4</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:4</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:4</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service5</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>5</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:5</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:5</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service6</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>6</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:6</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:6</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service7</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>7</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:7</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:7</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service8</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>8</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:8</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:8</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service9</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>9</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:9</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:9</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service10</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>10</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:10</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:10</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service11</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>11</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:11</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:11</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service12</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>12</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:12</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:12</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service13</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>13</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:13</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:13</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service14</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>14</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:14</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:14</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service15</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>15</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:15</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:15</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service16</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>16</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:16</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:16</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service17</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>17</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:17</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:17</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service18</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>18</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:18</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:18</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service19</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>19</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:19</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:19</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service20</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>20</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:20</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:20</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service21</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>21</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:21</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:21</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service22</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>22</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:22</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:22</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service23</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>23</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:23</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:23</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service24</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>24</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:24</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:24</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service25</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>25</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:25</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:25</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service26</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>26</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:26</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:26</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service27</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>27</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:27</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:27</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service28</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>28</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:28</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:28</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service29</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>29</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:29</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:29</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service30</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>30</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:30</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:30</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service31</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>31</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:31</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:31</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service32</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>32</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:32</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:32</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service33</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>33</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:33</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:33</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service34</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>34</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:34</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:34</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service35</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>35</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:35</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:35</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service36</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>36</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:36</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:36</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service37</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>37</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:37</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:37</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service38</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>38</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:38</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:38</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service39</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>39</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:39</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:39</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service40</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>40</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:40</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:40</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service41</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>41</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:41</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:41</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service42</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>42</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:42</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:42</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service43</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>43</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:43</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:43</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service44</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>44</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:44</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:44</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service45</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>45</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:45</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:45</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service46</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>46</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:46</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:46</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service47</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>47</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:47</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:47</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service48</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>48</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:48</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:48</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service49</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>49</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:49</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:49</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service50</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>50</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:50</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:50</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service51</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>51</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:51</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:51</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service52</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>52</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:52</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:52</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service53</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>53</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:53</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:53</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service54</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>54</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:54</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:54</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service55</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>55</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:55</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:55</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service56</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>56</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:56</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:56</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service57</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>57</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:57</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:57</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service58</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>58</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:58</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:58</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service59</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>59</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:59</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:59</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service60</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>60</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:60</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:60</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service61</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>61</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:61</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:61</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service62</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>62</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:62</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:62</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service63</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>63</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:63</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:63</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service64</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>64</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:64</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:64</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service65</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>65</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:65</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:65</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service66</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>66</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:66</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:66</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service67</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>67</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:67</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:67</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service68</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>68</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:68</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:68</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service69</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>69</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:69</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:69</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service70</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>70</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:70</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:70</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service71</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>71</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:71</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:71</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service72</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>72</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:72</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:72</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service73</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>73</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:73</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:73</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service74</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>74</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:74</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:74</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service75</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>75</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:75</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:75</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service76</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>76</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:76</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:76</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service77</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>77</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:77</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:77</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service78</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>78</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:78</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:78</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service79</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>79</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:79</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:79</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service80</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>80</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:80</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:80</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service81</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>81</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:81</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:81</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service82</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>82</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:82</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:82</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service83</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>83</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:83</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:83</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service84</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>84</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:84</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:84</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service85</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>85</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:85</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:85</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service86</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>86</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:86</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:86</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service87</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>87</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:87</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:87</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service88</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>88</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:88</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:88</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service89</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>89</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:89</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:89</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service90</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>90</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:90</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:90</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service91</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>91</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:91</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:91</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service92</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>92</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:92</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:92</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service93</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>93</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:93</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:93</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service94</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>94</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:94</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:94</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service95</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>95</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:95</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:95</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service96</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>96</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:96</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:96</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service97</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>97</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:97</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:97</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service98</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>98</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:98</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:98</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service99</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>99</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:99</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:99</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service100</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>100</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:100</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:100</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service101</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>101</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:101</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:101</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service102</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>102</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:102</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:102</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service103</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>103</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:103</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:103</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service104</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>104</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:104</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:104</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service105</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>105</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:105</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:105</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service106</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>106</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:106</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:106</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service107</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>107</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:107</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:107</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service108</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>108</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:108</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:108</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service109</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>109</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:109</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:109</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service110</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>110</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:110</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:110</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service111</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>111</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:111</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:111</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service112</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>112</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:112</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:112</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service113</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>113</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:113</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:113</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service114</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>114</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:114</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:114</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service115</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>115</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:115</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:115</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service116</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>116</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:116</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:116</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service117</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>117</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:117</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:117</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service118</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>118</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:118</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:118</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service119</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>119</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:119</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:119</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service120</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>120</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:120</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:120</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service121</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>121</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:121</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:121</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service122</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>122</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:122</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:122</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service123</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>123</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:123</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:123</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service124</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>124</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:124</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:124</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service125</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>125</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:125</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:125</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service126</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>126</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:126</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:126</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service127</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>127</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:127</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:127</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service128</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>128</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:128</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:128</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service129</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>129</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:129</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:129</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service130</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>130</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:130</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:130</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service131</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>131</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:131</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:131</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service132</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>132</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:132</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:132</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service133</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>133</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:133</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:133</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service134</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>134</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:134</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:134</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service135</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>135</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:135</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:135</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service136</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>136</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:136</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:136</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service137</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>137</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:137</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:137</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service138</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>138</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:138</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:138</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service139</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>139</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:139</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:139</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service140</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>140</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:140</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:140</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service141</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>141</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:141</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:141</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service142</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>142</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:142</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:142</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service143</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>143</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:143</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:143</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service144</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>144</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:144</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:144</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service145</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>145</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:145</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:145</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service146</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>146</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:146</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:146</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service147</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>147</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:147</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:147</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service148</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>148</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:148</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:148</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service149</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>149</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:149</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:149</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service150</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>150</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:150</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:150</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service151</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>151</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:151</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:151</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service152</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>152</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:152</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:152</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service153</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>153</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:153</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:153</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service154</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>154</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:154</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:154</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service155</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>155</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:155</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:155</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service156</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>156</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:156</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:156</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service157</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>157</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:157</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:157</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service158</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>158</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:158</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:158</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service159</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>159</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:159</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:159</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service160</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>160</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:160</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:160</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service161</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>161</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:161</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:161</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service162</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>162</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:162</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:162</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service163</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>163</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:163</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:163</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service164</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>164</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:164</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:164</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service165</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>165</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:165</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:165</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service166</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>166</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:166</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:166</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service167</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>167</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:167</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:167</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service168</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>168</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:168</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:168</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service169</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>169</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:169</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:169</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service170</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>170</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:170</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:170</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service171</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>171</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:171</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:171</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service172</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>172</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:172</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:172</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service173</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>173</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:173</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:173</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service174</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>174</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:174</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:174</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service175</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>175</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:175</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:175</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service176</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>176</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:176</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:176</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service177</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>177</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:177</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:177</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service178</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>178</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:178</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:178</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service179</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>179</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:179</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:179</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service180</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>180</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:180</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:180</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service181</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>181</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:181</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:181</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service182</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>182</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:182</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:182</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service183</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>183</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:183</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:183</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service184</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>184</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:184</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:184</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service185</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>185</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:185</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:185</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service186</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>186</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:186</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:186</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service187</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>187</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:187</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:187</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service188</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>188</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:188</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:188</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service189</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>189</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:189</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:189</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service190</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>190</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:190</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:190</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service191</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>191</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:191</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:191</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service192</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>192</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:192</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:192</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service193</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>193</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:193</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:193</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service194</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>194</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:194</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:194</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service195</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>195</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:195</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:195</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service196</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>196</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:196</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:196</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service197</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>197</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:197</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:197</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service198</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>198</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:198</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:198</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+   
+  <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+  <service>
+  <vpls>
+      <service-name>service199</service-name>
+      <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+      <service-id>199</service-id>
+      <customer>1</customer>
+      <spoke-sdp>
+          <sdp-bind-id>1:199</sdp-bind-id>
+          <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+      </spoke-sdp>
+      <sap>
+          <sap-id>1/1/c2/1:199</sap-id>
+          <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+      </sap>
+  </vpls> 
+  </service>
+  </configure>
+
