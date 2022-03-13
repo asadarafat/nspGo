@@ -8,6 +8,7 @@ import (
 	"github.com/go-resty/resty/v2"
 	log "github.com/sirupsen/logrus"
 	nspgoconstants "local.com/nspgo/nspGo-constants"
+	nspgotools "local.com/nspgo/nspGo-tools"
 )
 
 type RestConf struct {
@@ -16,9 +17,9 @@ type RestConf struct {
 }
 
 func init() {
-	log.SetFormatter(&log.TextFormatter{
-		FullTimestamp: true,
-	})
+	// init logConfig
+	toolLogger := nspgotools.Tools{}
+	toolLogger.InitLogger("./logs/nspGo-restconf.log", 5)
 }
 
 func (rConf *RestConf) ReadRestConfPayload(file string) {
@@ -120,7 +121,7 @@ func (rConf *RestConf) PatchRestConfMdc(urlHost string, token string, proxyEnabl
 		// log.Debug("PatchRestConfNetworkDevice debug ", resp)
 		// log.Info("Payload: " + string(payload))
 		// log.Info("URL: " + url)
-		log.Info("Received Respone "+neId+" Response: ", resp.String())
+		log.Info("Received Response "+neId+" Response: ", resp.String())
 		//fmt.Println(result)
 		if err != nil {
 			log.Error("PatchRestConfMdc is unsuccesful: ", err)
@@ -158,6 +159,6 @@ func (rConf *RestConf) NspRestconfInventory(urlHost string, token string, proxyE
 
 }
 
-//RestConf xPath
+// RestConf xPath
 // xPath := "/root/nokia-conf:configure/router=Base"
-//xPath := "/root/nokia-conf:configure"
+// xPath := "/root/nokia-conf:configure"

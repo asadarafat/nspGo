@@ -1,0 +1,14 @@
+<rpc message-id="1" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <edit-config>
+    <target><candidate></candidate></target>
+    <config>
+      <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+        <port>
+          <port-id>1/1/c1/2</port-id>
+          <admin-state>disable</admin-state>
+        </port>
+      </configure>
+    </config>
+  </edit-config>
+</rpc>
+

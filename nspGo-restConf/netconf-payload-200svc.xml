@@ -1,6 +1,3 @@
-neName: thalesvsim_31_134
-neId: 10.6.31.134
-NetconfPayload: |+
   <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
       <service>
       <sdp>

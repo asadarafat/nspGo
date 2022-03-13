@@ -1,0 +1,39 @@
+<nc:edit-config xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+<nc:target><nc:candidate/>
+</nc:target>
+<nc:config>
+<configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+    <service>
+    <sdp>
+    <sdp-id>1</sdp-id>
+    <admin-state>enable</admin-state>
+    <delivery-type>mpls</delivery-type>
+    <ldp>true</ldp>
+    <far-end>
+        <ip-address>99.99.99.1</ip-address>
+    </far-end>
+</sdp>
+</service>
+</configure>
+{% for n in range(1,4090) %}
+<configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+<service>
+<vpls>
+    <service-name>service-{{n}}</service-name>
+    <description>This Is PW-Labels-01 PlaceHolder-TiMOS-B-21.10.R1</description>
+    <service-id>{{n}}</service-id>
+    <customer>1</customer>
+    <spoke-sdp>
+        <sdp-bind-id>1:1{{n}}</sdp-bind-id>
+        <description>This Is MPLS-Params-01 PlaceHolder-1-10.2.31.2</description>
+    </spoke-sdp>
+    <sap>
+        <sap-id>1/1/c1/1:{{n}}</sap-id>
+        <description>This Is MPLS-Params-02 PlaceHolder-1-7750 SR-1</description>
+    </sap>
+</vpls>
+</service>
+</configure>
+{% endfor %}
+</nc:config>
+</nc:edit-config>

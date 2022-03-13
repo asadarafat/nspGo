@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101">
+    <edit-config>
+        <target>
+            <<candidate/>
+        </target>
+        <configure xmlns="urn:nokia.com:sros:ns:yang:sr:conf">
+            <service>
+                <sdp>
+                    <sdp-id>1</sdp-id>
+                    <admin-state>enable</admin-state>
+                    <delivery-type>mpls</delivery-type>
+                    <ldp>true</ldp>
+                    <far-end>
+                        <ip-address>99.99.99.1</ip-address>
+                    </far-end>
+                </sdp>
+            </service>
+        </configure>
+    </edit-config>
+</rpc>
+]]>]]>
