@@ -6,6 +6,9 @@ import (
 	"sync"
 	"time"
 
+	// "github.com/rifflock/lfshook"
+	// "github.com/sirupsen/logrus"
+
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 
@@ -13,7 +16,28 @@ import (
 	nspgosession "local.com/nspgo/nspGo-session"
 )
 
+// var log *logrus.Logger
+
+// func NewLogger() *logrus.Logger {
+// 	if log != nil {
+// 		return log
+// 	}
+
+// 	pathMap := lfshook.PathMap{
+// 		logrus.InfoLevel: "./nspGo-restConf/resconf-inventory-payload.log",
+// 	}
+
+// 	log = logrus.New()
+// 	log.Hooks.Add(lfshook.NewHook(
+// 		pathMap,
+// 		&logrus.TextFormatter{
+// 			FullTimestamp: true},
+// 	))
+// 	return log
+// }
+
 func main() {
+
 	// init class session
 	p := nspgosession.Session{}
 	p.LoadConfig()
