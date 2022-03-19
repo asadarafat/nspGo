@@ -13,6 +13,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 	nspgoconstants "local.com/nspgo/nspGo-constants"
+	nspgotools "local.com/nspgo/nspGo-tools"
 )
 
 type Session struct {
@@ -23,11 +24,18 @@ type Session struct {
 	Base64Str     string
 	Token         string
 	Proxy         Proxy
+	LogLevel      uint32
 }
 
 type Proxy struct {
 	Enable       string
 	ProxyAddress string
+}
+
+func (s *Session) InitLogger() {
+	// init logConfig
+	toolLogger := nspgotools.Tools{}
+	toolLogger.InitLogger("./logs/nspGo-Session.log", s.LogLevel)
 }
 
 func (s *Session) LoadConfig() {
@@ -119,7 +127,7 @@ func (s *Session) GetExample() {
 
 func (s *Session) GetRestToken() {
 	client := resty.New()
-	client.SetTimeout(20 * time.Second)
+	client.SetTimeout(36000000 * time.Minute)
 	client.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
 	// client.SetProxy("http://138.203.39.123:80")
 	if s.Proxy.Enable == "true" {

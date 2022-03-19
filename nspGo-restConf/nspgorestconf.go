@@ -14,13 +14,20 @@ import (
 type RestConf struct {
 	Payload      []byte
 	ResponseData []byte
+	LogLevel     uint32
 }
 
-func init() {
+func (rConf *RestConf) InitLogger() {
 	// init logConfig
 	toolLogger := nspgotools.Tools{}
-	toolLogger.InitLogger("./logs/nspGo-restconf.log", 5)
+	toolLogger.InitLogger("./logs/nspGo-restconf.log", rConf.LogLevel)
 }
+
+// func InitLogger() {
+// 	// init logConfig
+// 	toolLogger := nspgotools.Tools{}
+// 	toolLogger.InitLogger("./logs/nspGo-restconf.log", 5)
+// }
 
 func (rConf *RestConf) ReadRestConfPayload(file string) {
 	body, err := ioutil.ReadFile(file)
@@ -153,6 +160,87 @@ func (rConf *RestConf) NspRestconfInventory(urlHost string, token string, proxyE
 	// fmt.Println(result)
 	if err != nil {
 		log.Error("NspRestconfInventory is unsuccesful: ", err)
+		return
+	}
+	return resp.String()
+
+}
+
+func (rConf *RestConf) NspRestconf8545Post(urlHost string, token string, proxyEnable string, proxyAddress string, urlPath string, payload []byte) (result string) {
+	client := resty.New()
+	client.SetTimeout(6000 * time.Second)
+	client.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
+	if proxyEnable == "true" {
+		client.SetProxy(proxyAddress)
+	}
+
+	//asycn == false
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_RESTCONF_BASE_URL + urlPath)
+	resp, err := client.R().
+		SetHeader("Accept", "application/yang-data+json").
+		SetHeader("Content-Type", "application/yang-patch+json").
+		SetHeader("authorization", "Bearer "+token).
+		SetBody(payload).
+		Post(url)
+	log.Debug("url: ", url)
+	log.Debug("NspRestconf8545Post Response: ", resp.String())
+	log.Debug("Response: ", result)
+	if err != nil {
+		log.Error("NspRestconf8545Post is unsuccesful: ", err)
+		return
+	}
+	return resp.String()
+
+}
+
+func (rConf *RestConf) NspRestconf8545Get(urlHost string, token string, proxyEnable string, proxyAddress string, urlPath string, payload []byte) (result string) {
+	client := resty.New()
+	client.SetTimeout(6000 * time.Second)
+	client.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
+	if proxyEnable == "true" {
+		client.SetProxy(proxyAddress)
+	}
+
+	//asycn == false
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_RESTCONF_BASE_URL + urlPath)
+	resp, err := client.R().
+		SetHeader("Accept", "application/yang-data+json").
+		SetHeader("Content-Type", "application/yang-patch+json").
+		SetHeader("authorization", "Bearer "+token).
+		SetBody(payload).
+		Get(url)
+	log.Debug("url: ", url)
+	log.Debug("NspRestconf8545Get Response: ", resp.String())
+	log.Debug("Response: ", result)
+	if err != nil {
+		log.Error("NspRestconf8545Get is unsuccesful: ", err)
+		return
+	}
+	return resp.String()
+
+}
+
+func (rConf *RestConf) NspRestconf8545Del(urlHost string, token string, proxyEnable string, proxyAddress string, urlPath string, payload []byte) (result string) {
+	client := resty.New()
+	client.SetTimeout(6000 * time.Second)
+	client.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
+	if proxyEnable == "true" {
+		client.SetProxy(proxyAddress)
+	}
+
+	//asycn == false
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_RESTCONF_BASE_URL + urlPath)
+	resp, err := client.R().
+		SetHeader("Accept", "application/yang-data+json").
+		SetHeader("Content-Type", "application/yang-patch+json").
+		SetHeader("authorization", "Bearer "+token).
+		SetBody(payload).
+		Delete(url)
+	log.Debug("url: ", url)
+	log.Debug("NspRestconf8545Del Response: ", resp.String())
+	log.Debug("Response: ", result)
+	if err != nil {
+		log.Error("NspRestconf8545Del is unsuccesful: ", err)
 		return
 	}
 	return resp.String()

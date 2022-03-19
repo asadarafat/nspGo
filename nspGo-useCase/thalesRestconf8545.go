@@ -57,8 +57,8 @@ func ThalesRestConf8545() {
 	// pathToPayload := "./nspGo-restConf/resconf-payload.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-100-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-500-svc.json"
-	// pathToPayload := "./nspGo-restConf/resconf-payload-700-svc.json"
-	pathToPayload := "./nspGo-restConf/resconf-payload-1k-svc.json"
+	pathToPayload := "./nspGo-restConf/resconf-payload-700-svc.json"
+	// pathToPayload := "./nspGo-restConf/resconf-payload-1k-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-2k-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-4k-svc.json"
 

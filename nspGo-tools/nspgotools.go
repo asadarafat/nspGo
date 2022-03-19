@@ -10,6 +10,7 @@ import (
 	"github.com/scrapli/scrapligo/netconf"
 	"github.com/scrapli/scrapligo/transport"
 	log "github.com/sirupsen/logrus"
+
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
@@ -46,9 +47,15 @@ func (tool *Tools) InitLogger(filePath string, level uint32) {
 	})
 	log.SetLevel(log.Level(level))
 	log.SetOutput(mw)
+
+	// log.SetFormatter(&nested.Formatter{})
+
 	log.SetFormatter(&log.TextFormatter{
+		DisableQuote:  true,
 		DisableColors: false,
 		FullTimestamp: true})
+
+	// log.SetFormatter(&log.JSONFormatter{})
 }
 
 // follow this guide
