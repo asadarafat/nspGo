@@ -9,3 +9,5 @@ const GLBL_NSP_RESTCONF_BASE_URL = ":8545/restconf/"
 const GLBL_NSP_MDC_BASE_URL = ":8548/mdm-config-app/proxy/v1/restconf/"
 const GLBL_NSP_WFM_BASE_URL = ":8546/wfm/api"
 const GLBL_NSP_IM_BASE_URL = ":8547/mdt/api/v1/restconf/"
+
+// const GLBL_NSP_RESOURCE_MANAGER_BASE_URL = ":8622/"

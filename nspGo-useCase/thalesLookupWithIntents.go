@@ -3,9 +3,11 @@ package nspgousecase
 import (
 	"fmt"
 	"strconv"
+	"time"
 
 	"github.com/schollz/progressbar/v3"
 	log "github.com/sirupsen/logrus"
+	"github.com/tidwall/gjson"
 	"github.com/tidwall/sjson"
 
 	nspgointentmanger "local.com/nspgo/nspGo-intentManger"
@@ -13,7 +15,7 @@ import (
 	nspgosession "local.com/nspgo/nspGo-session"
 )
 
-func ThalesLookupWithIntent() {
+func ThalesLookupWithIntentCreateIntents() {
 
 	const json = `{
 		"ibn:intent": {
@@ -51,8 +53,8 @@ func ThalesLookupWithIntent() {
 	im.LogLevel = 5
 	im.InitLogger()
 
-	minIteration := 61002
-	maxIteration := 70001
+	minIteration := 1000000
+	maxIteration := 1000001
 	// batch := 100
 
 	bar := progressbar.Default(int64(maxIteration - minIteration))
@@ -104,13 +106,74 @@ func ThalesLookupWithIntent() {
 		// }
 		// time.Sleep(1 * time.Microsecond)
 	}
-	// im.NspIntentManagerPost(p.IpAdressNspOs, p.Token, p.Proxy.Enable, p.Proxy.ProxyAddress, "data/ibn:ibn", bytesJson)
-
-	// rc.NspRestconf8545Del(p.IpAdressNspOs, p.Token, p.Proxy.Enable, p.Proxy.ProxyAddress, "data/ibn:ibn/intent="+serviceId+",service", bytesJson)
-	// rc.NspRestconf8545Post(p.IpAdressNspOs, p.Token, p.Proxy.Enable, p.Proxy.ProxyAddress, "data/ibn:ibn", bytesJson)
-	// rc.NspRestconf8545Get(p.IpAdressNspOs, p.Token, p.Proxy.Enable, p.Proxy.ProxyAddress, "data/ibn:ibn/intent=service1000003,service", bytesJson)
-	// rc.NspRestconf8545Del(p.IpAdressNspOs, p.Token, p.Proxy.Enable, p.Proxy.ProxyAddress, "data/ibn:ibn/intent=service1000003,service", bytesJson)
 
 	s.RevokeRestToken()
 
+}
+
+func ThalesLookupWithIntentGetIntents() {
+	// init class Session
+	s := nspgosession.Session{}
+	s.LoadConfig()
+
+	s.EncodeUserName()
+	log.Debug(s.EncodeUserName())
+
+	s.GetRestToken()
+	log.Debug("nsp.linetoken_NEW :", s.Token)
+	fmt.Println(s.Token)
+
+	// init class IntentManager
+	im := nspgointentmanger.IntentManager{}
+	im.LogLevel = 4
+	im.InitLogger()
+
+	minSvcId := 1
+	maxSvcId := 10
+
+	payload := []byte("")
+
+	listOfLookupTimePerIteration := []time.Duration{}
+
+	for i := minSvcId; i <= maxSvcId; i++ {
+		startLookupTime := time.Now()
+		log.Debug("Lookup Time Start ", startLookupTime)
+
+		urlPath := "data/ibn:ibn/intent=service" + strconv.Itoa(1000000+i) + ",service"
+		// im.NspIntentManagerGet(s.IpAdressNspOs, s.Token, s.Proxy.Enable, s.Proxy.ProxyAddress, urlPath, payload)
+		log.Info(gjson.Get(im.NspIntentManagerGet(s.IpAdressNspOs, s.Token, s.Proxy.Enable, s.Proxy.ProxyAddress, urlPath, payload), "ibn:intent.intent-specific-data.service:service"))
+
+		listOfLookupTimePerIteration = append(listOfLookupTimePerIteration, (time.Since(startLookupTime)))
+
+	}
+
+	//Find Total Elapsed Time at MidPoint
+	var totalElapsedMidPoint time.Duration
+	for w := 0; w <= len(listOfLookupTimePerIteration)/2; w++ {
+		totalElapsedMidPoint += listOfLookupTimePerIteration[w]
+	}
+
+	//Find Total Elapsed Time
+	var totalElapsed time.Duration
+	for _, v := range listOfLookupTimePerIteration {
+		totalElapsed += v
+	}
+
+	//Find Min Max in Total Elapsed List
+	var max time.Duration = listOfLookupTimePerIteration[0]
+	var min time.Duration = listOfLookupTimePerIteration[0]
+	for _, value := range listOfLookupTimePerIteration {
+		if max < value {
+			max = value
+		}
+		if min > value {
+			min = value
+		}
+	}
+	log.Info("Min Elapsed Time Per Iteration (second): ", min.Seconds())
+	log.Info("Max Elapsed Time Per Iteration(second): ", max.Seconds())
+	log.Info("Total Iteration: ", maxSvcId-minSvcId+1)
+	log.Info("Total Elapsed Time MidPoint at "+strconv.Itoa(len(listOfLookupTimePerIteration)/2)+" Iteration (seconds): ", totalElapsedMidPoint)
+	log.Info("Total Elapsed Time(seconds): ", totalElapsed)
+	s.RevokeRestToken()
 }

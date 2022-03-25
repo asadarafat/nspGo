@@ -36,6 +36,39 @@ func (tool *Tools) LoadTemplateJinja(template string) {
 	}
 }
 
+// log level
+// // A constant exposing all logging levels
+// var AllLevels = []Level{
+// 	PanicLevel, 0
+// 	FatalLevel, 1
+// 	ErrorLevel, 2
+// 	WarnLevel,  3
+// 	InfoLevel,  4
+// 	DebugLevel, 5
+// 	TraceLevel, 6
+// }
+
+// const (
+// 	// PanicLevel level, highest level of severity. Logs and then calls panic with the
+// 	// message passed to Debug, Info, ...
+// 	PanicLevel Level = iota
+// 	// FatalLevel level. Logs and then calls `logger.Exit(1)`. It will exit even if the
+// 	// logging level is set to Panic.
+// 	FatalLevel
+// 	// ErrorLevel level. Logs. Used for errors that should definitely be noted.
+// 	// Commonly used for hooks to send errors to an error tracking service.
+// 	ErrorLevel
+// 	// WarnLevel level. Non-critical entries that deserve eyes.
+// 	WarnLevel
+// 	// InfoLevel level. General operational entries about what's going on inside the
+// 	// application.
+// 	InfoLevel
+// 	// DebugLevel level. Usually only enabled when debugging. Very verbose logging.
+// 	DebugLevel
+// 	// TraceLevel level. Designates finer-grained informational events than the Debug.
+// 	TraceLevel
+// )
+
 func (tool *Tools) InitLogger(filePath string, level uint32) {
 	mw := io.MultiWriter(os.Stdout, &lumberjack.Logger{
 		// mw := io.MultiWriter(&lumberjack.Logger{

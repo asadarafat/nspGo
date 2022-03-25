@@ -1,11 +1,16 @@
 package main
 
-import nspgousecase "local.com/nspgo/nspGo-useCase"
+import (
+	nspgousecase "local.com/nspgo/nspGo-useCase"
+)
 
 func main() {
-	// nspgousecase.ThalesRestConfMdc()
-	// nspgousecase.ThalesNetconfNe()
-	// nspgousecase.ThalesRestConf8545()
-	nspgousecase.ThalesLookupWithIntent()
+
+	// nspgousecase.ThalesLookupWithIntentCreateIntents()
+	// nspgousecase.ThalesLookupWithIntentGetIntents()
+	// nspgousecase.ThalesLookupWithResourceManagerObtain(1, 1000000)
+	// nspgousecase.ThalesLookupWithResourceManagerRelease()
+
+	nspgousecase.ThalesLookupWithGoCache(1, 1000000)
 
 }
