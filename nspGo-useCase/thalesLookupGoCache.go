@@ -265,7 +265,7 @@ func ThalesLookupWithGoCache(minIteration int, maxIteration int) {
 	log.Info("Min Elapsed Time Per Iteration (second): ", min.Seconds())
 	log.Info("Max Elapsed Time Per Iteration(second): ", max.Seconds())
 	log.Info("Total Iteration: ", maxIteration-minIteration+1)
-	// log.Info("Total Elapsed Time MidPoint at "+strconv.Itoa(len(listOfLookupTimePerIteration)/2)+" Iteration (seconds): ", totalElapsedMidPoint)
+	log.Info("Total Elapsed Time MidPoint at "+strconv.Itoa(len(listOfLookupTimePerIteration)/2)+" Iteration (seconds): ", totalElapsedMidPoint)
 	log.Info("Total Elapsed Time(seconds): ", totalElapsed)
 	// fmt.Println(c.Items())
 }

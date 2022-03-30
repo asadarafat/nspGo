@@ -215,3 +215,12 @@ func (tool *Tools) NetconfClientEditCommit(neId, username string, password strin
 	log.Info("NetcConf Commit "+neId+" Response: ", c.Result)
 
 }
+
+func (tool *Tools) WriteDataToFile(data string, filename string) {
+	file, err := os.Create(filename)
+	if err != nil {
+		return
+	}
+	defer file.Close()
+	file.WriteString(data)
+}

@@ -8,9 +8,9 @@ func main() {
 
 	// nspgousecase.ThalesLookupWithIntentCreateIntents()
 	// nspgousecase.ThalesLookupWithIntentGetIntents()
-	// nspgousecase.ThalesLookupWithResourceManagerObtain(1, 1000000)
+	nspgousecase.ThalesLookupWithResourceManagerObtain(1, 10)
 	// nspgousecase.ThalesLookupWithResourceManagerRelease()
 
-	nspgousecase.ThalesLookupWithGoCache(1, 1000000)
+	// nspgousecase.ThalesLookupWithGoCache(1, 1000000)
 
 }
