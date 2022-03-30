@@ -2,7 +2,7 @@ package main
 
 import (
 	nspgotools "local.com/nspgo/nspGo-tools"
-	nsptopoviewer "local.com/nspgo/nspGo-topoViewer"
+	nspgotopoviewer "local.com/nspgo/nspGo-topoViewer"
 )
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 	// filePath = (filePath + "../../../vis-library/colajs-asad-graph/data-cytoMarshall.json")
 	// graph1.DumpIetfNetworkToCyGraph(content, nsptopoviewer.IetfNetworkStruct{}, filePath)
 
-	nextUiGo := nsptopoviewer.NextUiGo{}
+	nextUiGo := nspgotopoviewer.NextUiGo{}
 	nextUiGo.LogLevel = 5
 	// nextUiGo.ReadRawTopoJsonFile("./nspGo-topoViewer/L3networks.json")
 	nextUiGo.InitLogger()
@@ -25,7 +25,7 @@ func main() {
 	// value := gjson.Get(string(nextUiGo.RawTopo), "response.data.network")
 	// log.Info(value)
 
-	nextUiGo.NextUiUnmarshalIetfNetworkModel(ietfRawFile, nsptopoviewer.IetfNetworkStruct{})
+	nextUiGo.NextUiUnmarshalIetfNetworkModel(ietfRawFile, nspgotopoviewer.IetfNetworkStruct{})
 	marshaledNextuiTopo := nextUiGo.NextUiMarshal()
 
 	tools := nspgotools.Tools{}
