@@ -10,11 +10,6 @@ import (
 	nspgoconstants "local.com/nspgo/nspGo-constants"
 )
 
-type IpOptim struct {
-	PathProfileData string // plachoder for yaml path-profile-data
-	ResponseData    []byte
-}
-
 func (ipO *IpOptim) GetNetworkIetf(urlHost string, token string, proxyEnable string, proxyAddress string) (result string) {
 	client := resty.New()
 	client.SetTimeout(60 * time.Second)

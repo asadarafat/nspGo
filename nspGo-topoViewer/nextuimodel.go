@@ -1,9 +1,13 @@
 package nsptopoviewer
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
+	"html/template"
 	"io/ioutil"
+	"net/http"
+	"os"
 
 	log "github.com/sirupsen/logrus"
 
@@ -13,6 +17,7 @@ import (
 type NextUiGo struct {
 	Topology NextTopology
 	LogLevel uint32
+	DataHtml TopologyDataHtml
 }
 
 type NextTopology struct {
@@ -21,17 +26,24 @@ type NextTopology struct {
 }
 
 type NextNode struct {
-	Id    string `json:"id"`
-	Name  string `json:"name"`
-	Group string `json:"group"`
-	Kind  string `json:"kind"`
+	Id        string `json:"id"`
+	Name      string `json:"name"`
+	NetworkId string `json:"networkId"`
+	Group     string `json:"group"`
+	Type      string `json:"type"`
 }
 
 type NextLink struct {
-	Id     string `json:"id"`
-	Source string `json:"source"`
-	Target string `json:"target"`
-	Kind   string `json:"kind"`
+	Id        string `json:"id"`
+	Source    string `json:"source"`
+	Target    string `json:"target"`
+	NetworkId string `json:"networkId"`
+	Type      string `json:"type"`
+}
+
+type TopologyDataHtml struct {
+	Name string
+	Data string
 }
 
 func (nextGo *NextUiGo) InitLogger() {
@@ -72,29 +84,34 @@ func (nextGo *NextUiGo) NextUiUnmarshalIetfNetworkModel(rawTopoFile []byte, ietf
 				if ietfModel.Response.Data.Network[i].Node[k].NodeID == SourceNodeID {
 					SourceNodeName := ietfModel.Response.Data.Network[i].Node[k].TeNodeAugment.Te.TeNodeID.DottedQuad.String
 					node.Name = SourceNodeName
-					// SourceNodeId := ietfModel.Response.Data.Network[i].Node[k].NodeID
-					// node.id = SourceNodeId
+					SourceNodeUuid := ietfModel.Response.Data.Network[i].Node[k].NodeID
+					node.Id = SourceNodeUuid
+					node.Group = "PhysicalLayer"
 					nextGo.Topology.Nodes = append(nextGo.Topology.Nodes, node)
 					link.Source = SourceNodeName
+
 				}
 
 				if ietfModel.Response.Data.Network[i].Node[k].NodeID == DestNodeID {
 					DestNodeName := ietfModel.Response.Data.Network[i].Node[k].TeNodeAugment.Te.TeNodeID.DottedQuad.String
 					node.Name = DestNodeName
-					// DestNodeId := ietfModel.Response.Data.Network[i].Node[k].NodeID
-					// node.id = DestNodeId
+					DestNodeUuid := ietfModel.Response.Data.Network[i].Node[k].NodeID
+					node.Id = DestNodeUuid
+					node.Group = "PhysicalLayer"
 					nextGo.Topology.Nodes = append(nextGo.Topology.Nodes, node)
 					link.Target = DestNodeName
-
 				}
 			}
+			LinkUuid := ietfModel.Response.Data.Network[i].Link[j].LinkID
+			link.Id = LinkUuid
 			nextGo.Topology.Links = append(nextGo.Topology.Links, link)
+
 		}
 	}
 	// log.Debug(nextGo)
 }
 
-func (nextGo *NextUiGo) NextUiMarshal() string {
+func (nextGo *NextUiGo) NextUiMarshal() []byte {
 	// u, err := json.Marshal(NextNode{Id: nextGo.Topology.NextNodes[0].Name})
 	jsonBytes, err := json.Marshal(NextTopology{
 		Nodes: nextGo.Topology.Nodes,
@@ -103,5 +120,44 @@ func (nextGo *NextUiGo) NextUiMarshal() string {
 		panic(err)
 	}
 	log.Debug(string(jsonBytes))
-	return string(jsonBytes)
+
+	return jsonBytes
+}
+
+func (nextGo *NextUiGo) NextUiHttpServer(marshaledNextuiTopo []byte) {
+
+	type nodeData struct {
+		Name string
+		// Name []byte
+	}
+	std1 := nodeData{string(marshaledNextuiTopo)}
+	tmp1 := template.New("Template_1")
+	tmp1, _ = tmp1.Parse("var data = {{.Name}}")
+
+	filePath, _ := (os.Getwd())
+	file, err := os.Create(filePath + "/nspGo-topoViewer/html-template/static/js/nextData.js")
+
+	log.Debugf("fileOutput: ", file)
+
+	if err == nil {
+		tmp1.Execute(file, std1)
+	}
+
+	// read the file again to replace "&#34;" with single quoute "
+	// aaraafat-tag: code need to be optimised
+	input, err := ioutil.ReadFile(filePath + "/nspGo-topoViewer/html-template/static/js/nextData.js")
+	if err != nil {
+		log.Error(err)
+		os.Exit(1)
+	}
+	output := bytes.Replace(input, []byte("&#34;"), []byte(`"`), -1)
+
+	if err = ioutil.WriteFile(filePath+"/nspGo-topoViewer/html-template/static/js/nextData.js", output, 0666); err != nil {
+		log.Error(err)
+		os.Exit(1)
+	}
+
+	// log.Debugf("filePath: ", filePath+"/nspGo-topoViewer/html-template/static/")
+	http.Handle("/", http.FileServer(http.Dir(filePath+"/nspGo-topoViewer/html-template")))
+	http.ListenAndServe(":8080", nil)
 }

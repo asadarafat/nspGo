@@ -216,11 +216,13 @@ func (tool *Tools) NetconfClientEditCommit(neId, username string, password strin
 
 }
 
-func (tool *Tools) WriteDataToFile(data string, filename string) {
-	file, err := os.Create(filename)
+func (tool *Tools) WriteDataToFile(data []byte, filename string) {
+	filePath, _ := (os.Getwd())
+	log.Debugf("filePath: ", filePath+"/nspGo-topoViewer/html-template/static/js/"+filename)
+	file, err := os.Create(filePath + "/nspGo-topoViewer/html-template/static/js/" + filename)
 	if err != nil {
 		return
 	}
 	defer file.Close()
-	file.WriteString(data)
+	file.Write(data)
 }

@@ -63,6 +63,12 @@ func (s *Session) LoadConfig() {
 	s.Proxy.Enable = viper.GetString("nsp.proxy.enable")
 	s.Proxy.ProxyAddress = viper.GetString("nsp.proxy.proxyAddress")
 
+	// log.Info("nsp.nspOsIP :", s.IpAdressNspOs)
+	// log.Info("nsp.nspIprcIP :", s.IpAdressIprc)
+	// log.Info("nsp.Username :", s.Username)
+	// log.Info("nsp.Password :", s.Password)
+	// log.Info("nsp.linetoken :", s.Token)
+
 	// Print
 	// fmt.Println("---------- Example ----------")
 	// fmt.Println("nsp.env :", env)

@@ -1,416 +1,409 @@
-{
+var data = {
 	"nodes": [
 		{
 			"id": "2074-0a1e0094-bb73-44da-aae1-e2a03cabb950",
 			"name": "10.10.10.10",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "1947-6049772a-e0d6-4f3b-9fc5-84da3fa4ffb4",
 			"name": "10.10.10.9",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "1947-6049772a-e0d6-4f3b-9fc5-84da3fa4ffb4",
 			"name": "10.10.10.9",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "2074-0a1e0094-bb73-44da-aae1-e2a03cabb950",
 			"name": "10.10.10.10",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "2069-86d533c1-f057-43aa-a943-6837ce278d89",
 			"name": "10.10.10.7",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "1941-45b75300-7f8b-4250-a98b-d6bec46f1d6d",
 			"name": "10.10.10.6",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "1941-45b75300-7f8b-4250-a98b-d6bec46f1d6d",
 			"name": "10.10.10.6",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "2069-86d533c1-f057-43aa-a943-6837ce278d89",
 			"name": "10.10.10.7",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "945-99dc6e74-b6c1-45ed-9b4f-0448c627c55b",
 			"name": "10.10.10.5",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "926-2fa93960-a6bb-46c5-9fc7-6155ba11b1e3",
 			"name": "10.10.10.3",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "945-99dc6e74-b6c1-45ed-9b4f-0448c627c55b",
 			"name": "10.10.10.5",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "933-2d774ec7-d017-4ab4-a232-5e344e92af02",
 			"name": "10.10.10.4",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "945-99dc6e74-b6c1-45ed-9b4f-0448c627c55b",
 			"name": "10.10.10.5",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "926-2fa93960-a6bb-46c5-9fc7-6155ba11b1e3",
 			"name": "10.10.10.3",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "945-99dc6e74-b6c1-45ed-9b4f-0448c627c55b",
 			"name": "10.10.10.5",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "933-2d774ec7-d017-4ab4-a232-5e344e92af02",
 			"name": "10.10.10.4",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "742-773af842-4402-4a78-9335-80fd0d399aea",
 			"name": "10.10.10.7",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "284-7228ec20-117c-4680-bb8a-1d660beed7d0",
 			"name": "10.10.10.3",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "742-773af842-4402-4a78-9335-80fd0d399aea",
 			"name": "10.10.10.7",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "299-5880dcbb-7bb8-4a89-b74e-ea133b4d4203",
 			"name": "10.10.10.4",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "296-d81c4390-e86d-47fd-b355-ba4bd1ac371c",
 			"name": "10.10.10.6",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "284-7228ec20-117c-4680-bb8a-1d660beed7d0",
 			"name": "10.10.10.3",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "745-d49bf90e-414b-4221-ab5e-c57d0f01d673",
 			"name": "10.10.10.2",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "853-7105052d-93b6-48c7-88da-9f94a8c4bbac",
 			"name": "10.10.10.1",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "853-7105052d-93b6-48c7-88da-9f94a8c4bbac",
 			"name": "10.10.10.1",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "284-7228ec20-117c-4680-bb8a-1d660beed7d0",
 			"name": "10.10.10.3",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "745-d49bf90e-414b-4221-ab5e-c57d0f01d673",
 			"name": "10.10.10.2",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "299-5880dcbb-7bb8-4a89-b74e-ea133b4d4203",
 			"name": "10.10.10.4",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "853-7105052d-93b6-48c7-88da-9f94a8c4bbac",
 			"name": "10.10.10.1",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "284-7228ec20-117c-4680-bb8a-1d660beed7d0",
 			"name": "10.10.10.3",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "742-773af842-4402-4a78-9335-80fd0d399aea",
 			"name": "10.10.10.7",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "299-5880dcbb-7bb8-4a89-b74e-ea133b4d4203",
 			"name": "10.10.10.4",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "745-d49bf90e-414b-4221-ab5e-c57d0f01d673",
 			"name": "10.10.10.2",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "853-7105052d-93b6-48c7-88da-9f94a8c4bbac",
 			"name": "10.10.10.1",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "296-d81c4390-e86d-47fd-b355-ba4bd1ac371c",
 			"name": "10.10.10.6",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "299-5880dcbb-7bb8-4a89-b74e-ea133b4d4203",
 			"name": "10.10.10.4",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "296-d81c4390-e86d-47fd-b355-ba4bd1ac371c",
 			"name": "10.10.10.6",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "284-7228ec20-117c-4680-bb8a-1d660beed7d0",
 			"name": "10.10.10.3",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "299-5880dcbb-7bb8-4a89-b74e-ea133b4d4203",
 			"name": "10.10.10.4",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "284-7228ec20-117c-4680-bb8a-1d660beed7d0",
 			"name": "10.10.10.3",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "742-773af842-4402-4a78-9335-80fd0d399aea",
 			"name": "10.10.10.7",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "284-7228ec20-117c-4680-bb8a-1d660beed7d0",
 			"name": "10.10.10.3",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "296-d81c4390-e86d-47fd-b355-ba4bd1ac371c",
 			"name": "10.10.10.6",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "299-5880dcbb-7bb8-4a89-b74e-ea133b4d4203",
 			"name": "10.10.10.4",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "299-5880dcbb-7bb8-4a89-b74e-ea133b4d4203",
 			"name": "10.10.10.4",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "284-7228ec20-117c-4680-bb8a-1d660beed7d0",
 			"name": "10.10.10.3",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "745-d49bf90e-414b-4221-ab5e-c57d0f01d673",
 			"name": "10.10.10.2",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "299-5880dcbb-7bb8-4a89-b74e-ea133b4d4203",
 			"name": "10.10.10.4",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "10183-ef1013e5-b6e5-4575-bde8-a1618c8de74e",
 			"name": "10.10.10.10",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "10188-8ff9e1c1-6f54-4fa0-9579-dfe112db411b",
 			"name": "10.10.10.8",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "10183-ef1013e5-b6e5-4575-bde8-a1618c8de74e",
 			"name": "10.10.10.10",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "10188-8ff9e1c1-6f54-4fa0-9579-dfe112db411b",
 			"name": "10.10.10.8",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "10213-803f6c92-8a55-4561-baf8-aff8fe7f3520",
 			"name": "10.10.10.9",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "10188-8ff9e1c1-6f54-4fa0-9579-dfe112db411b",
 			"name": "10.10.10.8",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "10213-803f6c92-8a55-4561-baf8-aff8fe7f3520",
 			"name": "10.10.10.9",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		},
 		{
 			"id": "10188-8ff9e1c1-6f54-4fa0-9579-dfe112db411b",
 			"name": "10.10.10.8",
 			"networkId": "",
-			"group": "",
+			"group": "PhysicalLayer",
 			"type": ""
 		}
 	],
 	"links": [
 		{
 			"id": "2076-6ee2e448-b73a-4a0d-ac48-709b084c8394",
-			"source": "",
+			"source": "10.10.10.7",
 			"target": "10.10.10.10",
 			"networkId": "",
 			"type": ""
 		},
 		{
 			"id": "1949-8afc9aec-9a93-4252-bfb8-3d12fe524018",
-			"source": "",
-			"target": "10.10.10.9",
-			"networkId": "",
-			"type": ""
-		},
-		{
-			"id": "2018-240370d9-dac8-42d3-a063-d1de26a34860",
-			"source": "10.10.10.9",
+			"source": "10.10.10.6",
 			"target": "10.10.10.9",
 			"networkId": "",
 			"type": ""

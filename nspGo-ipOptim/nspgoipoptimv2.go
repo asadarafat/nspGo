@@ -11,10 +11,16 @@ import (
 	nspgotools "local.com/nspgo/nspGo-tools"
 )
 
-func init() {
+type IpOptim struct {
+	PathProfileData string // plachoder for yaml path-profile-data
+	ResponseData    []byte
+	LogLevel        uint32
+}
+
+func (ipO *IpOptim) InitLogger() {
 	// init logConfig
 	toolLogger := nspgotools.Tools{}
-	toolLogger.InitLogger("./logs/nspGo-ipOptim.log", 3)
+	toolLogger.InitLogger("./logs/nspGo-ipOptim.log", ipO.LogLevel)
 }
 
 // Find an object by Application ID
@@ -26,7 +32,7 @@ func (ipO *IpOptim) IpoV4GenericApplicationidIdGet(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/generic/application-id/{id}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "generic/application-id/{id}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -53,7 +59,7 @@ func (ipO *IpOptim) IpoV4GenericApplicationidIdAppIdPut(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/generic/application-id/{id}/{appId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "generic/application-id/{id}/{appId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -80,7 +86,7 @@ func (ipO *IpOptim) IpoV4GenericConsumedUuidGet(urlHost string, token string, pr
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/generic/consumed/{uuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "generic/consumed/{uuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -107,7 +113,7 @@ func (ipO *IpOptim) IpoV4GenericFindbyexternalidPost(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/generic/find-by-external-id")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "generic/find-by-external-id")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -134,7 +140,7 @@ func (ipO *IpOptim) IpoV4GenericTenantsUuidGet(urlHost string, token string, pro
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/generic/tenants/{uuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "generic/tenants/{uuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -161,7 +167,7 @@ func (ipO *IpOptim) IpoV4GenericUuidGet(urlHost string, token string, proxyEnabl
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/generic/{uuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "generic/{uuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -188,7 +194,7 @@ func (ipO *IpOptim) IpoV4IetfEthtsvcL2backhaulServiceUuidEndpointPost(urlHost st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ietf/ethtsvc/l2-backhaul/{serviceUuid}/endpoint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ietf/ethtsvc/l2-backhaul/{serviceUuid}/endpoint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -215,7 +221,7 @@ func (ipO *IpOptim) IpoV4IetfEthtsvcL2backhaulServiceUuidEndpointEndpointUuidPut
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ietf/ethtsvc/l2-backhaul/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ietf/ethtsvc/l2-backhaul/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -242,7 +248,7 @@ func (ipO *IpOptim) IpoV4IetfEthtsvcL2backhaulServiceUuidEndpointEndpointUuidPat
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ietf/ethtsvc/l2-backhaul/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ietf/ethtsvc/l2-backhaul/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -269,7 +275,7 @@ func (ipO *IpOptim) IpoV4IetfEthtsvcL2backhaulAutoPathPost(urlHost string, token
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ietf/ethtsvc/l2backhaul/{autoPath}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ietf/ethtsvc/l2backhaul/{autoPath}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -296,7 +302,7 @@ func (ipO *IpOptim) IpoV4IetfEthtsvcL2backhaulServiceUuidPut(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ietf/ethtsvc/l2backhaul/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ietf/ethtsvc/l2backhaul/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -323,7 +329,7 @@ func (ipO *IpOptim) IpoV4IetfEthtsvcL2backhaulServiceUuidPatch(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ietf/ethtsvc/l2backhaul/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ietf/ethtsvc/l2backhaul/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -350,7 +356,7 @@ func (ipO *IpOptim) IpoV4IetfTeLinkLinkIdGet(urlHost string, token string, proxy
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ietf/te/link/{linkId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ietf/te/link/{linkId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -377,7 +383,7 @@ func (ipO *IpOptim) IpoV4IetfTeLinkLinkUuidPatch(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ietf/te/link/{linkUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ietf/te/link/{linkUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -404,7 +410,7 @@ func (ipO *IpOptim) IpoV4IetfTeNetworkNetworkIdGet(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ietf/te/network/{networkId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ietf/te/network/{networkId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -431,7 +437,7 @@ func (ipO *IpOptim) IpoV4IetfTeNetworksGet(urlHost string, token string, proxyEn
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ietf/te/networks")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ietf/te/networks")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -442,8 +448,8 @@ func (ipO *IpOptim) IpoV4IetfTeNetworksGet(urlHost string, token string, proxyEn
 		log.Error("NspRestconfInventory is unsuccesful: ", err)
 		return
 	}
-	log.Info("Received Response " + urlHost + " Response: ")
-	log.Info(resp.String())
+	log.Debug("Received Response " + urlHost + " Response: ")
+	log.Debug(resp.String())
 
 	return resp.String()
 
@@ -458,7 +464,7 @@ func (ipO *IpOptim) IpoV4IetfTeNodeNodeIdGet(urlHost string, token string, proxy
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ietf/te/node/{nodeId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ietf/te/node/{nodeId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -485,7 +491,7 @@ func (ipO *IpOptim) IpoV4IetfTeTerminationpointTpIdGet(urlHost string, token str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ietf/te/termination-point/{tpId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ietf/te/termination-point/{tpId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -512,7 +518,7 @@ func (ipO *IpOptim) IpoV4L2BackhaulPathsL2pathsGet(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/l2/backhaul/paths/l2-paths")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "l2/backhaul/paths/l2-paths")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -539,7 +545,7 @@ func (ipO *IpOptim) IpoV4MediationAmiversiontemplatesGet(urlHost string, token s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mediation/ami-version-templates")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mediation/ami-version-templates")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -566,7 +572,7 @@ func (ipO *IpOptim) IpoV4MediationAmisversionsGet(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mediation/amis-versions")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mediation/amis-versions")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -593,7 +599,7 @@ func (ipO *IpOptim) IpoV4MediationAugmentationmetaGet(urlHost string, token stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mediation/augmentation-meta")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mediation/augmentation-meta")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -620,7 +626,7 @@ func (ipO *IpOptim) IpoV4MediationAugmentationmetaPost(urlHost string, token str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mediation/augmentation-meta")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mediation/augmentation-meta")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -647,7 +653,7 @@ func (ipO *IpOptim) IpoV4MediationAugmentationmetaIdPut(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mediation/augmentation-meta/{id}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mediation/augmentation-meta/{id}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -674,7 +680,7 @@ func (ipO *IpOptim) IpoV4MediationAugmentationmetaIdDelete(urlHost string, token
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mediation/augmentation-meta/{id}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mediation/augmentation-meta/{id}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -701,7 +707,7 @@ func (ipO *IpOptim) IpoV4MediationMediationaugmentationPost(urlHost string, toke
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mediation/mediation-augmentation")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mediation/mediation-augmentation")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -728,7 +734,7 @@ func (ipO *IpOptim) IpoV4MplsLsplistPost(urlHost string, token string, proxyEnab
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp-list")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp-list")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -755,7 +761,7 @@ func (ipO *IpOptim) IpoV4MplsLsppathPost(urlHost string, token string, proxyEnab
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp-path")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp-path")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -782,7 +788,7 @@ func (ipO *IpOptim) IpoV4MplsLsppathlistPost(urlHost string, token string, proxy
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp-path-list")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp-path-list")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -809,7 +815,7 @@ func (ipO *IpOptim) IpoV4MplsLsppathprofileoverridePost(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp-path-profile-override")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp-path-profile-override")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -836,7 +842,7 @@ func (ipO *IpOptim) IpoV4MplsLsppathPathIdGet(urlHost string, token string, prox
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp-path/{pathId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp-path/{pathId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -863,7 +869,7 @@ func (ipO *IpOptim) IpoV4MplsLsppathPathIdDelete(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp-path/{pathId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp-path/{pathId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -890,7 +896,7 @@ func (ipO *IpOptim) IpoV4MplsLsppathPathIdPatch(urlHost string, token string, pr
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp-path/{pathId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp-path/{pathId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -917,7 +923,7 @@ func (ipO *IpOptim) IpoV4MplsLsppathsGet(urlHost string, token string, proxyEnab
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp-paths")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp-paths")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -944,7 +950,7 @@ func (ipO *IpOptim) IpoV4MplsLsppathsPost(urlHost string, token string, proxyEna
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp-paths")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp-paths")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -971,7 +977,7 @@ func (ipO *IpOptim) IpoV4MplsLsppathsDelete(urlHost string, token string, proxyE
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp-paths")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp-paths")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -998,7 +1004,7 @@ func (ipO *IpOptim) IpoV4MplsLsppathspaginatedLimitIndexGet(urlHost string, toke
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp-paths-paginated/{limit}/{index}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp-paths-paginated/{limit}/{index}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1025,7 +1031,7 @@ func (ipO *IpOptim) IpoV4MplsLspPathsOnlinkLinkIdRequestTypeGet(urlHost string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp/paths/on-link/{linkId}/{requestType}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp/paths/on-link/{linkId}/{requestType}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1052,7 +1058,7 @@ func (ipO *IpOptim) IpoV4MplsLspPathsProfilegroupProfileIdExtendedIdGet(urlHost 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp/paths/profile-group/{profileId}/{extendedId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp/paths/profile-group/{profileId}/{extendedId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1079,7 +1085,7 @@ func (ipO *IpOptim) IpoV4MplsLspLspIdGet(urlHost string, token string, proxyEnab
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsp/{lspId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsp/{lspId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1106,7 +1112,7 @@ func (ipO *IpOptim) IpoV4MplsLspsGet(urlHost string, token string, proxyEnable s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/lsps")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/lsps")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1133,7 +1139,7 @@ func (ipO *IpOptim) IpoV4MplsOptimizationPost(urlHost string, token string, prox
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/optimization")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/optimization")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1160,7 +1166,7 @@ func (ipO *IpOptim) IpoV4MplsResignalPost(urlHost string, token string, proxyEna
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/mpls/resignal")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "mpls/resignal")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1187,7 +1193,7 @@ func (ipO *IpOptim) IpoV4NeGet(urlHost string, token string, proxyEnable string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ne")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ne")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1214,7 +1220,7 @@ func (ipO *IpOptim) IpoV4NeSystemSystemIdGet(urlHost string, token string, proxy
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ne/system/{systemId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ne/system/{systemId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1241,7 +1247,7 @@ func (ipO *IpOptim) IpoV4NeIdPut(urlHost string, token string, proxyEnable strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ne/{id}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ne/{id}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1268,7 +1274,7 @@ func (ipO *IpOptim) IpoV4NeUuidGet(urlHost string, token string, proxyEnable str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ne/{uuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ne/{uuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1295,7 +1301,7 @@ func (ipO *IpOptim) IpoV4NspConfigurationLatencyGet(urlHost string, token string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/configuration/latency")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/configuration/latency")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1322,7 +1328,7 @@ func (ipO *IpOptim) IpoV4NspConfigurationLatencyPatch(urlHost string, token stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/configuration/latency")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/configuration/latency")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1349,7 +1355,7 @@ func (ipO *IpOptim) IpoV4NspConfigurationLatencySessionDelete(urlHost string, to
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/configuration/latency/{session}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/configuration/latency/{session}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1376,7 +1382,7 @@ func (ipO *IpOptim) IpoV4NspConfigurationNrcphistoricalGet(urlHost string, token
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/configuration/nrcp-historical")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/configuration/nrcp-historical")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1403,7 +1409,7 @@ func (ipO *IpOptim) IpoV4NspConfigurationNrcphistoricalPatch(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/configuration/nrcp-historical")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/configuration/nrcp-historical")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1430,7 +1436,7 @@ func (ipO *IpOptim) IpoV4NspConfigurationSrpolicyconfigGet(urlHost string, token
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/configuration/sr-policy-config")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/configuration/sr-policy-config")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1457,7 +1463,7 @@ func (ipO *IpOptim) IpoV4NspConfigurationSrpolicyconfigPatch(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/configuration/sr-policy-config")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/configuration/sr-policy-config")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1484,7 +1490,7 @@ func (ipO *IpOptim) IpoV4NspConfigurationTcaconfigpolicyGet(urlHost string, toke
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/configuration/tca-config-policy")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/configuration/tca-config-policy")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1511,7 +1517,7 @@ func (ipO *IpOptim) IpoV4NspConfigurationTcaconfigpolicyPatch(urlHost string, to
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/configuration/tca-config-policy")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/configuration/tca-config-policy")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1538,7 +1544,7 @@ func (ipO *IpOptim) IpoV4NspConfigurationTrafficdatacollectionGet(urlHost string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/configuration/traffic-data-collection")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/configuration/traffic-data-collection")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1565,7 +1571,7 @@ func (ipO *IpOptim) IpoV4NspConfigurationTrafficdatacollectionPatch(urlHost stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/configuration/traffic-data-collection")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/configuration/traffic-data-collection")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1592,7 +1598,7 @@ func (ipO *IpOptim) IpoV4NspNetL3LinkTpTpIdGet(urlHost string, token string, pro
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/link/tp/{tpId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/link/tp/{tpId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1619,7 +1625,7 @@ func (ipO *IpOptim) IpoV4NspNetL3LinkLinkIdGet(urlHost string, token string, pro
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/link/{linkId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/link/{linkId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1646,7 +1652,7 @@ func (ipO *IpOptim) IpoV4NspNetL3LinkLinkUuidPatch(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/link/{linkUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/link/{linkUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1673,7 +1679,7 @@ func (ipO *IpOptim) IpoV4NspNetL3LinksPost(urlHost string, token string, proxyEn
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/links")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/links")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1700,7 +1706,7 @@ func (ipO *IpOptim) IpoV4NspNetL3NetworkNetworkIdGet(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/network/{networkId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/network/{networkId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1727,7 +1733,7 @@ func (ipO *IpOptim) IpoV4NspNetL3NetworksGet(urlHost string, token string, proxy
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/networks")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/networks")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1754,7 +1760,7 @@ func (ipO *IpOptim) IpoV4NspNetL3NodeNodeIdGet(urlHost string, token string, pro
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/node/{nodeId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/node/{nodeId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1781,7 +1787,7 @@ func (ipO *IpOptim) IpoV4NspNetL3NodeNodeIdPatch(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/node/{nodeId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/node/{nodeId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1808,7 +1814,7 @@ func (ipO *IpOptim) IpoV4NspNetL3NodesRouterRouterIdGet(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/nodes/router/{routerId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/nodes/router/{routerId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1835,7 +1841,7 @@ func (ipO *IpOptim) IpoV4NspNetL3NodesSiteSiteIpGet(urlHost string, token string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/nodes/site/{siteIp}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/nodes/site/{siteIp}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1862,7 +1868,7 @@ func (ipO *IpOptim) IpoV4NspNetL3TerminationpointTpIdGet(urlHost string, token s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/termination-point/{tpId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/termination-point/{tpId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1889,7 +1895,7 @@ func (ipO *IpOptim) IpoV4NspNetL3TerminationpointTpIdReverseGet(urlHost string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/termination-point/{tpId}/reverse")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/termination-point/{tpId}/reverse")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1916,7 +1922,7 @@ func (ipO *IpOptim) IpoV4NspNetL3TerminationpointsNodeIdIpAddressGet(urlHost str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/termination-points/{nodeId}/{ipAddress}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/termination-points/{nodeId}/{ipAddress}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1943,7 +1949,7 @@ func (ipO *IpOptim) IpoV4NspNetL3TopologyreferencesDomainNetworkIdDelete(urlHost
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/topology-references/domain/{networkId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/topology-references/domain/{networkId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1970,7 +1976,7 @@ func (ipO *IpOptim) IpoV4NspNetL3TopologyreferencesLinkLinkIdDelete(urlHost stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/net/l3/topology-references/link/{linkId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/net/l3/topology-references/link/{linkId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -1997,7 +2003,7 @@ func (ipO *IpOptim) IpoV4NspPathtoolDiagnoselspLspPathIdPost(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/pathtool/diagnose-lsp/{lspPathId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/pathtool/diagnose-lsp/{lspPathId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2024,7 +2030,7 @@ func (ipO *IpOptim) IpoV4NspPathtoolDiagnosepathPost(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/pathtool/diagnose-path")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/pathtool/diagnose-path")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2051,7 +2057,7 @@ func (ipO *IpOptim) IpoV4NspPathtoolFindpathPost(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/nsp/pathtool/find-path")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "nsp/pathtool/find-path")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2078,7 +2084,7 @@ func (ipO *IpOptim) IpoV4OpenflowFlowsPost(urlHost string, token string, proxyEn
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/openflow/flows")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "openflow/flows")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2105,7 +2111,7 @@ func (ipO *IpOptim) IpoV4OpenflowFlowsDelete(urlHost string, token string, proxy
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/openflow/flows")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "openflow/flows")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2132,7 +2138,7 @@ func (ipO *IpOptim) IpoV4OpenflowFlowsPatch(urlHost string, token string, proxyE
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/openflow/flows")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "openflow/flows")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2159,7 +2165,7 @@ func (ipO *IpOptim) IpoV4OpenflowFlowsSearchPost(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/openflow/flows/search")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "openflow/flows/search")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2186,7 +2192,7 @@ func (ipO *IpOptim) IpoV4OpenflowFlowsSearchbyidPost(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/openflow/flows/search-by-id")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "openflow/flows/search-by-id")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2213,7 +2219,7 @@ func (ipO *IpOptim) IpoV4OpenflowPortsDatapathIdGet(urlHost string, token string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/openflow/ports/{datapathId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "openflow/ports/{datapathId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2240,7 +2246,7 @@ func (ipO *IpOptim) IpoV4OpenflowSwitchesGet(urlHost string, token string, proxy
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/openflow/switches")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "openflow/switches")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2267,7 +2273,7 @@ func (ipO *IpOptim) IpoV4OpenflowSwitchesNeIdGet(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/openflow/switches/{neId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "openflow/switches/{neId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2294,7 +2300,7 @@ func (ipO *IpOptim) IpoV4OpenflowTablesDatapathIdGet(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/openflow/tables/{datapathId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "openflow/tables/{datapathId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2321,7 +2327,7 @@ func (ipO *IpOptim) IpoV4PhysicallinksGet(urlHost string, token string, proxyEna
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/physicallinks")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "physicallinks")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2348,7 +2354,7 @@ func (ipO *IpOptim) IpoV4PhysicallinksMultipointportMultipointLinkIdPortIdPost(u
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/physicallinks/multipoint-port/{multipointLinkId}/{portId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "physicallinks/multipoint-port/{multipointLinkId}/{portId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2375,7 +2381,7 @@ func (ipO *IpOptim) IpoV4PhysicallinksMultipointportMultipointLinkIdPortIdDelete
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/physicallinks/multipoint-port/{multipointLinkId}/{portId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "physicallinks/multipoint-port/{multipointLinkId}/{portId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2402,7 +2408,7 @@ func (ipO *IpOptim) IpoV4PhysicallinksMultipointLinkIdDelete(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/physicallinks/multipoint/{linkId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "physicallinks/multipoint/{linkId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2429,7 +2435,7 @@ func (ipO *IpOptim) IpoV4PhysicallinksMultipointNamePost(urlHost string, token s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/physicallinks/multipoint/{name}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "physicallinks/multipoint/{name}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2456,7 +2462,7 @@ func (ipO *IpOptim) IpoV4PhysicallinksMultipointUuidGet(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/physicallinks/multipoint/{uuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "physicallinks/multipoint/{uuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2483,7 +2489,7 @@ func (ipO *IpOptim) IpoV4PhysicallinksMultipointsGet(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/physicallinks/multipoints")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "physicallinks/multipoints")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2510,7 +2516,7 @@ func (ipO *IpOptim) IpoV4PhysicallinksLinkIdDelete(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/physicallinks/{linkId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "physicallinks/{linkId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2537,7 +2543,7 @@ func (ipO *IpOptim) IpoV4PhysicallinksSrcIdDestIdPost(urlHost string, token stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/physicallinks/{srcId}/{destId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "physicallinks/{srcId}/{destId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2564,7 +2570,7 @@ func (ipO *IpOptim) IpoV4PhysicallinksUuidGet(urlHost string, token string, prox
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/physicallinks/{uuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "physicallinks/{uuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2591,7 +2597,7 @@ func (ipO *IpOptim) IpoV4PolicyAllconnectionprofileNeIdGet(urlHost string, token
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/all-connection-profile/{neId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/all-connection-profile/{neId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2618,7 +2624,7 @@ func (ipO *IpOptim) IpoV4PolicyIpopticalcorrelationpoliciyGet(urlHost string, to
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/ip-optical-correlation-policiy")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/ip-optical-correlation-policiy")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2645,7 +2651,7 @@ func (ipO *IpOptim) IpoV4PolicyIpopticalcorrelationpolicyPost(urlHost string, to
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/ip-optical-correlation-policy")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/ip-optical-correlation-policy")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2672,7 +2678,7 @@ func (ipO *IpOptim) IpoV4PolicyIpopticalcorrelationpolicyPolicyIdGet(urlHost str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/ip-optical-correlation-policy/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/ip-optical-correlation-policy/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2699,7 +2705,7 @@ func (ipO *IpOptim) IpoV4PolicyIpopticalcorrelationpolicyPolicyIdPut(urlHost str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/ip-optical-correlation-policy/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/ip-optical-correlation-policy/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2726,7 +2732,7 @@ func (ipO *IpOptim) IpoV4PolicyIpopticalcorrelationpolicyPolicyIdDelete(urlHost 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/ip-optical-correlation-policy/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/ip-optical-correlation-policy/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2753,7 +2759,7 @@ func (ipO *IpOptim) IpoV4PolicyRdrtrangesGet(urlHost string, token string, proxy
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/rd-rt-ranges")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/rd-rt-ranges")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2780,7 +2786,7 @@ func (ipO *IpOptim) IpoV4PolicyRdrtrangesPost(urlHost string, token string, prox
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/rd-rt-ranges")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/rd-rt-ranges")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2807,7 +2813,7 @@ func (ipO *IpOptim) IpoV4PolicyRdrtrangesPolicyIdPut(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/rd-rt-ranges/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/rd-rt-ranges/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2834,7 +2840,7 @@ func (ipO *IpOptim) IpoV4PolicyRdrtrangesPolicyIdDelete(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/rd-rt-ranges/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/rd-rt-ranges/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2861,7 +2867,7 @@ func (ipO *IpOptim) IpoV4PolicyRouterportprotectiongrouppolicyGet(urlHost string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/router-port-protection-group-policy")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/router-port-protection-group-policy")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2888,7 +2894,7 @@ func (ipO *IpOptim) IpoV4PolicyRouterportprotectiongrouppolicyPost(urlHost strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/router-port-protection-group-policy")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/router-port-protection-group-policy")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2915,7 +2921,7 @@ func (ipO *IpOptim) IpoV4PolicyRouterportprotectiongrouppolicyPolicyIdGet(urlHos
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/router-port-protection-group-policy/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/router-port-protection-group-policy/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2942,7 +2948,7 @@ func (ipO *IpOptim) IpoV4PolicyRouterportprotectiongrouppolicyPolicyIdPut(urlHos
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/router-port-protection-group-policy/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/router-port-protection-group-policy/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2969,7 +2975,7 @@ func (ipO *IpOptim) IpoV4PolicyRouterportprotectiongrouppolicyPolicyIdDelete(url
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/router-port-protection-group-policy/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/router-port-protection-group-policy/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -2996,7 +3002,7 @@ func (ipO *IpOptim) IpoV4PolicySteeringparameterPost(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/steering-parameter")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/steering-parameter")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3023,7 +3029,7 @@ func (ipO *IpOptim) IpoV4PolicySteeringparameterSteeringParameterNameDelete(urlH
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/steering-parameter/{steeringParameterName}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/steering-parameter/{steeringParameterName}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3050,7 +3056,7 @@ func (ipO *IpOptim) IpoV4PolicySteeringparametersGet(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/steering-parameters")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/steering-parameters")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3077,7 +3083,7 @@ func (ipO *IpOptim) IpoV4PolicyTunnelselectionsGet(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/tunnel-selections")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/tunnel-selections")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3104,7 +3110,7 @@ func (ipO *IpOptim) IpoV4PolicyTunnelselectionsPost(urlHost string, token string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/tunnel-selections")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/tunnel-selections")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3131,7 +3137,7 @@ func (ipO *IpOptim) IpoV4PolicyTunnelselectionsPolicyIdGet(urlHost string, token
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/tunnel-selections/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/tunnel-selections/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3158,7 +3164,7 @@ func (ipO *IpOptim) IpoV4PolicyTunnelselectionsPolicyIdPut(urlHost string, token
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/tunnel-selections/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/tunnel-selections/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3185,7 +3191,7 @@ func (ipO *IpOptim) IpoV4PolicyTunnelselectionsPolicyIdDelete(urlHost string, to
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/policy/tunnel-selections/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "policy/tunnel-selections/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3212,7 +3218,7 @@ func (ipO *IpOptim) IpoV4PortsGet(urlHost string, token string, proxyEnable stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ports")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ports")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3239,7 +3245,7 @@ func (ipO *IpOptim) IpoV4PortsNeallbytenantNeIdTenantTenantUuidGet(urlHost strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ports/ne-all-by-tenant/{neId}/tenant/{tenantUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ports/ne-all-by-tenant/{neId}/tenant/{tenantUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3266,7 +3272,7 @@ func (ipO *IpOptim) IpoV4PortsNeallNeIdGet(urlHost string, token string, proxyEn
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ports/ne-all/{neId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ports/ne-all/{neId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3293,7 +3299,7 @@ func (ipO *IpOptim) IpoV4PortsNebytenantNeIdServicetypeServiceTypeTenantTenantUu
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ports/ne-by-tenant/{neId}/servicetype/{serviceType}/tenant/{tenantUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ports/ne-by-tenant/{neId}/servicetype/{serviceType}/tenant/{tenantUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3320,7 +3326,7 @@ func (ipO *IpOptim) IpoV4PortsNeNeUuidServicetypeServiceTypeGet(urlHost string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ports/ne/{neUuid}/servicetype/{serviceType}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ports/ne/{neUuid}/servicetype/{serviceType}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3347,7 +3353,7 @@ func (ipO *IpOptim) IpoV4PortsServicecountonportPortUuidGet(urlHost string, toke
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ports/service-count-on-port/{portUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ports/service-count-on-port/{portUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3374,7 +3380,7 @@ func (ipO *IpOptim) IpoV4PortsServicesonportPortUuidGet(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ports/services-on-port/{portUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ports/services-on-port/{portUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3401,7 +3407,7 @@ func (ipO *IpOptim) IpoV4PortsServicetypeServiceTypeGet(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ports/servicetype/{serviceType}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ports/servicetype/{serviceType}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3428,7 +3434,7 @@ func (ipO *IpOptim) IpoV4PortsServicetypeServiceTypeTenantTenantUuidGet(urlHost 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ports/servicetype/{serviceType}/tenant/{tenantUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ports/servicetype/{serviceType}/tenant/{tenantUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3455,7 +3461,7 @@ func (ipO *IpOptim) IpoV4PortsTenantTenantUuidGet(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ports/tenant/{tenantUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ports/tenant/{tenantUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3482,7 +3488,7 @@ func (ipO *IpOptim) IpoV4PortsIdPut(urlHost string, token string, proxyEnable st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ports/{id}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ports/{id}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3509,7 +3515,7 @@ func (ipO *IpOptim) IpoV4PortsPortUuidGet(urlHost string, token string, proxyEna
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/ports/{portUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "ports/{portUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3536,7 +3542,7 @@ func (ipO *IpOptim) IpoV4SecurityAuthenticationGet(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/security/authentication")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "security/authentication")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3563,7 +3569,7 @@ func (ipO *IpOptim) IpoV4ServicedebugConstrainttestServiceUuidPost(urlHost strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/servicedebug/constraint-test/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "servicedebug/constraint-test/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3590,7 +3596,7 @@ func (ipO *IpOptim) IpoV4ServicedebugDcirecomputeServiceUuidPost(urlHost string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/servicedebug/dci-recompute/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "servicedebug/dci-recompute/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3617,7 +3623,7 @@ func (ipO *IpOptim) IpoV4ServicedebugTriggerttzalgorithmPost(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/servicedebug/trigger-ttz-algorithm")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "servicedebug/trigger-ttz-algorithm")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3644,7 +3650,7 @@ func (ipO *IpOptim) IpoV4ServicesGet(urlHost string, token string, proxyEnable s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3671,7 +3677,7 @@ func (ipO *IpOptim) IpoV4ServicesClinesPost(urlHost string, token string, proxyE
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/clines")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/clines")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3698,7 +3704,7 @@ func (ipO *IpOptim) IpoV4ServicesClinesServiceUuidPut(urlHost string, token stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/clines/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/clines/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3725,7 +3731,7 @@ func (ipO *IpOptim) IpoV4ServicesClinesServiceUuidPatch(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/clines/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/clines/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3752,7 +3758,7 @@ func (ipO *IpOptim) IpoV4ServicesClinesServiceUuidEndpointEndpointUuidPut(urlHos
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/clines/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/clines/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3779,7 +3785,7 @@ func (ipO *IpOptim) IpoV4ServicesClinesServiceUuidEndpointEndpointUuidPatch(urlH
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/clines/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/clines/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3806,7 +3812,7 @@ func (ipO *IpOptim) IpoV4ServicesComponentsUuidGet(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/components/{uuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/components/{uuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3833,7 +3839,7 @@ func (ipO *IpOptim) IpoV4ServicesEaccessPost(urlHost string, token string, proxy
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/eaccess")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/eaccess")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3860,7 +3866,7 @@ func (ipO *IpOptim) IpoV4ServicesEaccessServiceUuidPut(urlHost string, token str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/eaccess/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/eaccess/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3887,7 +3893,7 @@ func (ipO *IpOptim) IpoV4ServicesEaccessServiceUuidPatch(urlHost string, token s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/eaccess/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/eaccess/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3914,7 +3920,7 @@ func (ipO *IpOptim) IpoV4ServicesElansPost(urlHost string, token string, proxyEn
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/elans")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/elans")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3941,7 +3947,7 @@ func (ipO *IpOptim) IpoV4ServicesElansServiceUuidPut(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/elans/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/elans/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3968,7 +3974,7 @@ func (ipO *IpOptim) IpoV4ServicesElansServiceUuidPatch(urlHost string, token str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/elans/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/elans/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -3995,7 +4001,7 @@ func (ipO *IpOptim) IpoV4ServicesElansServiceUuidEndpointPost(urlHost string, to
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/elans/{serviceUuid}/endpoint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/elans/{serviceUuid}/endpoint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4022,7 +4028,7 @@ func (ipO *IpOptim) IpoV4ServicesElansServiceUuidEndpointEndpointUuidPut(urlHost
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/elans/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/elans/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4049,7 +4055,7 @@ func (ipO *IpOptim) IpoV4ServicesElansServiceUuidEndpointEndpointUuidPatch(urlHo
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/elans/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/elans/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4076,7 +4082,7 @@ func (ipO *IpOptim) IpoV4ServicesElinesPost(urlHost string, token string, proxyE
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/elines")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/elines")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4103,7 +4109,7 @@ func (ipO *IpOptim) IpoV4ServicesElinesServiceUuidPut(urlHost string, token stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/elines/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/elines/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4130,7 +4136,7 @@ func (ipO *IpOptim) IpoV4ServicesElinesServiceUuidPatch(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/elines/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/elines/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4157,7 +4163,7 @@ func (ipO *IpOptim) IpoV4ServicesElinesServiceUuidEndpointPost(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/elines/{serviceUuid}/endpoint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/elines/{serviceUuid}/endpoint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4184,7 +4190,7 @@ func (ipO *IpOptim) IpoV4ServicesElinesServiceUuidEndpointEndpointUuidPut(urlHos
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/elines/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/elines/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4211,7 +4217,7 @@ func (ipO *IpOptim) IpoV4ServicesElinesServiceUuidEndpointEndpointUuidPatch(urlH
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/elines/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/elines/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4238,7 +4244,7 @@ func (ipO *IpOptim) IpoV4ServicesFixl3vpnvrfmembershipServiceUuidPut(urlHost str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/fix-l3-vpn-vrf-membership/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/fix-l3-vpn-vrf-membership/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4265,7 +4271,7 @@ func (ipO *IpOptim) IpoV4ServicesIesPost(urlHost string, token string, proxyEnab
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/ies")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/ies")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4292,7 +4298,7 @@ func (ipO *IpOptim) IpoV4ServicesIesServiceUuidPut(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/ies/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/ies/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4319,7 +4325,7 @@ func (ipO *IpOptim) IpoV4ServicesIesServiceUuidPatch(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/ies/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/ies/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4346,7 +4352,7 @@ func (ipO *IpOptim) IpoV4ServicesIesServiceUuidEndpointPost(urlHost string, toke
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/ies/{serviceUuid}/endpoint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/ies/{serviceUuid}/endpoint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4373,7 +4379,7 @@ func (ipO *IpOptim) IpoV4ServicesIesServiceUuidEndpointEndpointUuidPut(urlHost s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/ies/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/ies/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4400,7 +4406,7 @@ func (ipO *IpOptim) IpoV4ServicesIesServiceUuidEndpointEndpointUuidPatch(urlHost
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/ies/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/ies/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4427,7 +4433,7 @@ func (ipO *IpOptim) IpoV4ServicesIesServiceUuidLoopbackendpointPost(urlHost stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/ies/{serviceUuid}/loopback-endpoint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/ies/{serviceUuid}/loopback-endpoint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4454,7 +4460,7 @@ func (ipO *IpOptim) IpoV4ServicesIesServiceUuidLoopbackendpointEndpointUuidPut(u
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/ies/{serviceUuid}/loopback-endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/ies/{serviceUuid}/loopback-endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4481,7 +4487,7 @@ func (ipO *IpOptim) IpoV4ServicesIesServiceUuidLoopbackendpointEndpointUuidPatch
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/ies/{serviceUuid}/loopback-endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/ies/{serviceUuid}/loopback-endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4508,7 +4514,7 @@ func (ipO *IpOptim) IpoV4ServicesL3dcivpnsPost(urlHost string, token string, pro
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-dci-vpns")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-dci-vpns")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4535,7 +4541,7 @@ func (ipO *IpOptim) IpoV4ServicesL3dcisServiceUuidEndpointPost(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-dcis/{serviceUuid}/endpoint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-dcis/{serviceUuid}/endpoint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4562,7 +4568,7 @@ func (ipO *IpOptim) IpoV4ServicesL3dcisServiceUuidEndpointEndpointUuidPatch(urlH
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-dcis/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-dcis/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4589,7 +4595,7 @@ func (ipO *IpOptim) IpoV4ServicesL3dcisServiceUuidLoopbackendpointPost(urlHost s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-dcis/{serviceUuid}/loopback-endpoint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-dcis/{serviceUuid}/loopback-endpoint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4616,7 +4622,7 @@ func (ipO *IpOptim) IpoV4ServicesL3dcisServiceUuidLoopbackendpointEndpointUuidPa
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-dcis/{serviceUuid}/loopback-endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-dcis/{serviceUuid}/loopback-endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4643,7 +4649,7 @@ func (ipO *IpOptim) IpoV4ServicesL3vpnrtauditGet(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-vpn-rt-audit")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-vpn-rt-audit")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4670,7 +4676,7 @@ func (ipO *IpOptim) IpoV4ServicesL3vpnsPost(urlHost string, token string, proxyE
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-vpns")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-vpns")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4697,7 +4703,7 @@ func (ipO *IpOptim) IpoV4ServicesL3vpnsServiceUuidPut(urlHost string, token stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-vpns/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-vpns/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4724,7 +4730,7 @@ func (ipO *IpOptim) IpoV4ServicesL3vpnsServiceUuidPatch(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-vpns/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-vpns/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4751,7 +4757,7 @@ func (ipO *IpOptim) IpoV4ServicesL3vpnsServiceUuidEndpointPost(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-vpns/{serviceUuid}/endpoint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-vpns/{serviceUuid}/endpoint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4778,7 +4784,7 @@ func (ipO *IpOptim) IpoV4ServicesL3vpnsServiceUuidEndpointEndpointUuidPut(urlHos
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-vpns/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-vpns/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4805,7 +4811,7 @@ func (ipO *IpOptim) IpoV4ServicesL3vpnsServiceUuidEndpointEndpointUuidPatch(urlH
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-vpns/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-vpns/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4832,7 +4838,7 @@ func (ipO *IpOptim) IpoV4ServicesL3vpnsServiceUuidLoopbackendpointPost(urlHost s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-vpns/{serviceUuid}/loopback-endpoint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-vpns/{serviceUuid}/loopback-endpoint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4859,7 +4865,7 @@ func (ipO *IpOptim) IpoV4ServicesL3vpnsServiceUuidLoopbackendpointEndpointUuidPu
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-vpns/{serviceUuid}/loopback-endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-vpns/{serviceUuid}/loopback-endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4886,7 +4892,7 @@ func (ipO *IpOptim) IpoV4ServicesL3vpnsServiceUuidLoopbackendpointEndpointUuidPa
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/l3-vpns/{serviceUuid}/loopback-endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/l3-vpns/{serviceUuid}/loopback-endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4913,7 +4919,7 @@ func (ipO *IpOptim) IpoV4ServicesLagsPost(urlHost string, token string, proxyEna
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/lags")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/lags")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4940,7 +4946,7 @@ func (ipO *IpOptim) IpoV4ServicesLagsServiceUuidPut(urlHost string, token string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/lags/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/lags/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4967,7 +4973,7 @@ func (ipO *IpOptim) IpoV4ServicesNormalizedl3vpnsPost(urlHost string, token stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/normalized-l3-vpns")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/normalized-l3-vpns")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -4994,7 +5000,7 @@ func (ipO *IpOptim) IpoV4ServicesNormalizedl3vpnsServiceUuidPut(urlHost string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/normalized-l3-vpns/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/normalized-l3-vpns/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5021,7 +5027,7 @@ func (ipO *IpOptim) IpoV4ServicesNormalizedl3vpnsServiceUuidPatch(urlHost string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/normalized-l3-vpns/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/normalized-l3-vpns/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5048,7 +5054,7 @@ func (ipO *IpOptim) IpoV4ServicesNormalizedl3vpnsServiceUuidEndpointPost(urlHost
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/normalized-l3-vpns/{serviceUuid}/endpoint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/normalized-l3-vpns/{serviceUuid}/endpoint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5075,7 +5081,7 @@ func (ipO *IpOptim) IpoV4ServicesOpticalPost(urlHost string, token string, proxy
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/optical")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/optical")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5102,7 +5108,7 @@ func (ipO *IpOptim) IpoV4ServicesOpticalServiceUuidPut(urlHost string, token str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/optical/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/optical/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5129,7 +5135,7 @@ func (ipO *IpOptim) IpoV4ServicesOpticalServiceUuidPatch(urlHost string, token s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/optical/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/optical/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5156,7 +5162,7 @@ func (ipO *IpOptim) IpoV4ServicesPhysicallinksonserviceServiceUuidGet(urlHost st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/physical-links-on-service/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/physical-links-on-service/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5183,7 +5189,7 @@ func (ipO *IpOptim) IpoV4ServicesResourcecountTenantUuidResourceTypeGet(urlHost 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/resource-count/{tenantUuid}/{resourceType}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/resource-count/{tenantUuid}/{resourceType}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5210,7 +5216,7 @@ func (ipO *IpOptim) IpoV4ServicesServicesontunnelTunnelUuidGet(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/services-on-tunnel/{tunnelUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/services-on-tunnel/{tunnelUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5237,7 +5243,7 @@ func (ipO *IpOptim) IpoV4ServicesStitchl2extServiceUuidL2extServiceUuidServiceEn
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/stitch-l2-ext/{serviceUuid}/{l2extServiceUuid}/{serviceEndpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/stitch-l2-ext/{serviceUuid}/{l2extServiceUuid}/{serviceEndpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5264,7 +5270,7 @@ func (ipO *IpOptim) IpoV4ServicesTenantUuidGet(urlHost string, token string, pro
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/tenant/{uuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/tenant/{uuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5291,7 +5297,7 @@ func (ipO *IpOptim) IpoV4ServicesTunnelTunnelUuidGet(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/tunnel/{tunnelUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/tunnel/{tunnelUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5318,7 +5324,7 @@ func (ipO *IpOptim) IpoV4ServicesTunnelTunnelUuidPut(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/tunnel/{tunnelUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/tunnel/{tunnelUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5345,7 +5351,7 @@ func (ipO *IpOptim) IpoV4ServicesTunnelsGet(urlHost string, token string, proxyE
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/tunnels")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/tunnels")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5372,7 +5378,7 @@ func (ipO *IpOptim) IpoV4ServicesTunnelsonserviceServiceUuidGet(urlHost string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/tunnels-on-service/{serviceUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/tunnels-on-service/{serviceUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5399,7 +5405,7 @@ func (ipO *IpOptim) IpoV4ServicesServiceUuidEndpointEndpointUuidDelete(urlHost s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/{serviceUuid}/endpoint/{endpointUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/{serviceUuid}/endpoint/{endpointUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5426,7 +5432,7 @@ func (ipO *IpOptim) IpoV4ServicesServiceUuidEndpointsGet(urlHost string, token s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/{serviceUuid}/endpoints")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/{serviceUuid}/endpoints")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5453,7 +5459,7 @@ func (ipO *IpOptim) IpoV4ServicesUuidGet(urlHost string, token string, proxyEnab
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/{uuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/{uuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5480,7 +5486,7 @@ func (ipO *IpOptim) IpoV4ServicesUuidDelete(urlHost string, token string, proxyE
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/services/{uuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "services/{uuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5507,7 +5513,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesGet(urlHost string, token string, proxyEnable
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5534,7 +5540,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesPost(urlHost string, token string, proxyEnabl
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5561,7 +5567,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesCandidatepathresignalIdPost(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies/candidate-path-resignal/{id}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies/candidate-path-resignal/{id}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5588,7 +5594,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesCandidatepathCandidatePathIdAdminAdminStatePa
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies/candidate-path/{candidatePathId}/admin/{adminState}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies/candidate-path/{candidatePathId}/admin/{adminState}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5615,7 +5621,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesCandidatepathsIdPut(urlHost string, token str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies/candidate-paths/{id}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies/candidate-paths/{id}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5642,7 +5648,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesOnlinkLinkIdRequestTypeGet(urlHost string, to
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies/on-link/{linkId}/{requestType}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies/on-link/{linkId}/{requestType}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5669,7 +5675,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesPoliciesDelete(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies/policies")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies/policies")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5696,7 +5702,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesPoliciesIdPut(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies/policies/{id}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies/policies/{id}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5723,7 +5729,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesPolicylistPost(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies/policy-list")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies/policy-list")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5750,7 +5756,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesPolicyIdDelete(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies/policy/{id}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies/policy/{id}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5777,7 +5783,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesPolicySrPolicyIdAdminAdminStatePatch(urlHost 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies/policy/{srPolicyId}/admin/{adminState}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies/policy/{srPolicyId}/admin/{adminState}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5804,7 +5810,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesResignalPost(urlHost string, token string, pr
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies/resignal")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies/resignal")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5831,7 +5837,7 @@ func (ipO *IpOptim) IpoV4SrpoliciesResignalallPost(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/srpolicies/resignal-all")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "srpolicies/resignal-all")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5858,7 +5864,7 @@ func (ipO *IpOptim) IpoV4SystemIsMasterGet(urlHost string, token string, proxyEn
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/system/isMaster")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "system/isMaster")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5885,7 +5891,7 @@ func (ipO *IpOptim) IpoV4SystemPluginconnectPluginNamePluginVIdPluginKeyPluginNa
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/system/plugin-connect/{pluginName}/{pluginVId}/{pluginKey}?pluginName=VSR_NRC")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "system/plugin-connect/{pluginName}/{pluginVId}/{pluginKey}?pluginName=VSR_NRC")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5912,7 +5918,7 @@ func (ipO *IpOptim) IpoV4SystemResyncnmsGet(urlHost string, token string, proxyE
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/system/resync-nms")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "system/resync-nms")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5939,7 +5945,7 @@ func (ipO *IpOptim) IpoV4SystemResyncobjectUuidGet(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/system/resync-object/{uuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "system/resync-object/{uuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5966,7 +5972,7 @@ func (ipO *IpOptim) IpoV4SystemStateGet(urlHost string, token string, proxyEnabl
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/system/state")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "system/state")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -5993,7 +5999,7 @@ func (ipO *IpOptim) IpoV4SystemVersionGet(urlHost string, token string, proxyEna
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/system/version")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "system/version")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6020,7 +6026,7 @@ func (ipO *IpOptim) IpoV4TemplateClineservicesGet(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/cline-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/cline-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6047,7 +6053,7 @@ func (ipO *IpOptim) IpoV4TemplateClineservicesPost(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/cline-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/cline-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6074,7 +6080,7 @@ func (ipO *IpOptim) IpoV4TemplateClineservicesTemplateIdGet(urlHost string, toke
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/cline-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/cline-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6101,7 +6107,7 @@ func (ipO *IpOptim) IpoV4TemplateClineservicesTemplateIdPut(urlHost string, toke
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/cline-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/cline-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6128,7 +6134,7 @@ func (ipO *IpOptim) IpoV4TemplateClineservicesTemplateIdDelete(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/cline-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/cline-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6155,7 +6161,7 @@ func (ipO *IpOptim) IpoV4TemplateCustomattributesGet(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/custom-attributes")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/custom-attributes")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6182,7 +6188,7 @@ func (ipO *IpOptim) IpoV4TemplateCustomattributesPost(urlHost string, token stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/custom-attributes")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/custom-attributes")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6209,7 +6215,7 @@ func (ipO *IpOptim) IpoV4TemplateCustomattributesTemplateIdGet(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/custom-attributes/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/custom-attributes/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6236,7 +6242,7 @@ func (ipO *IpOptim) IpoV4TemplateCustomattributesTemplateIdPut(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/custom-attributes/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/custom-attributes/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6263,7 +6269,7 @@ func (ipO *IpOptim) IpoV4TemplateCustomattributesTemplateIdDelete(urlHost string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/custom-attributes/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/custom-attributes/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6290,7 +6296,7 @@ func (ipO *IpOptim) IpoV4TemplateElanservicesGet(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/elan-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/elan-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6317,7 +6323,7 @@ func (ipO *IpOptim) IpoV4TemplateElanservicesPost(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/elan-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/elan-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6344,7 +6350,7 @@ func (ipO *IpOptim) IpoV4TemplateElanservicesTemplateIdGet(urlHost string, token
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/elan-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/elan-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6371,7 +6377,7 @@ func (ipO *IpOptim) IpoV4TemplateElanservicesTemplateIdPut(urlHost string, token
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/elan-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/elan-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6398,7 +6404,7 @@ func (ipO *IpOptim) IpoV4TemplateElanservicesTemplateIdDelete(urlHost string, to
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/elan-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/elan-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6425,7 +6431,7 @@ func (ipO *IpOptim) IpoV4TemplateElineservicesGet(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/eline-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/eline-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6452,7 +6458,7 @@ func (ipO *IpOptim) IpoV4TemplateElineservicesPost(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/eline-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/eline-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6479,7 +6485,7 @@ func (ipO *IpOptim) IpoV4TemplateElineservicesTemplateIdGet(urlHost string, toke
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/eline-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/eline-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6506,7 +6512,7 @@ func (ipO *IpOptim) IpoV4TemplateElineservicesTemplateIdPut(urlHost string, toke
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/eline-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/eline-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6533,7 +6539,7 @@ func (ipO *IpOptim) IpoV4TemplateElineservicesTemplateIdDelete(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/eline-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/eline-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6560,7 +6566,7 @@ func (ipO *IpOptim) IpoV4TemplateGenericqosGet(urlHost string, token string, pro
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/generic-qos")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/generic-qos")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6587,7 +6593,7 @@ func (ipO *IpOptim) IpoV4TemplateGenericqosPost(urlHost string, token string, pr
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/generic-qos")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/generic-qos")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6614,7 +6620,7 @@ func (ipO *IpOptim) IpoV4TemplateGenericqosprofilesNeIdGet(urlHost string, token
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/generic-qos-profiles/{neId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/generic-qos-profiles/{neId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6641,7 +6647,7 @@ func (ipO *IpOptim) IpoV4TemplateGenericqosGqpIdGet(urlHost string, token string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/generic-qos/{gqpId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/generic-qos/{gqpId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6668,7 +6674,7 @@ func (ipO *IpOptim) IpoV4TemplateGenericqosGqpIdPut(urlHost string, token string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/generic-qos/{gqpId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/generic-qos/{gqpId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6695,7 +6701,7 @@ func (ipO *IpOptim) IpoV4TemplateGenericqosGqpIdDelete(urlHost string, token str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/generic-qos/{gqpId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/generic-qos/{gqpId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6722,7 +6728,7 @@ func (ipO *IpOptim) IpoV4TemplateIesservicesGet(urlHost string, token string, pr
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/ies-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/ies-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6749,7 +6755,7 @@ func (ipO *IpOptim) IpoV4TemplateIesservicesPost(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/ies-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/ies-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6776,7 +6782,7 @@ func (ipO *IpOptim) IpoV4TemplateIesservicesTemplateIdGet(urlHost string, token 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/ies-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/ies-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6803,7 +6809,7 @@ func (ipO *IpOptim) IpoV4TemplateIesservicesTemplateIdPut(urlHost string, token 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/ies-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/ies-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6830,7 +6836,7 @@ func (ipO *IpOptim) IpoV4TemplateIesservicesTemplateIdDelete(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/ies-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/ies-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6857,7 +6863,7 @@ func (ipO *IpOptim) IpoV4TemplateL2dcivpnservicesGet(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l2-dci-vpn-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l2-dci-vpn-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6884,7 +6890,7 @@ func (ipO *IpOptim) IpoV4TemplateL2dcivpnservicesTemplateIdGet(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l2-dci-vpn-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l2-dci-vpn-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6911,7 +6917,7 @@ func (ipO *IpOptim) IpoV4TemplateL2dcivpnservicesTemplateIdPut(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l2-dci-vpn-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l2-dci-vpn-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6938,7 +6944,7 @@ func (ipO *IpOptim) IpoV4TemplateL2backhaulservicesGet(urlHost string, token str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l2backhaul-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l2backhaul-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6965,7 +6971,7 @@ func (ipO *IpOptim) IpoV4TemplateL2backhaulservicesPost(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l2backhaul-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l2backhaul-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -6992,7 +6998,7 @@ func (ipO *IpOptim) IpoV4TemplateL2backhaulservicesTemplateIdGet(urlHost string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l2backhaul-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l2backhaul-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7019,7 +7025,7 @@ func (ipO *IpOptim) IpoV4TemplateL2backhaulservicesTemplateIdPut(urlHost string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l2backhaul-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l2backhaul-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7046,7 +7052,7 @@ func (ipO *IpOptim) IpoV4TemplateL2backhaulservicesTemplateIdDelete(urlHost stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l2backhaul-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l2backhaul-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7073,7 +7079,7 @@ func (ipO *IpOptim) IpoV4TemplateL3dcivpnservicesGet(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l3-dci-vpn-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l3-dci-vpn-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7100,7 +7106,7 @@ func (ipO *IpOptim) IpoV4TemplateL3dcivpnservicesPost(urlHost string, token stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l3-dci-vpn-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l3-dci-vpn-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7127,7 +7133,7 @@ func (ipO *IpOptim) IpoV4TemplateL3dcivpnservicesTemplateIdGet(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l3-dci-vpn-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l3-dci-vpn-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7154,7 +7160,7 @@ func (ipO *IpOptim) IpoV4TemplateL3dcivpnservicesTemplateIdPut(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l3-dci-vpn-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l3-dci-vpn-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7181,7 +7187,7 @@ func (ipO *IpOptim) IpoV4TemplateL3dcivpnservicesTemplateIdDelete(urlHost string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l3-dci-vpn-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l3-dci-vpn-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7208,7 +7214,7 @@ func (ipO *IpOptim) IpoV4TemplateL3vpnservicesGet(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l3-vpn-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l3-vpn-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7235,7 +7241,7 @@ func (ipO *IpOptim) IpoV4TemplateL3vpnservicesPost(urlHost string, token string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l3-vpn-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l3-vpn-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7262,7 +7268,7 @@ func (ipO *IpOptim) IpoV4TemplateL3vpnservicesTemplateIdGet(urlHost string, toke
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l3-vpn-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l3-vpn-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7289,7 +7295,7 @@ func (ipO *IpOptim) IpoV4TemplateL3vpnservicesTemplateIdPut(urlHost string, toke
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l3-vpn-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l3-vpn-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7316,7 +7322,7 @@ func (ipO *IpOptim) IpoV4TemplateL3vpnservicesTemplateIdDelete(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/l3-vpn-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/l3-vpn-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7343,7 +7349,7 @@ func (ipO *IpOptim) IpoV4TemplateLagservicesGet(urlHost string, token string, pr
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/lag-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/lag-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7370,7 +7376,7 @@ func (ipO *IpOptim) IpoV4TemplateLagservicesPost(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/lag-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/lag-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7397,7 +7403,7 @@ func (ipO *IpOptim) IpoV4TemplateLagservicesTemplateIdGet(urlHost string, token 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/lag-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/lag-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7424,7 +7430,7 @@ func (ipO *IpOptim) IpoV4TemplateLagservicesTemplateIdPut(urlHost string, token 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/lag-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/lag-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7451,7 +7457,7 @@ func (ipO *IpOptim) IpoV4TemplateLagservicesTemplateIdDelete(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/lag-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/lag-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7478,7 +7484,7 @@ func (ipO *IpOptim) IpoV4TemplateMediationprofilemappingPost(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/mediation-profile-mapping")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/mediation-profile-mapping")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7505,7 +7511,7 @@ func (ipO *IpOptim) IpoV4TemplateMediationprofilemappingProfileIdGet(urlHost str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/mediation-profile-mapping/{profileId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/mediation-profile-mapping/{profileId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7532,7 +7538,7 @@ func (ipO *IpOptim) IpoV4TemplateMediationprofilemappingProfileIdPut(urlHost str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/mediation-profile-mapping/{profileId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/mediation-profile-mapping/{profileId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7559,7 +7565,7 @@ func (ipO *IpOptim) IpoV4TemplateMediationprofilemappingProfileIdDelete(urlHost 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/mediation-profile-mapping/{profileId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/mediation-profile-mapping/{profileId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7586,7 +7592,7 @@ func (ipO *IpOptim) IpoV4TemplateMediationprofilemappingsGet(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/mediation-profile-mappings")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/mediation-profile-mappings")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7613,7 +7619,7 @@ func (ipO *IpOptim) IpoV4TemplateNfmptemplateGet(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/nfmp-template")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/nfmp-template")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7640,7 +7646,7 @@ func (ipO *IpOptim) IpoV4TemplateOchservicesGet(urlHost string, token string, pr
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/och-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/och-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7667,7 +7673,7 @@ func (ipO *IpOptim) IpoV4TemplateOchservicesPost(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/och-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/och-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7694,7 +7700,7 @@ func (ipO *IpOptim) IpoV4TemplateOchservicesTemplateIdGet(urlHost string, token 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/och-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/och-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7721,7 +7727,7 @@ func (ipO *IpOptim) IpoV4TemplateOchservicesTemplateIdPut(urlHost string, token 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/och-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/och-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7748,7 +7754,7 @@ func (ipO *IpOptim) IpoV4TemplateOchservicesTemplateIdDelete(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/och-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/och-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7775,7 +7781,7 @@ func (ipO *IpOptim) IpoV4TemplateOduservicesGet(urlHost string, token string, pr
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/odu-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/odu-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7802,7 +7808,7 @@ func (ipO *IpOptim) IpoV4TemplateOduservicesPost(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/odu-services")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/odu-services")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7829,7 +7835,7 @@ func (ipO *IpOptim) IpoV4TemplateOduservicesTemplateIdGet(urlHost string, token 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/odu-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/odu-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7856,7 +7862,7 @@ func (ipO *IpOptim) IpoV4TemplateOduservicesTemplateIdPut(urlHost string, token 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/odu-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/odu-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7883,7 +7889,7 @@ func (ipO *IpOptim) IpoV4TemplateOduservicesTemplateIdDelete(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/odu-services/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/odu-services/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7910,7 +7916,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalconnectivityconstraintGet(urlHost string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-connectivity-constraint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-connectivity-constraint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7937,7 +7943,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalconnectivityconstraintPost(urlHost strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-connectivity-constraint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-connectivity-constraint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7964,7 +7970,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalconnectivityconstraintTemplateIdGet(urlH
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-connectivity-constraint/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-connectivity-constraint/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -7991,7 +7997,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalconnectivityconstraintTemplateIdPut(urlH
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-connectivity-constraint/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-connectivity-constraint/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8018,7 +8024,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalconnectivityconstraintTemplateIdDelete(u
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-connectivity-constraint/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-connectivity-constraint/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8045,7 +8051,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalconnectivityserviceGet(urlHost string, t
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-connectivity-service")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-connectivity-service")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8072,7 +8078,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalconnectivityservicePost(urlHost string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-connectivity-service")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-connectivity-service")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8099,7 +8105,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalconnectivityserviceTemplateIdGet(urlHost
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-connectivity-service/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-connectivity-service/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8126,7 +8132,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalconnectivityserviceTemplateIdPut(urlHost
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-connectivity-service/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-connectivity-service/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8153,7 +8159,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalconnectivityserviceTemplateIdDelete(urlH
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-connectivity-service/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-connectivity-service/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8180,7 +8186,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalresilienceconstraintGet(urlHost string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-resilience-constraint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-resilience-constraint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8207,7 +8213,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalresilienceconstraintPost(urlHost string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-resilience-constraint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-resilience-constraint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8234,7 +8240,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalresilienceconstraintTemplateIdGet(urlHos
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-resilience-constraint/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-resilience-constraint/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8261,7 +8267,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalresilienceconstraintTemplateIdPut(urlHos
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-resilience-constraint/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-resilience-constraint/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8288,7 +8294,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalresilienceconstraintTemplateIdDelete(url
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-resilience-constraint/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-resilience-constraint/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8315,7 +8321,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalroutingconstraintGet(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-routing-constraint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-routing-constraint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8342,7 +8348,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalroutingconstraintPost(urlHost string, to
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-routing-constraint")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-routing-constraint")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8369,7 +8375,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalroutingconstraintTemplateIdGet(urlHost s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-routing-constraint/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-routing-constraint/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8396,7 +8402,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalroutingconstraintTemplateIdPut(urlHost s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-routing-constraint/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-routing-constraint/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8423,7 +8429,7 @@ func (ipO *IpOptim) IpoV4TemplateOpticalroutingconstraintTemplateIdDelete(urlHos
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/optical-routing-constraint/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/optical-routing-constraint/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8450,7 +8456,7 @@ func (ipO *IpOptim) IpoV4TemplatePathprofilesGet(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/path-profiles")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/path-profiles")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8477,7 +8483,7 @@ func (ipO *IpOptim) IpoV4TemplatePathprofilesPost(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/path-profiles")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/path-profiles")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8504,7 +8510,7 @@ func (ipO *IpOptim) IpoV4TemplatePathprofilesTemplateIdGet(urlHost string, token
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/path-profiles/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/path-profiles/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8531,7 +8537,7 @@ func (ipO *IpOptim) IpoV4TemplatePathprofilesTemplateIdPut(urlHost string, token
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/path-profiles/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/path-profiles/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8558,7 +8564,7 @@ func (ipO *IpOptim) IpoV4TemplatePathprofilesTemplateIdDelete(urlHost string, to
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/path-profiles/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/path-profiles/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8585,7 +8591,7 @@ func (ipO *IpOptim) IpoV4TemplateQosGet(urlHost string, token string, proxyEnabl
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/qos")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/qos")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8612,7 +8618,7 @@ func (ipO *IpOptim) IpoV4TemplateQosPost(urlHost string, token string, proxyEnab
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/qos")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/qos")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8639,7 +8645,7 @@ func (ipO *IpOptim) IpoV4TemplateQospoliciesGet(urlHost string, token string, pr
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/qos-policies")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/qos-policies")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8666,7 +8672,7 @@ func (ipO *IpOptim) IpoV4TemplateQospoliciesNeIdGet(urlHost string, token string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/qos-policies/{neId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/qos-policies/{neId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8693,7 +8699,7 @@ func (ipO *IpOptim) IpoV4TemplateQosTemplateIdGet(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/qos/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/qos/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8720,7 +8726,7 @@ func (ipO *IpOptim) IpoV4TemplateQosTemplateIdPut(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/qos/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/qos/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8747,7 +8753,7 @@ func (ipO *IpOptim) IpoV4TemplateQosTemplateIdDelete(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/qos/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/qos/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8774,7 +8780,7 @@ func (ipO *IpOptim) IpoV4TemplateRouteridsystemidmappingGet(urlHost string, toke
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/router-id-system-id-mapping")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/router-id-system-id-mapping")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8801,7 +8807,7 @@ func (ipO *IpOptim) IpoV4TemplateRouteridsystemidmappingPost(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/router-id-system-id-mapping")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/router-id-system-id-mapping")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8828,7 +8834,7 @@ func (ipO *IpOptim) IpoV4TemplateRouteridsystemidmappingPolicyIdGet(urlHost stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/router-id-system-id-mapping/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/router-id-system-id-mapping/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8855,7 +8861,7 @@ func (ipO *IpOptim) IpoV4TemplateRouteridsystemidmappingPolicyIdPut(urlHost stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/router-id-system-id-mapping/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/router-id-system-id-mapping/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8882,7 +8888,7 @@ func (ipO *IpOptim) IpoV4TemplateRouteridsystemidmappingPolicyIdDelete(urlHost s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/router-id-system-id-mapping/{policyId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/router-id-system-id-mapping/{policyId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8909,7 +8915,7 @@ func (ipO *IpOptim) IpoV4TemplateSystemipmplsconfigGet(urlHost string, token str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/system-ip-mpls-config")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/system-ip-mpls-config")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8936,7 +8942,7 @@ func (ipO *IpOptim) IpoV4TemplateSystemipmplsconfigTemplateIdPut(urlHost string,
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/system-ip-mpls-config/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/system-ip-mpls-config/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8963,7 +8969,7 @@ func (ipO *IpOptim) IpoV4TemplateTunnelcreationsGet(urlHost string, token string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/tunnel-creations")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/tunnel-creations")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -8990,7 +8996,7 @@ func (ipO *IpOptim) IpoV4TemplateTunnelcreationsTemplateIdPut(urlHost string, to
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/tunnel-creations/{templateId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/tunnel-creations/{templateId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9017,7 +9023,7 @@ func (ipO *IpOptim) IpoV4TemplateWorkflowprofileGet(urlHost string, token string
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/workflow-profile")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/workflow-profile")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9044,7 +9050,7 @@ func (ipO *IpOptim) IpoV4TemplateWorkflowprofilePost(urlHost string, token strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/workflow-profile")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/workflow-profile")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9071,7 +9077,7 @@ func (ipO *IpOptim) IpoV4TemplateWorkflowprofileProfileIdGet(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/workflow-profile/{profileId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/workflow-profile/{profileId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9098,7 +9104,7 @@ func (ipO *IpOptim) IpoV4TemplateWorkflowprofileProfileIdPut(urlHost string, tok
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/workflow-profile/{profileId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/workflow-profile/{profileId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9125,7 +9131,7 @@ func (ipO *IpOptim) IpoV4TemplateWorkflowprofileProfileIdDelete(urlHost string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/template/workflow-profile/{profileId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "template/workflow-profile/{profileId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9152,7 +9158,7 @@ func (ipO *IpOptim) IpoV4TenantsGet(urlHost string, token string, proxyEnable st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9179,7 +9185,7 @@ func (ipO *IpOptim) IpoV4TenantsPost(urlHost string, token string, proxyEnable s
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9206,7 +9212,7 @@ func (ipO *IpOptim) IpoV4TenantsCustomerallGet(urlHost string, token string, pro
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants/customer-all")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants/customer-all")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9233,7 +9239,7 @@ func (ipO *IpOptim) IpoV4TenantsCustomerCustomerIdGet(urlHost string, token stri
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants/customer/{customerId}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants/customer/{customerId}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9260,7 +9266,7 @@ func (ipO *IpOptim) IpoV4TenantsResyncProviderGet(urlHost string, token string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants/resync/{provider}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants/resync/{provider}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9287,7 +9293,7 @@ func (ipO *IpOptim) IpoV4TenantsTenantUuidGet(urlHost string, token string, prox
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants/{tenantUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants/{tenantUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9314,7 +9320,7 @@ func (ipO *IpOptim) IpoV4TenantsTenantUuidPut(urlHost string, token string, prox
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants/{tenantUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants/{tenantUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9341,7 +9347,7 @@ func (ipO *IpOptim) IpoV4TenantsTenantUuidDelete(urlHost string, token string, p
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants/{tenantUuid}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants/{tenantUuid}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9368,7 +9374,7 @@ func (ipO *IpOptim) IpoV4TenantsTenantUuidResourcesGet(urlHost string, token str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants/{tenantUuid}/resources")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants/{tenantUuid}/resources")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9395,7 +9401,7 @@ func (ipO *IpOptim) IpoV4TenantsTenantUuidResourcesPost(urlHost string, token st
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants/{tenantUuid}/resources")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants/{tenantUuid}/resources")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9422,7 +9428,7 @@ func (ipO *IpOptim) IpoV4TenantsTenantUuidResourcesDelete(urlHost string, token 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants/{tenantUuid}/resources")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants/{tenantUuid}/resources")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9449,7 +9455,7 @@ func (ipO *IpOptim) IpoV4TenantsTenantUuidUsergroupGroupNameGet(urlHost string, 
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants/{tenantUuid}/usergroup/{groupName}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants/{tenantUuid}/usergroup/{groupName}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9476,7 +9482,7 @@ func (ipO *IpOptim) IpoV4TenantsTenantUuidUsergroupGroupNameDelete(urlHost strin
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants/{tenantUuid}/usergroup/{groupName}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants/{tenantUuid}/usergroup/{groupName}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9503,7 +9509,7 @@ func (ipO *IpOptim) IpoV4TenantsTenantUuidUsergroupGroupNameRoleRoleTypePost(url
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/tenants/{tenantUuid}/usergroup/{groupName}/role/{roleType}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "tenants/{tenantUuid}/usergroup/{groupName}/role/{roleType}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9530,7 +9536,7 @@ func (ipO *IpOptim) IpoV4UsergroupsGet(urlHost string, token string, proxyEnable
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/usergroups")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "usergroups")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9557,7 +9563,7 @@ func (ipO *IpOptim) IpoV4UsergroupsGroupNameGet(urlHost string, token string, pr
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/usergroups/{groupName}")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "usergroups/{groupName}")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
@@ -9584,7 +9590,7 @@ func (ipO *IpOptim) IpoV4UsergroupsGroupNameTenantsGet(urlHost string, token str
 		client.SetProxy(proxyAddress)
 	}
 
-	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "/v4/usergroups/{groupName}/tenants")
+	url := ("https://" + urlHost + nspgoconstants.GLBL_NSP_IP_OPTIM_BASE_URL + "usergroups/{groupName}/tenants")
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetHeader("authorization", "Bearer "+token).
