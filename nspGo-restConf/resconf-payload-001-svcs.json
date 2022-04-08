@@ -1,0 +1,70 @@
+
+	{
+		"ietf-yang-patch:yang-patch": {
+		  "patch-id": "as",
+		  "edit": [
+			{
+			  "edit-id": "svc-01",
+			  "operation": "merge",
+			  "target": "nokia-conf:configure",
+			  "value": {
+				"nokia-conf:configure": {
+				  "port": [
+					{
+					  "port-id": "1/1/c1/1",
+					  "ethernet": [
+						{
+						  "mode": "hybrid"
+						}
+					  ]
+					},
+					{
+					  "port-id": "1/1/c2/1",
+					  "ethernet": [
+						{
+						  "mode": "hybrid"
+						}
+					  ]
+					}
+				  ],
+				  "service": {
+					"sdp": [
+					  {
+						"sdp-id": "1",
+						"admin-state": "enable",
+						"delivery-type": "mpls",
+						"ldp": "true",
+						"far-end": {
+						  "ip-address": "99.99.99.1"
+						}
+					  }
+					],
+					"vpls":[
+					   
+					   {
+						"service-name": "service1",
+						"service-id": 1,
+						"description": "<% mplsParam01 %>",
+						"customer": "1",
+						"spoke-sdp": [
+						  {
+							"sdp-bind-id": "1:1",
+							"description": "This Is MPLS-Params-01 PlaceHolder-1-<% mplsParam02 %>"
+						  }
+						],
+						"sap": [
+						  {
+							"sap-id": "1/1/c2/1:1",
+							"description": "This Is MPLS-Params-02 PlaceHolder-1-<% pwLabels %>"
+						  }
+						]
+					  }
+					
+					]
+				  }
+				}
+			  }
+			}
+		  ]
+		}
+	  }

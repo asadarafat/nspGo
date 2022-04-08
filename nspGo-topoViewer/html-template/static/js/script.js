@@ -5,7 +5,7 @@
 
     console.log(data)
     var activeLayout = ''
-    var defaultIconType = 'router'
+    var defaultIconType = 'switch'
 
     // when group property is not set in containerlab
     // we set it to N/A to indicate a missing group assignment
@@ -109,8 +109,8 @@
                         text: this.sourcelabel(),
                     });
                     //TODO: accommodate larger text label
-                    sourceBg.sets({ width: 34, visible: true });
-                    sourceBg.setTransform(34 / -2);
+                    sourceBg.sets({ width: 50, visible: true });
+                    sourceBg.setTransform(50 / -2);
                     point = line.start;
                     if (stageScale) {
                         sourceBadge.set('transform', 'translate(' + point.x + ',' + point.y + ') ' + 'scale (' + stageScale + ') ');
@@ -126,8 +126,8 @@
                     targetText.sets({
                         text: this.targetlabel(),
                     });
-                    targetBg.sets({ width: 34, visible: true });
-                    targetBg.setTransform(34 / -2);
+                    targetBg.sets({ width: 50, visible: true });
+                    targetBg.setTransform(50 / -2);
                     point = line.end;
                     if (stageScale) {
                         targetBadge.set('transform', 'translate(' + point.x + ',' + point.y + ') ' + 'scale (' + stageScale + ') ');
@@ -135,12 +135,12 @@
                         targetBadge.set('transform', 'translate(' + point.x + ',' + point.y + ') ');
                     }
                 }
-                this.view("sourceBadge").visible(true);
-                this.view("sourceBg").visible(true);
-                this.view("sourceText").visible(true);
-                this.view("targetBadge").visible(true);
-                this.view("targetBg").visible(true);
-                this.view("targetText").visible(true);
+                this.view("sourceBadge").visible(false);
+                this.view("sourceBg").visible(false);
+                this.view("sourceText").visible(false);
+                this.view("targetBadge").visible(false);
+                this.view("targetBg").visible(false);
+                this.view("targetText").visible(false);
             }
         }
     });
@@ -256,8 +256,8 @@
             },
         },
         linkConfig: {
-            linkType: 'curve',
-            width: 5,
+            linkType: 'parallel',
+            width: 3,
             sourcelabel: 'model.source_endpoint',
             targetlabel: 'model.target_endpoint',
             color: '#DBEAFE',
@@ -330,19 +330,6 @@
             return model.get('group');
         });
         topo.activateLayout('hierarchicalLayout');
-
-        // //get link Type
-        // var links = topo.getLayer("links").links()
-        // // console.log(links[12]._model._data.type)
-        // // console.log(links.length)
-        // for (index = 0; index < links.length; index++) {
-        //     // console.log(links[index]._model._data.type);
-        //     if (links[index]._model._data.type == "interTopoLayerLink") {
-        //         console.log(links[index])
-        //         links[index].enable(false)
-        //         // links[index].visible(false)
-        //     }        
-        // }
     
     }
 
@@ -363,7 +350,7 @@
         // console.log(links.length)
         for (index = 0; index < links.length; index++) {
             console.log(links[index]._model._data.type);
-            if (links[index]._model._data.type == "interTopoLayerLink") {
+            if (links[index]._model._data.group == "interTopoLayerLink") {
                 // console.log(links[index])
                 links[index].enable(false)
                 // links[index].visible(false)
@@ -386,7 +373,7 @@
                 // console.log(nodesAll[index])
                 nodesPhysicalLayer.push(nodesAll[index])
             }
-            if (nodesAll[index]._model._data.group == "1") {
+            if (nodesAll[index]._model._data.group == "IgpLayer") {
                 // console.log(nodesAll[index])
                 nodesIgpLayer.push(nodesAll[index])
             }                     
@@ -406,7 +393,7 @@
         var link_layer_el = document.querySelectorAll('[data-nx-type="nx.graphic.Topology.LinksLayer"]')
         var group_layer_el = document.querySelectorAll('[data-nx-type="nx.graphic.Topology.GroupsLayer"]')
         var parent_el = link_layer_el[0].parentNode
-    parent_el.insertBefore(group_layer_el[0], link_layer_el[0])
+        parent_el.insertBefore(group_layer_el[0], link_layer_el[0])
         // topo.insertLayerAfter('mylayer', 'MyLayer', 'nodes');
         // console.log(topo)
     }

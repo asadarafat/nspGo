@@ -54,8 +54,8 @@ func ThalesRestConfMdc() {
 
 	// get RestConf payload
 	// pathToPayload := "./nspGo-restConf/resconf-payload.json"
-	pathToPayload := "./nspGo-restConf/resconf-payload-100-svc.json"
-	// pathToPayload := "./nspGo-restConf/resconf-payload-500-svc.json"
+	// pathToPayload := "./nspGo-restConf/resconf-payload-100-svc.json"
+	pathToPayload := "./nspGo-restConf/resconf-payload-500-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-700-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-1k-svc.json"
 	// pathToPayload := "./nspGo-restConf/resconf-payload-2k-svc.json"
@@ -171,6 +171,7 @@ func ThalesRestConfMdc() {
 	log.Info("##################################")
 	log.Info("Test-Case : RestConf MDC (8548) Call")
 	log.Info("Number of Targeted NE: ", len(listOfNeId))
+	log.Info("Payload File: ", pathToPayload)
 	log.Info("RestConf Async: ", restconfAsync)
 	log.Info("Total Iteration: ", (float64(iteration)))
 	log.Info("Payload Size Per NE Per Interation (MegaBytes): ", float64(file.Size())/1000000)

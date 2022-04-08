@@ -3,11 +3,12 @@ package nsptopoviewer
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
 	"html/template"
 	"io/ioutil"
 	"net/http"
 	"os"
+	"strconv"
+	"strings"
 
 	log "github.com/sirupsen/logrus"
 
@@ -34,11 +35,14 @@ type NextNode struct {
 }
 
 type NextLink struct {
-	Id        string `json:"id"`
-	Source    string `json:"source"`
-	Target    string `json:"target"`
-	NetworkId string `json:"networkId"`
-	Type      string `json:"type"`
+	Id             string `json:"id"`
+	Source         string `json:"source"`
+	SourceEndpoint string `json:"source_endpoint"`
+	Target         string `json:"target"`
+	TargetEndpoint string `json:"target_endpoint"`
+	NetworkId      string `json:"networkId"`
+	Group          string `json:"group"`
+	Type           string `json:"type"`
 }
 
 type TopologyDataHtml struct {
@@ -70,7 +74,7 @@ func (nextGo *NextUiGo) ReadRawTopoJsonFile(file string) []byte {
 
 func (nextGo *NextUiGo) NextUiUnmarshalIetfNetworkModel(rawTopoFile []byte, ietfModel IetfNetworkStruct) {
 	json.Unmarshal(rawTopoFile, &ietfModel)
-	log.Debug("Lenght of Data Network Array: " + fmt.Sprint(len(ietfModel.Response.Data.Network)))
+	log.Debugf("Lenght of Data Network Array: ", (len(ietfModel.Response.Data.Network)))
 	var node NextNode
 	var link NextLink
 
@@ -86,10 +90,12 @@ func (nextGo *NextUiGo) NextUiUnmarshalIetfNetworkModel(rawTopoFile []byte, ietf
 					node.Name = SourceNodeName
 					SourceNodeUuid := ietfModel.Response.Data.Network[i].Node[k].NodeID
 					node.Id = SourceNodeUuid
-					node.Group = "PhysicalLayer"
+					node.Group = "IgpLayer"
+					node.NetworkId = ietfModel.Response.Data.Network[i].NetworkID
 					nextGo.Topology.Nodes = append(nextGo.Topology.Nodes, node)
-					link.Source = SourceNodeName
 
+					link.Source = SourceNodeName
+					link.SourceEndpoint = ("From-" + SourceNodeName)
 				}
 
 				if ietfModel.Response.Data.Network[i].Node[k].NodeID == DestNodeID {
@@ -97,18 +103,77 @@ func (nextGo *NextUiGo) NextUiUnmarshalIetfNetworkModel(rawTopoFile []byte, ietf
 					node.Name = DestNodeName
 					DestNodeUuid := ietfModel.Response.Data.Network[i].Node[k].NodeID
 					node.Id = DestNodeUuid
-					node.Group = "PhysicalLayer"
+					node.Group = "IgpLayer"
+					node.NetworkId = ietfModel.Response.Data.Network[i].NetworkID
 					nextGo.Topology.Nodes = append(nextGo.Topology.Nodes, node)
+
 					link.Target = DestNodeName
+					link.TargetEndpoint = ("From-" + DestNodeName)
+
 				}
 			}
 			LinkUuid := ietfModel.Response.Data.Network[i].Link[j].LinkID
 			link.Id = LinkUuid
+			link.NetworkId = ietfModel.Response.Data.Network[i].NetworkID
 			nextGo.Topology.Links = append(nextGo.Topology.Links, link)
 
 		}
 	}
 	// log.Debug(nextGo)
+}
+
+func (nextGo *NextUiGo) NextUiUnmarshalNetSupPhysicalModel(rawTopoFile []byte, netSupModel NetSupPhysicalStruct) {
+	json.Unmarshal(rawTopoFile, &netSupModel)
+	var node NextNode
+	var link NextLink
+	for i := 0; i < len(netSupModel.Response.Data); i++ {
+		// log.Debugf("sourceNode: ", netSupModel.Response.Data[i].Endpoints[0].ParentNeID)
+		// log.Debugf("destNode: ", netSupModel.Response.Data[i].Endpoints[1].ParentNeID)
+
+		// append pyhsical source Node in pyhsical Topology
+		SourceNodeName := netSupModel.Response.Data[i].Endpoints[0].ParentNeID
+		node.Name = ("phy-" + SourceNodeName)
+		node.Group = "PhysicalLayer"
+		nextGo.Topology.Nodes = append(nextGo.Topology.Nodes, node)
+
+		// append pyhsical destination Node in pyhsical Topology
+		DestNodeName := netSupModel.Response.Data[i].Endpoints[1].ParentNeID
+		node.Name = ("phy-" + DestNodeName)
+		node.Group = "PhysicalLayer"
+		nextGo.Topology.Nodes = append(nextGo.Topology.Nodes, node)
+
+		// append pyhsical link in pyhsical Topology
+		link.Source = ("phy-" + SourceNodeName)
+		link.SourceEndpoint = netSupModel.Response.Data[i].Endpoints[0].Name
+		link.Target = ("phy-" + DestNodeName)
+		link.TargetEndpoint = netSupModel.Response.Data[i].Endpoints[1].Name
+		link.Id = strconv.Itoa(i)
+		nextGo.Topology.Links = append(nextGo.Topology.Links, link)
+	}
+}
+
+func (nextGo *NextUiGo) NextUiAppendInterLayerLinks(Nodes []NextNode) {
+	// u, err := json.Marshal(NextNode{Id: nextGo.Topology.NextNodes[0].Name})
+	var link NextLink
+	var linkId int = 1
+	for i := 0; i < len(Nodes); i++ {
+		if !strings.Contains(Nodes[i].Name, "phy-") { // find Igp layer nodes
+			link.Source = Nodes[i].Name
+			link.SourceEndpoint = "igp"
+			for j := 0; j < len(Nodes); j++ {
+				if Nodes[j].Name == ("phy-" + Nodes[i].Name) { // find Phy Layer node with same name with Igp Layer node
+
+					link.Target = Nodes[j].Name
+					link.TargetEndpoint = "phy"
+
+					link.Id = strconv.Itoa(linkId + j)
+				}
+			}
+			link.Group = "interTopoLayerLink"
+			nextGo.Topology.Links = append(nextGo.Topology.Links, link)
+		}
+
+	}
 }
 
 func (nextGo *NextUiGo) NextUiMarshal() []byte {
@@ -119,7 +184,7 @@ func (nextGo *NextUiGo) NextUiMarshal() []byte {
 	if err != nil {
 		panic(err)
 	}
-	log.Debug(string(jsonBytes))
+	log.Debugf("NextUiMarshal Result:", string(jsonBytes))
 
 	return jsonBytes
 }
@@ -144,7 +209,7 @@ func (nextGo *NextUiGo) NextUiHttpServer(marshaledNextuiTopo []byte) {
 	}
 
 	// read the file again to replace "&#34;" with single quoute "
-	// aaraafat-tag: code need to be optimised
+	// aaraafat-tag: code need to be optimised, no need to read/write again file nextData.js
 	input, err := ioutil.ReadFile(filePath + "/nspGo-topoViewer/html-template/static/js/nextData.js")
 	if err != nil {
 		log.Error(err)

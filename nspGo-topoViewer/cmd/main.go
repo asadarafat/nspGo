@@ -1,6 +1,9 @@
 package main
 
 import (
+	"io/ioutil"
+	"os"
+
 	log "github.com/sirupsen/logrus"
 	nspgoipoptim "local.com/nspgo/nspGo-ipOptim"
 	nspgosession "local.com/nspgo/nspGo-session"
@@ -41,10 +44,20 @@ func main() {
 	nextUiGo.LogLevel = 5
 
 	nextUiGo.NextUiUnmarshalIetfNetworkModel([]byte(ietfRawFile), nspgotopoviewer.IetfNetworkStruct{})
-	marshaledNextuiTopo := nextUiGo.NextUiMarshal()
 
 	s.RevokeRestToken()
 
-	nextUiGo.NextUiHttpServer(marshaledNextuiTopo)
+	// Load NetSupFile and Make Physical Topology
+	filePath, _ := os.Getwd()
+	filePath = (filePath + "/nspGo-topoViewer/rawTopoFile/netSupPhysical.json")
+	netSupFile, err := ioutil.ReadFile(filePath)
+	if err != nil {
+		log.Error(err)
+		os.Exit(1)
+	}
+	nextUiGo.NextUiUnmarshalNetSupPhysicalModel(netSupFile, nspgotopoviewer.NetSupPhysicalStruct{})
+
+	nextUiGo.NextUiAppendInterLayerLinks(nextUiGo.Topology.Nodes)
+	nextUiGo.NextUiHttpServer(nextUiGo.NextUiMarshal())
 
 }
