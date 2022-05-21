@@ -12,7 +12,7 @@ require (
 	github.com/BurntSushi/toml v1.0.0 // indirect
 	github.com/creack/pty v1.1.17 // indirect
 	github.com/goph/emperror v0.17.2 // indirect
-	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect
+	golang.org/x/net v0.0.0-20220325170049-de3da57026de // indirect
 )
 
 require (
@@ -29,10 +29,9 @@ require (
 	github.com/tidwall/gjson v1.14.0
 	github.com/tidwall/sjson v1.2.4
 	github.com/ugorji/go v1.2.7 // indirect
-	github.com/vbauerster/mpb v3.4.0+incompatible
-	github.com/vbauerster/mpb/v7 v7.4.1
-	golang.org/x/crypto v0.0.0-20220315160706-3147a52a75dd // indirect
-	golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8 // indirect
+	golang.org/x/crypto v0.0.0-20220321153916-2c7772ba3064 // indirect
+	golang.org/x/sys v0.0.0-20220325203850-36772127a21f // indirect
+	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/ini.v1 v1.66.4 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
 )
