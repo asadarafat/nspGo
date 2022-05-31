@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-05-31T16:02:27.638Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36" etag="7HfX_OJEDJOMjsTE5EZx" version="18.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-05-31T16:19:45.194Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36" etag="ygUwTFsAu8X6FOw7BqDv" version="18.1.3" type="github">
   <diagram id="qFvYz6doVROe8Kf728JT" name="Page-1">
-    <mxGraphModel dx="7774" dy="5296" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="7774" dy="4196" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -317,8 +317,8 @@
             <mxPoint x="-240" y="370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-111" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Greenfield means that the service created by IBSF using admin-tag.&amp;nbsp;&lt;br&gt;see below demo:&lt;br&gt;https://nokia-my.sharepoint.com/:v:/p/steve_j_aubrey/EZrYKWuuvClKtPy4n83jKlQBv6JjUKnmErISvAa3goOXDA?e=FfR8iH&lt;br&gt;&lt;br&gt;Caveat:&amp;nbsp;&lt;br&gt;&lt;p style=&quot;margin: 0cm; caret-color: rgb(0, 0, 0); text-size-adjust: auto;&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;&quot; lang=&quot;EN-GB&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span lang=&quot;EN-GB&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;ol style=&quot;margin-bottom: 0cm; caret-color: rgb(0, 0, 0); text-size-adjust: auto; margin-top: 0cm;&quot; type=&quot;1&quot; start=&quot;1&quot;&gt;&lt;li style=&quot;margin: 0cm;&quot; class=&quot;MsoListParagraph&quot;&gt;&lt;span style=&quot;&quot; lang=&quot;EN-GB&quot;&gt;Yes if they have services without an admin tag this will not work (but why would you care about the routing of a service that have no specific SLA)&lt;/span&gt;&lt;span lang=&quot;EN-GB&quot;&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;margin: 0cm;&quot; class=&quot;MsoListParagraph&quot;&gt;&lt;span style=&quot;&quot; lang=&quot;EN-GB&quot;&gt;If there are parallel LSPs of the same technology (ie RSVP) with the same admin tag we will not know which one (but then why would ask why do they have this setup as really if they are PCE controlled they are more than likely taking the same path anyway)&lt;/span&gt;&lt;span lang=&quot;EN-GB&quot;&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;margin: 0cm;&quot; class=&quot;MsoListParagraph&quot;&gt;&lt;span style=&quot;&quot; lang=&quot;EN-GB&quot;&gt;Yes the solution will need to be sorted to address MD SROS&lt;span class=&quot;Apple-converted-space&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span lang=&quot;EN-GB&quot;&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;margin: 0cm;&quot; class=&quot;MsoListParagraph&quot;&gt;&lt;span style=&quot;&quot; lang=&quot;EN-GB&quot;&gt;I have assumed that the admin tag is the same for all sites of the same service (if they do have services with different tags from each site then the solution will work with some mods – but this will make life harder for the HCO as they will need to do per service site queries&lt;/span&gt;&lt;span lang=&quot;EN-GB&quot;&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;margin: 0cm;&quot; class=&quot;MsoListParagraph&quot;&gt;&lt;span style=&quot;&quot; lang=&quot;EN-GB&quot;&gt;Still need to work out for MV…but for now this is not the highest priority for the VDF testing (correct me if ‘m wrong)&lt;span class=&quot;Apple-converted-space&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span lang=&quot;EN-GB&quot;&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;margin: 0cm;&quot; class=&quot;MsoListParagraph&quot;&gt;&lt;span style=&quot;&quot; lang=&quot;EN-GB&quot;&gt;The IT could be enhanced by clever people to read automatically from the import policy the admin tag and store this in the operational service model&lt;span class=&quot;Apple-converted-space&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span lang=&quot;EN-GB&quot;&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;margin: 0cm;&quot; class=&quot;MsoListParagraph&quot;&gt;&lt;span style=&quot;&quot; lang=&quot;EN-GB&quot;&gt;Will this scale – yes&lt;span class=&quot;Apple-converted-space&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span lang=&quot;EN-GB&quot;&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;margin: 0cm;&quot; class=&quot;MsoListParagraph&quot;&gt;&lt;span style=&quot;&quot; lang=&quot;EN-GB&quot;&gt;Is this supported – yes&lt;span class=&quot;Apple-converted-space&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span lang=&quot;EN-GB&quot;&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;margin: 0cm;&quot; class=&quot;MsoListParagraph&quot;&gt;&lt;span style=&quot;&quot; lang=&quot;EN-GB&quot;&gt;The HCO will need to keep a real-time view on admin tag changes made to LSPs&lt;/span&gt;&lt;span lang=&quot;EN-GB&quot;&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;margin: 0cm;&quot; class=&quot;MsoListParagraph&quot;&gt;&lt;span style=&quot;&quot; lang=&quot;EN-GB&quot;&gt;If the admin tag defined in the import policy is changed then the user will need to update the slo field&lt;span class=&quot;Apple-converted-space&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span lang=&quot;EN-GB&quot;&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;margin: 0cm;&quot; class=&quot;MsoListParagraph&quot;&gt;&lt;span style=&quot;&quot; lang=&quot;EN-GB&quot;&gt;If the related import policy is changed against the service sites, then assuming (6) has been done the op model would be updated automatically&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=8;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="-1630" y="-50" width="460" height="370" as="geometry" />
+        <mxCell id="tBrI-_pKumTUekCtIgdW-111" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;the service created by IBSF using admin-tag.&amp;nbsp;&lt;br&gt;see below demo:&lt;br&gt;https://nokia-my.sharepoint.com/:v:/p/steve_j_aubrey/EZrYKWuuvClKtPy4n83jKlQBv6JjUKnmErISvAa3goOXDA?e=FfR8iH&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=8;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-1630" y="260" width="460" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tBrI-_pKumTUekCtIgdW-113" value="SLO = service Level Objective" style="text;whiteSpace=wrap;html=1;fontSize=8;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="-230" y="470" width="460" height="30" as="geometry" />
@@ -393,7 +393,7 @@
             <mxPoint x="200" y="540" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-127" value="No Solution yet&lt;br&gt;for Inter AS" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-135" vertex="1">
+        <mxCell id="tBrI-_pKumTUekCtIgdW-127" value="&amp;nbsp;## Stub ##&lt;br&gt;No Solution" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-135" vertex="1">
           <mxGeometry x="480" y="270" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tBrI-_pKumTUekCtIgdW-128" value="" style="endArrow=classic;html=1;rounded=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="tBrI-_pKumTUekCtIgdW-135" source="tBrI-_pKumTUekCtIgdW-118" target="tBrI-_pKumTUekCtIgdW-127" edge="1">
@@ -469,7 +469,7 @@
             <mxPoint x="200" y="540" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-149" value="No Solution yet&lt;br&gt;for Inter AS" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-136" vertex="1">
+        <mxCell id="tBrI-_pKumTUekCtIgdW-149" value="&amp;nbsp;## Stub ##&lt;br&gt;No Solution" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-136" vertex="1">
           <mxGeometry x="480" y="270" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tBrI-_pKumTUekCtIgdW-150" value="" style="endArrow=classic;html=1;rounded=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="tBrI-_pKumTUekCtIgdW-136" source="tBrI-_pKumTUekCtIgdW-142" target="tBrI-_pKumTUekCtIgdW-149" edge="1">
@@ -495,105 +495,14 @@
             <mxPoint x="-1040" y="470" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-158" value="" style="group;rounded=1;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="1360" y="540" width="530" height="640" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-70" value="DirectNeStateRetrieval EPIPE TLDP&lt;br&gt;WF" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-158" vertex="1">
-          <mxGeometry x="180" width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-71" value="Intra/Inter&lt;br&gt;AS" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-158" vertex="1">
-          <mxGeometry x="220" y="120" width="80" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-72" value="Identifed Service Site" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-158" vertex="1">
-          <mxGeometry x="30" y="260" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-73" value="Get spoke-sdp&lt;br&gt;from IBSF" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-158" vertex="1">
-          <mxGeometry x="30" y="380" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-74" value="" style="endArrow=classic;html=1;rounded=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="tBrI-_pKumTUekCtIgdW-158" source="tBrI-_pKumTUekCtIgdW-70" target="tBrI-_pKumTUekCtIgdW-71" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="420" y="70" as="sourcePoint" />
-            <mxPoint x="270" y="10" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-75" value="" style="endArrow=classic;html=1;rounded=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="tBrI-_pKumTUekCtIgdW-158" source="tBrI-_pKumTUekCtIgdW-71" target="tBrI-_pKumTUekCtIgdW-72" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="110" y="160" as="sourcePoint" />
-            <mxPoint x="170" y="20" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-76" value="Intra AS" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=1;" parent="tBrI-_pKumTUekCtIgdW-75" vertex="1" connectable="0">
-          <mxGeometry x="-0.08" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-77" value="" style="endArrow=classic;html=1;rounded=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="tBrI-_pKumTUekCtIgdW-158" source="tBrI-_pKumTUekCtIgdW-72" target="tBrI-_pKumTUekCtIgdW-73" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="210" y="170" as="sourcePoint" />
-            <mxPoint x="160" y="170" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-78" value="" style="endArrow=classic;html=1;rounded=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="tBrI-_pKumTUekCtIgdW-158" source="tBrI-_pKumTUekCtIgdW-71" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="230" y="170" as="sourcePoint" />
-            <mxPoint x="420" y="160" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-79" value="Inter AS" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=1;" parent="tBrI-_pKumTUekCtIgdW-78" vertex="1" connectable="0">
-          <mxGeometry x="-0.08" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-80" value="Identifed Service Site" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-158" vertex="1">
-          <mxGeometry x="410" y="260" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-81" value="Get IntraAS service-lsp using&lt;br&gt;by parsing NE CLI output" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-158" vertex="1">
-          <mxGeometry x="410" y="380" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-82" value="" style="endArrow=classic;html=1;rounded=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="tBrI-_pKumTUekCtIgdW-158" source="tBrI-_pKumTUekCtIgdW-80" target="tBrI-_pKumTUekCtIgdW-81" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="570" y="340" as="sourcePoint" />
-            <mxPoint x="530" y="300" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-83" value="Identified ASBR" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-158" vertex="1">
-          <mxGeometry x="410" y="140" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-84" value="" style="endArrow=classic;html=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-158" source="tBrI-_pKumTUekCtIgdW-83" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="490" y="330" as="sourcePoint" />
-            <mxPoint x="470" y="260" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-87" value="Get InterAS option A service-intraAS-UNI-port using" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-158" vertex="1">
-          <mxGeometry x="410" y="580" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-89" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="tBrI-_pKumTUekCtIgdW-158" source="tBrI-_pKumTUekCtIgdW-81" target="tBrI-_pKumTUekCtIgdW-87" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="429.99999999999955" y="550" as="sourcePoint" />
-            <mxPoint x="480" y="760" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-156" value="resolve lsp-used in spoke-sdp using IBSF service Tunnel Inventory" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="tBrI-_pKumTUekCtIgdW-158" vertex="1">
-          <mxGeometry y="580" width="180" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-157" value="" style="endArrow=classic;html=1;rounded=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="tBrI-_pKumTUekCtIgdW-158" target="tBrI-_pKumTUekCtIgdW-156" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="89.44000000000005" y="440" as="sourcePoint" />
-            <mxPoint x="89.44000000000005" y="500" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="tBrI-_pKumTUekCtIgdW-160" value="Full NSP&lt;br&gt;EPIPE TLDP&lt;br&gt;WF" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="-1800" y="460" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tBrI-_pKumTUekCtIgdW-161" value="Intra/Inter&lt;br&gt;AS" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="-1780" y="580" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-162" value="Identifed Service Site" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
+        <mxCell id="tBrI-_pKumTUekCtIgdW-162" value="&amp;nbsp;## Stub ##&lt;br&gt;No Solution" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="-1970" y="720" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-163" value="Get spoke-sdp&lt;br&gt;from IBSF" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="-1970" y="840" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tBrI-_pKumTUekCtIgdW-164" value="" style="endArrow=classic;html=1;rounded=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="tBrI-_pKumTUekCtIgdW-160" target="tBrI-_pKumTUekCtIgdW-161" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -612,12 +521,6 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-167" value="" style="endArrow=classic;html=1;rounded=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="tBrI-_pKumTUekCtIgdW-162" target="tBrI-_pKumTUekCtIgdW-163" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-1790" y="630" as="sourcePoint" />
-            <mxPoint x="-1840" y="630" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="tBrI-_pKumTUekCtIgdW-168" value="" style="endArrow=classic;html=1;rounded=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="tBrI-_pKumTUekCtIgdW-161" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-1770" y="630" as="sourcePoint" />
@@ -629,17 +532,8 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-173" value="No Solution yet&lt;br&gt;for Inter AS" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
+        <mxCell id="tBrI-_pKumTUekCtIgdW-173" value="&amp;nbsp;## Stub ##&lt;br&gt;No Solution" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="-1590" y="600" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-177" value="resolve lsp-used in spoke-sdp using IBSF service Tunnel Inventory" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="-2000" y="1040" width="180" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-178" value="" style="endArrow=classic;html=1;rounded=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="tBrI-_pKumTUekCtIgdW-177" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-1910.56" y="900" as="sourcePoint" />
-            <mxPoint x="-1910.56" y="960" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="tBrI-_pKumTUekCtIgdW-179" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;" parent="1" source="tBrI-_pKumTUekCtIgdW-104" target="tBrI-_pKumTUekCtIgdW-160" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -653,16 +547,6 @@
             <mxPoint x="160" y="1660" as="targetPoint" />
             <Array as="points">
               <mxPoint x="-1203" y="1420" />
-              <mxPoint x="15" y="1420" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="tBrI-_pKumTUekCtIgdW-182" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.457;exitY=0.978;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="tBrI-_pKumTUekCtIgdW-177" target="tBrI-_pKumTUekCtIgdW-27" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-1790" y="1240" as="sourcePoint" />
-            <mxPoint x="-346.83000000000004" y="1886.04" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="-1918" y="1420" />
               <mxPoint x="15" y="1420" />
             </Array>
           </mxGeometry>
@@ -715,11 +599,140 @@
             <mxPoint x="350" y="350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="LrL0mOIRUzlrbFbC9fVg-14" value="&lt;h1&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;note:&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;All NEs are SROS based, managed by NFMP, hence classic management interface&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;for DirectNeStateRetrieval, the logic is to create &quot;function&quot; to read the state of the service in NE to get service-bearer (TransportTunnel [SR-TE, RSVP-TE, BGP-LU], UNI-port) by using NSP-to-NE mediation (CLI). The function then will return list of service-bearer-using to HCO, which triggering the execution of the function.&lt;br&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;for DirectNeStateRetrieval, There is potential bottleNeck to&lt;br&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;for DirectNeStateRetrieval, multivendor CLI can be addressed with changing CLI parser taks&amp;nbsp;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;for DirectNeStateRetrieval, other means mediation ie gRPC, NetConf can be explored as long as fullfiling the requiremet to get the L3VPN route-table-to-LSP mapping and to get L2VPN evpn endpoint-to-LSP mapping&lt;/font&gt;&lt;br&gt;&lt;/li&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;for FullNspApproach&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;strokeColor=#331CFF;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="200" y="-870" width="820" height="400" as="geometry" />
+        <mxCell id="LrL0mOIRUzlrbFbC9fVg-14" value="&lt;h1&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;note:&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;All NEs are SROS based, managed by NFMP, hence classic management interface&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;for DirectNeStateRetrieval, the logic is to create &quot;function&quot; to read the state of the service in NE to get service-bearer (TransportTunnel [SR-TE, RSVP-TE, BGP-LU], UNI-port) by using NSP-to-NE mediation (CLI). The function then will return list of service-bearer-using to HCO, which triggering the execution of the function.&lt;br&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;for DirectNeStateRetrieval, There is potential performance bottleNeck in NSP-to-NE mediation task (parsing NE CLI output) ie: how if VPN holding million of routes, how if during the retrieval the comm. between NSP/NE is broken. hence code railguarding need to be implemented,&lt;br&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;for DirectNeStateRetrieval, multivendor CLI can be addressed with changing CLI parser taks&amp;nbsp;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;for DirectNeStateRetrieval, other means mediation ie gRPC, NetConf can be explored as long as fullfiling the requiremet to get the L3VPN route-table-to-LSP mapping and to get L2VPN evpn endpoint-to-LSP mapping&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;for FullNspApproach, the logic is to compare the two table, 1st table is LSP table with adminTag from NFMP and 2nd table is ServiceSite from IBSF. both of them having shared key which is the NE ipAddress.&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font size=&quot;3&quot;&gt;for FullNspApproach, potentially very scalable but with some caveat:&lt;/font&gt;&amp;nbsp;&lt;/li&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial; font-size: medium;&quot;&gt;Yes if they have services without an admin tag this will not work&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial; font-size: medium;&quot;&gt;If there are parallel LSPs of the same technology (ie RSVP) with the same admin tag we will not know which one (but then why would ask why do they have this setup as really if they are PCE controlled they are more than likely taking the same path anyway)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: medium; background-color: initial;&quot;&gt;Yes the solution will need to be sorted to address MD SROS&lt;/span&gt;&lt;span style=&quot;font-size: medium; background-color: initial;&quot; class=&quot;Apple-converted-space&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial; font-size: medium;&quot;&gt;I have assumed that the admin tag is the same for all sites of the same service (if they do have services with different tags from each site then the solution will work with some mods – but this will make life harder for the HCO as they will need to do per service site queries&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: medium; background-color: initial;&quot;&gt;Still need to work out for MV…but for now this is not the highest priority for the VDF testing (correct me if ‘m wrong)&lt;/span&gt;&lt;span style=&quot;font-size: medium; background-color: initial;&quot; class=&quot;Apple-converted-space&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: medium; background-color: initial;&quot;&gt;The IT could be enhanced by clever people to read automatically from the import policy the admin tag and store this in the operational service model&lt;/span&gt;&lt;span style=&quot;font-size: medium; background-color: initial;&quot; class=&quot;Apple-converted-space&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: medium; background-color: initial;&quot;&gt;Will this scale – yes&lt;/span&gt;&lt;span style=&quot;font-size: medium; background-color: initial;&quot; class=&quot;Apple-converted-space&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: medium; background-color: initial;&quot;&gt;Is this supported – yes&lt;/span&gt;&lt;span style=&quot;font-size: medium; background-color: initial;&quot; class=&quot;Apple-converted-space&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial; font-size: medium;&quot;&gt;The HCO will need to keep a real-time view on admin tag changes made to LSP&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: medium; background-color: initial;&quot;&gt;If the admin tag defined in the import policy is changed then the user will need to update the slo field&lt;/span&gt;&lt;span style=&quot;font-size: medium; background-color: initial;&quot; class=&quot;Apple-converted-space&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial; font-size: medium;&quot;&gt;If the related import policy is changed against the service sites, then assuming (6) has been done the op model would be updated automatically&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;strokeColor=#331CFF;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="-850" y="-680" width="1020" height="840" as="geometry" />
         </mxCell>
-        <mxCell id="LrL0mOIRUzlrbFbC9fVg-16" value="&lt;p class=&quot;p1&quot;&gt;&lt;span class=&quot;s1&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/ create pathDiscoveyAdaptor, &lt;/span&gt;&lt;span class=&quot;s3&quot;&gt;&quot;adaptor&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; to read the state of service to get transport tunnel id/name using nsp-to-ne mediation (cli, gRPC), the &lt;/span&gt;&lt;span class=&quot;s3&quot;&gt;&quot;adaptor&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; will &lt;/span&gt;&lt;span class=&quot;s4&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; list of used transport tunnel. &lt;/span&gt;&lt;span class=&quot;s3&quot;&gt;&quot;Adaptor&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; can be realized as a code &lt;/span&gt;&lt;span class=&quot;s4&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; intentType and list of transport tunnel can be augmented &lt;/span&gt;&lt;span class=&quot;s4&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; service operational model.&lt;/span&gt;&lt;/p&gt;&#xa;&lt;p class=&quot;p2&quot;&gt;&lt;span class=&quot;s5&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;fontSize=24;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="240" y="-1310" width="550" height="370" as="geometry" />
+        <mxCell id="tBrI-_pKumTUekCtIgdW-70" value="DirectNeStateRetrieval EPIPE TLDP&lt;br&gt;WF" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1540" y="540" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-71" value="Intra/Inter&lt;br&gt;AS" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1580" y="660" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-72" value="Identifed Service Site" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1390" y="800" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-73" value="Get spoke-sdp&lt;br&gt;from IBSF" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1390" y="1070" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-74" value="" style="endArrow=classic;html=1;rounded=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="tBrI-_pKumTUekCtIgdW-70" target="tBrI-_pKumTUekCtIgdW-71" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1780" y="610" as="sourcePoint" />
+            <mxPoint x="1630" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-75" value="" style="endArrow=classic;html=1;rounded=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="tBrI-_pKumTUekCtIgdW-71" target="tBrI-_pKumTUekCtIgdW-72" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1470" y="700" as="sourcePoint" />
+            <mxPoint x="1530" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-76" value="Intra AS" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=1;" parent="tBrI-_pKumTUekCtIgdW-75" vertex="1" connectable="0">
+          <mxGeometry x="-0.08" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-77" value="" style="endArrow=classic;html=1;rounded=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="tBrI-_pKumTUekCtIgdW-72" target="LrL0mOIRUzlrbFbC9fVg-39" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1570" y="710" as="sourcePoint" />
+            <mxPoint x="1520" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-78" value="" style="endArrow=classic;html=1;rounded=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="tBrI-_pKumTUekCtIgdW-71" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1590" y="710" as="sourcePoint" />
+            <mxPoint x="1780" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-79" value="Inter AS" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=1;" parent="tBrI-_pKumTUekCtIgdW-78" vertex="1" connectable="0">
+          <mxGeometry x="-0.08" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-80" value="Identifed Service Site" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1770" y="800" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-81" value="Get IntraAS service-lsp using&lt;br&gt;by parsing NE CLI output" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1770" y="920" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-82" value="" style="endArrow=classic;html=1;rounded=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="tBrI-_pKumTUekCtIgdW-80" target="tBrI-_pKumTUekCtIgdW-81" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1930" y="880" as="sourcePoint" />
+            <mxPoint x="1890" y="840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-83" value="Identified ASBR" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1770" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-84" value="" style="endArrow=classic;html=1;rounded=1;" parent="1" source="tBrI-_pKumTUekCtIgdW-83" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1850" y="870" as="sourcePoint" />
+            <mxPoint x="1830" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-87" value="Get InterAS option A service-intraAS-UNI-port using" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1770" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-89" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="tBrI-_pKumTUekCtIgdW-81" target="tBrI-_pKumTUekCtIgdW-87" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1789.9999999999995" y="1090" as="sourcePoint" />
+            <mxPoint x="1840" y="1300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-156" value="resolve lsp-used in spoke-sdp using IBSF service Tunnel Inventory" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1360" y="1180" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tBrI-_pKumTUekCtIgdW-157" value="" style="endArrow=classic;html=1;rounded=1;" parent="1" target="tBrI-_pKumTUekCtIgdW-73" edge="1" source="LrL0mOIRUzlrbFbC9fVg-39">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1326.12" y="961.6799999999998" as="sourcePoint" />
+            <mxPoint x="1449.44" y="1040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LrL0mOIRUzlrbFbC9fVg-44" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;intraIGP Area&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;fontFamily=Helvetica;" vertex="1" connectable="0" parent="tBrI-_pKumTUekCtIgdW-157">
+          <mxGeometry x="0.0114" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LrL0mOIRUzlrbFbC9fVg-39" value="Intra/inter&lt;br&gt;IGP" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1410" y="890" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LrL0mOIRUzlrbFbC9fVg-43" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="tBrI-_pKumTUekCtIgdW-73" target="tBrI-_pKumTUekCtIgdW-156">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1509.43" y="1110" as="sourcePoint" />
+            <mxPoint x="1509.43" y="1150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LrL0mOIRUzlrbFbC9fVg-45" value="Get spoke-sdp&lt;br&gt;from IBSF" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1590" y="1070" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LrL0mOIRUzlrbFbC9fVg-48" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.945;exitY=0.498;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;exitPerimeter=0;" edge="1" parent="1" source="LrL0mOIRUzlrbFbC9fVg-39" target="LrL0mOIRUzlrbFbC9fVg-45">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1595" y="950" as="sourcePoint" />
+            <mxPoint x="1705" y="980" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LrL0mOIRUzlrbFbC9fVg-51" value="inter IGP Area" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontFamily=Helvetica;" vertex="1" connectable="0" parent="LrL0mOIRUzlrbFbC9fVg-48">
+          <mxGeometry x="-0.1192" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LrL0mOIRUzlrbFbC9fVg-49" value="resolve BGP-LU tunnel using CLI Parsing" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1560" y="1180" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LrL0mOIRUzlrbFbC9fVg-50" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="LrL0mOIRUzlrbFbC9fVg-45" target="LrL0mOIRUzlrbFbC9fVg-49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1460" y="1140" as="sourcePoint" />
+            <mxPoint x="1460" y="1190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LrL0mOIRUzlrbFbC9fVg-52" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LrL0mOIRUzlrbFbC9fVg-49" target="tBrI-_pKumTUekCtIgdW-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1460" y="1250" as="sourcePoint" />
+            <mxPoint x="25" y="1670" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1650" y="1420" />
+              <mxPoint x="15" y="1420" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
