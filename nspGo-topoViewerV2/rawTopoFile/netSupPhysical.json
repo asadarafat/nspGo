@@ -1,0 +1,1167 @@
+{
+    "response": {
+        "status": 0,
+        "startRow": 0,
+        "endRow": 17,
+        "totalRows": 17,
+        "data": [
+            {
+                "fdn": "fdn:model:service:Service:6093",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-26-FF-00-00-00-portid-35717120-Nearest-Bridge-to-MAC Address-C8-28-FF-00-00-00-portid-35717120"
+                ],
+                "name": "R8-PE:1/1/2--R10-PE-ASBR:1/1/2",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/2",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:6418",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4210",
+                        "parentNeId": "10.10.10.8",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/2",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:7539",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:7522",
+                        "parentNeId": "10.10.10.10",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:6093"
+                    }
+                ],
+                "id": "from-MAC Address-C8-26-FF-00-00-00-portid-35717120-Nearest-Bridge-to-MAC Address-C8-28-FF-00-00-00-portid-35717120"
+            },
+            {
+                "fdn": "fdn:model:service:Service:6228",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-22-FF-00-00-00-portid-35815424-Nearest-Bridge-to-MAC Address-C8-23-FF-00-00-00-portid-35815424"
+                ],
+                "name": "R4-P:1/1/5--R5-PE:1/1/5",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/5",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:6039",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4209",
+                        "parentNeId": "10.10.10.4",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/5",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:5804",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4208",
+                        "parentNeId": "10.10.10.5",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:6228"
+                    }
+                ],
+                "id": "from-MAC Address-C8-22-FF-00-00-00-portid-35815424-Nearest-Bridge-to-MAC Address-C8-23-FF-00-00-00-portid-35815424"
+            },
+            {
+                "fdn": "fdn:model:service:Service:6229",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-20-FF-00-00-00-portid-35684352-Nearest-Bridge-to-MAC Address-C8-22-FF-00-00-00-portid-35684352"
+                ],
+                "name": "R2-PE:1/1/1--R4-P:1/1/1",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/1",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4315",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4204",
+                        "parentNeId": "10.10.10.2",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/1",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:6035",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4209",
+                        "parentNeId": "10.10.10.4",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:6229"
+                    }
+                ],
+                "id": "from-MAC Address-C8-20-FF-00-00-00-portid-35684352-Nearest-Bridge-to-MAC Address-C8-22-FF-00-00-00-portid-35684352"
+            },
+            {
+                "fdn": "fdn:model:service:Service:6376",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-22-FF-00-00-00-portid-35782656-Nearest-Bridge-to-MAC Address-C8-25-FF-00-00-00-portid-35717120"
+                ],
+                "name": "R4-P:1/1/4--R7-PE-ASBR:1/1/2",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/4",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:6038",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4209",
+                        "parentNeId": "10.10.10.4",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/2",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4281",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4206",
+                        "parentNeId": "10.10.10.7",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:6376"
+                    }
+                ],
+                "id": "from-MAC Address-C8-22-FF-00-00-00-portid-35782656-Nearest-Bridge-to-MAC Address-C8-25-FF-00-00-00-portid-35717120"
+            },
+            {
+                "fdn": "fdn:model:service:Service:6528",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-22-FF-00-00-00-portid-35717120-Nearest-Bridge-to-MAC Address-C8-24-FF-00-00-00-portid-35684352"
+                ],
+                "name": "R4-P:1/1/2--R6-PE-ASBR:1/1/1",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/2",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:6036",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4209",
+                        "parentNeId": "10.10.10.4",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/1",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:7335",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4211",
+                        "parentNeId": "10.10.10.6",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:6528"
+                    }
+                ],
+                "id": "from-MAC Address-C8-22-FF-00-00-00-portid-35717120-Nearest-Bridge-to-MAC Address-C8-24-FF-00-00-00-portid-35684352"
+            },
+            {
+                "fdn": "fdn:model:service:Service:6745",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-21-FF-00-00-00-portid-35782656-Nearest-Bridge-to-MAC Address-C8-23-FF-00-00-00-portid-35717120"
+                ],
+                "name": "R3-P:1/1/4--R5-PE:1/1/2",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/4",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4335",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4202",
+                        "parentNeId": "10.10.10.3",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/2",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:5241",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4208",
+                        "parentNeId": "10.10.10.5",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:6745"
+                    }
+                ],
+                "id": "from-MAC Address-C8-21-FF-00-00-00-portid-35782656-Nearest-Bridge-to-MAC Address-C8-23-FF-00-00-00-portid-35717120"
+            },
+            {
+                "fdn": "fdn:model:service:Service:6746",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-25-FF-00-00-00-portid-35782656-Nearest-Bridge-to-MAC Address-C8-29-FF-00-00-00-portid-35684352"
+                ],
+                "name": "R7-PE-ASBR:1/1/4--VSR-NRC:1/1/1",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/4",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4285",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4206",
+                        "parentNeId": "10.10.10.7",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/1",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4437",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4205",
+                        "parentNeId": "10.10.10.48",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:6746"
+                    }
+                ],
+                "id": "from-MAC Address-C8-25-FF-00-00-00-portid-35782656-Nearest-Bridge-to-MAC Address-C8-29-FF-00-00-00-portid-35684352"
+            },
+            {
+                "fdn": "fdn:model:service:Service:7257",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-1F-FF-00-00-00-portid-1610899521-Nearest-Bridge-to-MAC Address-C8-21-FF-00-00-00-portid-35684352"
+                ],
+                "name": "R1-PE:1/1/c1/1--R3-P:1/1/1",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/c1/1",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4282",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4203",
+                        "parentNeId": "10.10.10.1",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/1",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4318",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4202",
+                        "parentNeId": "10.10.10.3",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:7257"
+                    }
+                ],
+                "id": "from-MAC Address-C8-1F-FF-00-00-00-portid-1610899521-Nearest-Bridge-to-MAC Address-C8-21-FF-00-00-00-portid-35684352"
+            },
+            {
+                "fdn": "fdn:model:service:Service:7258",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-28-FF-00-00-00-portid-35782656-Nearest-Bridge-to-MAC Address-C8-29-FF-00-00-00-portid-35717120"
+                ],
+                "name": "R10-PE-ASBR:1/1/4--VSR-NRC:1/1/2",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/4",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:7541",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:7522",
+                        "parentNeId": "10.10.10.10",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/2",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4440",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4205",
+                        "parentNeId": "10.10.10.48",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:7258"
+                    }
+                ],
+                "id": "from-MAC Address-C8-28-FF-00-00-00-portid-35782656-Nearest-Bridge-to-MAC Address-C8-29-FF-00-00-00-portid-35717120"
+            },
+            {
+                "fdn": "fdn:model:service:Service:7261",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-25-FF-00-00-00-portid-35684352-Nearest-Bridge-to-MAC Address-C8-28-FF-00-00-00-portid-35749888"
+                ],
+                "name": "R7-PE-ASBR:1/1/1--R10-PE-ASBR:1/1/3",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/1",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4277",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4206",
+                        "parentNeId": "10.10.10.7",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/3",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:7540",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:7522",
+                        "parentNeId": "10.10.10.10",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:7261"
+                    }
+                ],
+                "id": "from-MAC Address-C8-25-FF-00-00-00-portid-35684352-Nearest-Bridge-to-MAC Address-C8-28-FF-00-00-00-portid-35749888"
+            },
+            {
+                "fdn": "fdn:model:service:Service:7362",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-21-FF-00-00-00-portid-35749888-Nearest-Bridge-to-MAC Address-C8-22-FF-00-00-00-portid-35749888"
+                ],
+                "name": "R3-P:1/1/3--R4-P:1/1/3",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/3",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4334",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4202",
+                        "parentNeId": "10.10.10.3",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/3",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:6037",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4209",
+                        "parentNeId": "10.10.10.4",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:7362"
+                    }
+                ],
+                "id": "from-MAC Address-C8-21-FF-00-00-00-portid-35749888-Nearest-Bridge-to-MAC Address-C8-22-FF-00-00-00-portid-35749888"
+            },
+            {
+                "fdn": "fdn:model:service:Service:7655",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-1F-FF-00-00-00-portid-1610899585-Nearest-Bridge-to-MAC Address-C8-20-FF-00-00-00-portid-35717120"
+                ],
+                "name": "R1-PE:1/1/c2/1--R2-PE:1/1/2",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/c2/1",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4337",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4203",
+                        "parentNeId": "10.10.10.1",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/2",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4319",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4204",
+                        "parentNeId": "10.10.10.2",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:7655"
+                    }
+                ],
+                "id": "from-MAC Address-C8-1F-FF-00-00-00-portid-1610899585-Nearest-Bridge-to-MAC Address-C8-20-FF-00-00-00-portid-35717120"
+            },
+            {
+                "fdn": "fdn:model:service:Service:7946",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-21-FF-00-00-00-portid-35717120-Nearest-Bridge-to-MAC Address-C8-24-FF-00-00-00-portid-35717120"
+                ],
+                "name": "R3-P:1/1/2--R6-PE-ASBR:1/1/2",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/2",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:7336",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4211",
+                        "parentNeId": "10.10.10.6",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/2",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4333",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4202",
+                        "parentNeId": "10.10.10.3",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:7946"
+                    }
+                ],
+                "id": "from-MAC Address-C8-21-FF-00-00-00-portid-35717120-Nearest-Bridge-to-MAC Address-C8-24-FF-00-00-00-portid-35717120"
+            },
+            {
+                "fdn": "fdn:model:service:Service:19665",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-26-FF-00-00-00-portid-35815424-Nearest-Bridge-to-MAC Address-C8-27-FF-00-00-00-portid-35717120"
+                ],
+                "name": "R8-PE:1/1/5--R9-PE-ASBR:1/1/2",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/5",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:6421",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4210",
+                        "parentNeId": "10.10.10.8",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/2",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4807",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4207",
+                        "parentNeId": "10.10.10.9",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:19665"
+                    }
+                ],
+                "id": "from-MAC Address-C8-26-FF-00-00-00-portid-35815424-Nearest-Bridge-to-MAC Address-C8-27-FF-00-00-00-portid-35717120"
+            },
+            {
+                "fdn": "fdn:model:service:Service:19666",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-21-FF-00-00-00-portid-35815424-Nearest-Bridge-to-MAC Address-C8-25-FF-00-00-00-portid-35749888"
+                ],
+                "name": "R3-P:1/1/5--R7-PE-ASBR:1/1/3",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/5",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4336",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4202",
+                        "parentNeId": "10.10.10.3",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/3",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4283",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4206",
+                        "parentNeId": "10.10.10.7",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:19666"
+                    }
+                ],
+                "id": "from-MAC Address-C8-21-FF-00-00-00-portid-35815424-Nearest-Bridge-to-MAC Address-C8-25-FF-00-00-00-portid-35749888"
+            },
+            {
+                "fdn": "fdn:model:service:Service:19833",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-24-FF-00-00-00-portid-35749888-Nearest-Bridge-to-MAC Address-C8-27-FF-00-00-00-portid-35749888"
+                ],
+                "name": "R6-PE-ASBR:1/1/3--R9-PE-ASBR:1/1/3",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/3",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:7337",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4211",
+                        "parentNeId": "10.10.10.6",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/3",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4905",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4207",
+                        "parentNeId": "10.10.10.9",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:19833"
+                    }
+                ],
+                "id": "from-MAC Address-C8-24-FF-00-00-00-portid-35749888-Nearest-Bridge-to-MAC Address-C8-27-FF-00-00-00-portid-35749888"
+            },
+            {
+                "fdn": "fdn:model:service:Service:94518",
+                "sourceType": "nfmp",
+                "sourceSystem": "fdn:realm:sam",
+                "sources": [
+                    "fdn:realm:sam:physicalLink:from-MAC Address-C8-1F-FF-00-00-00-portid-1610899713-Nearest-Bridge-to-MAC Address-C8-24-FF-00-00-00-portid-35979264"
+                ],
+                "name": "R1-PE:1/1/c4/1--R6-PE-ASBR:1/1/10",
+                "type": "cable",
+                "rate": null,
+                "actualRate": null,
+                "actualRateUnits": "unknown",
+                "description": "N/A",
+                "protection": "unknown",
+                "protectionKind": "unknown",
+                "latency": 0,
+                "latencyUnits": "unknown",
+                "restoration": "unknown",
+                "direction": "biDirectional",
+                "adminState": "unknown",
+                "operState": "enabled",
+                "standbyState": "providingService",
+                "availabilityStates": [],
+                "objectDetails": {
+                    "linkDiscoveredFrom": "lldp",
+                    "linkScope": "nearestBridge",
+                    "isLagMember": "false",
+                    "cableType": "ethernet",
+                    "linkType": "pointToPoint",
+                    "hasLLDPAdjacency": "false"
+                },
+                "endpoints": [
+                    {
+                        "name": "Port 1/1/c4/1",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:4341",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4203",
+                        "parentNeId": "10.10.10.1",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isSource": "true",
+                            "hasUnderlyingEndpoint": "false"
+                        },
+                        "parentNeName": null
+                    },
+                    {
+                        "name": "Port 1/1/10",
+                        "type": "physicalPort",
+                        "port": "fdn:model:equipment:Equipment:7404",
+                        "lag": null,
+                        "parentNe": "fdn:model:equipment:NetworkElement:4211",
+                        "parentNeId": "10.10.10.6",
+                        "subnetName": null,
+                        "objectDetails": {
+                            "isTarget": "true"
+                        },
+                        "parentNeName": null
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "https://147.75.102.178:8544/NetworkSupervision/rest/api/v1/physicalLinks/fdn:model:service:Service:94518"
+                    }
+                ],
+                "id": "from-MAC Address-C8-1F-FF-00-00-00-portid-1610899713-Nearest-Bridge-to-MAC Address-C8-24-FF-00-00-00-portid-35979264"
+            }
+        ],
+        "errors": null
+    }
+}

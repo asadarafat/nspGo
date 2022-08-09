@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Topology NeXt UI</title>
+    <link rel="stylesheet" href="css/next.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="js/next.js"></script>
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <p class="title is-6">Layers: </p>
+            </div>
+            <div class="level-item">
+              <label class="checkbox">
+                <input type="checkbox" name="layer[]" value="L2-Layer" onclick="updateGroups()" checked>
+                L2-Layer
+              </label>
+            </div>
+            <div class="level-item">
+              <label class="checkbox">
+                <input type="checkbox" name="layer[]" value="L3-Layer" onclick="updateGroups()" checked>
+                L3-Layer
+              </label>
+            </div>
+
+          </div>
+        </div>
+    </section>
+    <script src="app/data.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>

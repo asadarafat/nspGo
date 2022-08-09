@@ -9,17 +9,19 @@ nsp:
   # nspIprcIP: "172.23.160.30"   # API gateway
 
   ### Thales
-  nspOsIP:    "thalesnsp.ion.de.alcatel-lucent.com"    # API gateway
-  nspIprcIP:  "thalesnsp.ion.de.alcatel-lucent.com"   # API gateway
-  username:   "admin"
-  password:   "NokiaNsp1!"
+  # nspOsIP:    "thalesnsp.ion.de.alcatel-lucent.com"    # API gateway
+  # nspIprcIP:  "thalesnsp.ion.de.alcatel-lucent.com"   # API gateway
+  # username:   "admin"
+  # password:   "NokiaNsp1!"
 
   ### VF-HCO
-  # nspOsIP:    "147.75.102.178"    # API gateway
-  # nspIprcIP:  "147.75.102.178"   # API gateway
-  # username:   "admin"
-  # password:   "zkw3VSs6"
+  nspOsIP:    "147.75.102.178"    # API gateway
+  nspIprcIP:  "147.75.102.178"   # API gateway
+  username:   "admin"
+  password:   "zkw3VSs6"
 
   proxy:   
     enable: "false"
     proxyAddress: "http://138.203.39.123:80" # API proxy Gateway
+    # proxyAddress: "http://138.203.39.123:80" 
+

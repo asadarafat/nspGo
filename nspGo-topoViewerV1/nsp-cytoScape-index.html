@@ -1,0 +1,472 @@
+<!DOCTYPE>
+
+<html>
+
+<head>
+  <title> NSP Smart Proponent (NSP) </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+  <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+
+  <!-- for testing with local version of cytoscape.js -->
+  <!--<script src="../cytoscape.js/build/cytoscape.js"></script>-->
+
+  <script src="https://unpkg.com/webcola/WebCola/cola.min.js"></script>
+
+    <!-- polyfills so the demo works on old browsers, like IE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.2.20171210/classList.min.js"></script>
+    <script src="https://unpkg.com/bluebird@3.5.2/js/browser/bluebird.js"></script>
+    <script src="https://unpkg.com/whatwg-fetch@3.0.0/dist/fetch.umd.js"></script>
+
+    <!-- libs used by demo -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.min.js"></script>
+    <script src="https://unpkg.com/webcola@3.3.8/WebCola/cola.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.14.4/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/tippy.js@2.6.0/dist/tippy.all.js"></script>
+
+    <!-- cy libs -->
+    <!-- <script src="./js/cytoscape.min.js"></script> -->
+    <script src="https://unpkg.com/cytoscape-cola@2.2.3/cytoscape-cola.js"></script>
+    <script src="https://unpkg.com/cytoscape-popper@1.0.2/cytoscape-popper.js"></script>
+  
+  <style>
+    body {
+      font-family: helvetica;
+      font-size: 12px;
+    }
+
+    html {
+      width: 100%;
+      height: 100%;
+    }
+    
+    #cy {
+      position: absolute;
+      left: 20;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 20em;
+      z-index: 999;
+    }
+
+    .config {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 25em;
+      background: #FAFAFA;
+      box-sizing: border-box;
+      padding: 1em;
+      color: #494949;
+      transition-property: opacity;
+      transition-duration: 250ms;
+      transition-timing-function: ease-out;
+      overflow: auto;
+      z-index: 1;
+    }
+
+    h1 {
+      opacity: 0.5;
+      font-size: 1em;
+    }
+
+    .objectButton {
+      color: black;
+      font-size: 12px;
+      cursor: pointer;
+      width: 3em;
+      margin-right: 0.25em;
+      text-align: center;
+}
+
+    .objectData {
+      color: black;
+      border-style: solid;
+      border-color: #BEC8D2;
+      resize: vertical;
+      font-size: 10px;
+      overflow-wrap: break-word;
+      margin-right: 0.5em;
+      margin-left: 0.5em;
+      text-align: left;
+      background-color: white;      
+}
+
+  </style>
+
+
+</head>
+
+<body>
+  <div id="cy"></div>
+  <div id="config" class="config">
+    <div class="preamble">
+      <span class="label label-info">NSP Smart Proponent (NSP)</span>
+      <p>A Prototype Multilayer Network Topology Viewer and Correlation Tool.</p>
+      <p>Data by <a href="https://www.nokia.com/networks/solutions/network-services-platform/">Nokia NSP</a><br/></p>
+      <button id="elementButton01"></button> 
+      <button id="elementButton02"></button> 
+
+    </div>
+
+    <div><br></br></div>
+
+    <textarea id="elementTextData01" name="w3review"></textarea>
+
+   
+    </div>
+  </div>
+
+  
+  <script> 
+  document.addEventListener('DOMContentLoaded', function () {
+
+    var cy = window.cy = cytoscape({
+        container: document.getElementById('cy'),
+
+        layout: {
+          name: 'circle',
+        },
+
+        style: [
+        {
+            selector: 'node[group=\"transportTunnelLayer\"]',
+            css: {
+                "content": 'data(name)',
+                "width": "20",
+                "height": "20",
+                "text-valign": 'bottom',
+                "text-halign": 'center',
+                "background-color": '#BEC8D2',
+                "font-size": "8px",
+                "text-outline-color": '#F2F2F2',
+                "text-outline-width":'0.3px',
+                "shape": 'circle', 
+            }
+          },  
+        {
+            selector: 'node[group=\"igpTunnelLayer\"]',
+            css: {
+                "content": 'data(name)',
+                "width": "20",
+                "height": "20",
+                "text-valign": 'bottom',
+                "text-halign": 'center',
+                "background-color": '#124191',
+                "font-size": "8px",
+                "text-outline-color": '#F2F2F2',
+                "text-outline-width":'0.3px',
+                "shape": 'triangle', 
+            }
+          },
+          {
+            selector: 'node[group=\"physicalLayer\"]',
+            css: {
+                "content": 'data(name)',
+                "width": "20",
+                "height": "20",
+                "text-valign": 'bottom',
+                "text-halign": 'center',
+                "background-color": '#101116',
+                "font-size": "8px",
+                "text-outline-color": '#F2F2F2',
+                "text-outline-width":'0.3px',
+                "shape": 'square', 
+            }
+          },
+
+          {
+            selector: 'node:parent',
+            css: {
+                "content": 'data(name)',  
+                'background-opacity': 0.1,
+                'background-color': '#8F96AC',
+                "font-size": '10px', 
+                'text-outline-color': '#F2F2F2',
+                "text-outline-width":'0.3px',
+                "text-valign": 'bottom',
+                "text-halign": 'center',
+            }
+          },
+
+          {
+            selector: 'edge',
+            css: {
+              'line-color': '#61A80A',
+              'opacity': '0.4',
+              'width': '2'
+            }
+          },
+          {
+            selector: 'edge[group=\"interLayer\"]',
+            css: {
+              'line-color': '#353535',
+              'opacity': '0.2',
+              'width': '2',
+              'line-style': 'dotted'
+            }
+        }
+        ,
+          {
+            selector: 'edge[group=\"bgpLu\"]',
+            css: {
+              'line-color': '#FF3154',
+              'opacity': '1',
+              'width': '2',
+              'line-style': 'dashed',
+              'line-dash-pattern': [1, 3],
+              'curve-style': 'unbundled-bezier',
+              'target-arrow-color': '#FF3154',
+              'target-arrow-shape': 'triangle',
+            }
+        }
+        ],
+
+        elements: [
+        { group: 'nodes', data: { id: 'n1', name: 'Physical Layer-Asad'} },
+        { group: 'nodes', data: { id: 'n2', name: 'IGP Layer-Asad'} },
+        { group: 'nodes', data: { id: 'n3', name: 'Transport Tunnel Layer' } },
+
+
+        { group: 'nodes', data: { id: 'n11', name: '10.1.1.1', weight: '100', group: "physicalLayer", parent: 'n1' } },
+        { group: 'nodes', data: { id: 'n12', name: '10.1.1.2', weight: '100', group: "physicalLayer", parent: 'n1' } },
+        { group: 'nodes', data: { id: 'n13', name: '10.1.1.3', weight: '100', group: "physicalLayer", parent: 'n1' } },
+        { group: 'nodes', data: { id: 'n14', name: '10.1.1.4', weight: '100', group: "physicalLayer", parent: 'n1' } },
+        { group: 'nodes', data: { id: 'n15', name: '10.1.1.5', weight: '100', group: "physicalLayer", parent: 'n1' } },
+        { group: 'nodes', data: { id: 'n16', name: '10.1.1.6', weight: '100', group: "physicalLayer", parent: 'n1' } },
+
+        { group: 'nodes', data: { id: 'n21', name: '10.1.1.1', weight: '100', group: "igpTunnelLayer", parent: 'n2' } },
+        { group: 'nodes', data: { id: 'n22', name: '10.1.1.2', weight: '100', group: "igpTunnelLayer", parent: 'n2' } },
+        { group: 'nodes', data: { id: 'n23', name: '10.1.1.3', weight: '100', group: "igpTunnelLayer", parent: 'n2' } },
+        { group: 'nodes', data: { id: 'n24', name: '10.1.1.4', weight: '100', group: "igpTunnelLayer", parent: 'n2' } },
+        { group: 'nodes', data: { id: 'n25', name: '10.1.1.5', weight: '100', group: "igpTunnelLayer", parent: 'n2' } },
+        { group: 'nodes', data: { id: 'n26', name: '10.1.1.6', weight: '100', group: "igpTunnelLayer", parent: 'n2' } },
+
+        { group: 'nodes', data: { id: 'n31', name: '10.1.1.1', weight: '100', group: "transportTunnelLayer", parent: 'n3' } },
+        { group: 'nodes', data: { id: 'n32', name: '10.1.1.2', weight: '100', group: "transportTunnelLayer", parent: 'n3' } },
+        { group: 'nodes', data: { id: 'n33', name: '10.1.1.3', weight: '100', group: "transportTunnelLayer", parent: 'n3' } },
+        { group: 'nodes', data: { id: 'n34', name: '10.1.1.4', weight: '100', group: "transportTunnelLayer", parent: 'n3' } },
+        { group: 'nodes', data: { id: 'n35', name: '10.1.1.5', weight: '100', group: "transportTunnelLayer", parent: 'n3' } },
+        { group: 'nodes', data: { id: 'n36', name: '10.1.1.6', weight: '100', group: "transportTunnelLayer", parent: 'n3' } },
+        
+
+        { group: 'edges', data: { id: 'e11', name: 'Physical Link 10.1.1.1--10.1.1.2', weight: "3", source: 'n11', target: 'n12' } },
+        { group: 'edges', data: { id: 'e12', name: 'Physical Link 10.1.1.1--10.1.1.3', weight: "3", source: 'n11', target: 'n13' } },
+        { group: 'edges', data: { id: 'e13', name: 'Physical Link 10.1.1.1--10.1.1.4', weight: "3", source: 'n11', target: 'n14' } },
+        { group: 'edges', data: { id: 'e14', name: 'Physical Link 10.1.1.2--10.1.1.3', weight: "3", source: 'n12', target: 'n13' } },
+        { group: 'edges', data: { id: 'e15', name: 'Physical Link 10.1.1.2--10.1.1.4', weight: "3", source: 'n12', target: 'n14' } },
+        { group: 'edges', data: { id: 'e16', name: 'Physical Link 10.1.1.3--10.1.1.4', weight: "3", source: 'n13', target: 'n14' } },
+        { group: 'edges', data: { id: 'e17', name: 'Physical Link 10.1.1.5--10.1.1.1', weight: "3", source: 'n15', target: 'n11' } },
+        { group: 'edges', data: { id: 'e18', name: 'Physical Link 10.1.1.5--10.1.1.2', weight: "3", source: 'n15', target: 'n12' } },
+        { group: 'edges', data: { id: 'e19', name: 'Physical Link 10.1.1.6--10.1.1.3', weight: "3", source: 'n16', target: 'n13' } },
+        { group: 'edges', data: { id: 'e20', name: 'Physical Link 10.1.1.6--10.1.1.4', weight: "3", source: 'n16', target: 'n14' } },
+
+
+        { group: 'edges', data: { id: 'e21', weight: "2", source: 'n21', target: 'n22' } },
+        { group: 'edges', data: { id: 'e22', weight: "2", source: 'n21', target: 'n23' } },
+        { group: 'edges', data: { id: 'e23', weight: "2", source: 'n21', target: 'n24' } },
+        { group: 'edges', data: { id: 'e24', weight: "2", source: 'n22', target: 'n23' } },
+        { group: 'edges', data: { id: 'e25', weight: "2", source: 'n22', target: 'n24' } },
+        { group: 'edges', data: { id: 'e26', weight: "2", source: 'n23', target: 'n24' } },
+        { group: 'edges', data: { id: 'e27', weight: "2", source: 'n25', target: 'n21' } },
+        { group: 'edges', data: { id: 'e28', weight: "2", source: 'n25', target: 'n22' } },
+        { group: 'edges', data: { id: 'e29', weight: "2", source: 'n26', target: 'n23' } },
+        { group: 'edges', data: { id: 'e30', weight: "2", source: 'n26', target: 'n24' } },
+
+
+        { group: 'edges', data: { id: 'e31', weight: "1", source: 'n31', target: 'n32' } },
+        { group: 'edges', data: { id: 'e32', weight: "1", source: 'n31', target: 'n33' } },
+        { group: 'edges', data: { id: 'e33', weight: "1", source: 'n31', target: 'n34' } },
+        { group: 'edges', data: { id: 'e34', weight: "1", source: 'n32', target: 'n33' } },
+        { group: 'edges', data: { id: 'e35', weight: "1", source: 'n32', target: 'n34' } },
+        { group: 'edges', data: { id: 'e36', weight: "1", source: 'n33', target: 'n34' } },
+        { group: 'edges', data: { id: 'e37', weight: "1", source: 'n35', target: 'n31' } },
+        { group: 'edges', data: { id: 'e38', weight: "1", source: 'n35', target: 'n32' } },
+        { group: 'edges', data: { id: 'e39', weight: "1", source: 'n36', target: 'n33' } },
+        { group: 'edges', data: { id: 'e40', weight: "1", source: 'n36', target: 'n34' } },
+
+        // inter Layer connector
+        { group: 'edges', data: { id: 'e12-1', group: "interLayer", weight: "10", source: 'n11', target: 'n21' } },
+        { group: 'edges', data: { id: 'e12-2', group: "interLayer", weight: "10", source: 'n12', target: 'n22' } },
+        { group: 'edges', data: { id: 'e12-3', group: "interLayer", weight: "10", source: 'n13', target: 'n23' } },
+        { group: 'edges', data: { id: 'e12-4', group: "interLayer", weight: "10", source: 'n14', target: 'n24' } },
+        { group: 'edges', data: { id: 'e12-5', group: "interLayer", weight: "10", source: 'n15', target: 'n25' } },
+        { group: 'edges', data: { id: 'e12-6', group: "interLayer", weight: "10", source: 'n16', target: 'n26' } },
+
+        { group: 'edges', data: { id: 'e23-1', group: "interLayer", weight: "10", source: 'n21', target: 'n31' } },
+        { group: 'edges', data: { id: 'e23-2', group: "interLayer", weight: "10", source: 'n22', target: 'n32' } },
+        { group: 'edges', data: { id: 'e23-3', group: "interLayer", weight: "10", source: 'n23', target: 'n33' } },
+        { group: 'edges', data: { id: 'e23-4', group: "interLayer", weight: "10", source: 'n24', target: 'n34' } },
+        { group: 'edges', data: { id: 'e23-5', group: "interLayer", weight: "10", source: 'n25', target: 'n35' } },
+        { group: 'edges', data: { id: 'e23-6', group: "interLayer", weight: "10", source: 'n26', target: 'n36' } },
+
+        // BGP-LU Tunnel
+        { group: 'edges', data: { id: 'bgpLu001', group: "bgpLu", weight: "2", source: 'n35', target: 'n36' } },
+        { group: 'edges', data: { id: 'bgpLu002', group: "bgpLu", weight: "2", source: 'n36', target: 'n35' } },
+
+        ]
+      });
+
+
+
+  // render Physical Layer Topo Layout
+    var physicalLayerParam = {
+      name: 'cola',
+      nodeSpacing: 20,
+      edgeLength: 0,
+      animate: true,
+      randomize: false,
+      maxSimulationTime: 15
+    };
+
+    physicalNodes = cy.filter ('node[group = "physicalLayer"]');
+    console.log("PhysicalNode: ");
+    console.log(physicalNodes);
+
+    function physicalLayerMakeLayout( opts ){
+      physicalLayerParam.edgeLength = function(e){ return physicalLayerParam.edgeLengthVal / e.data('weight'); };
+      for( var i in opts ){
+        physicalLayerParam[i] = opts[i];
+      }
+      return cy.elements(physicalNodes).layout( physicalLayerParam );
+    }
+    
+    var physicalLayerLayout = physicalLayerMakeLayout();
+    physicalLayerLayout.run();
+
+
+    // console.log(igpTunnelLayerNodes)
+    var igpLayerParam = {
+      name: 'cola',
+      nodeSpacing: 50,
+      edgeLength: 10,
+      animate: true,
+      randomize: false,
+      maxSimulationTime: 15
+    };
+
+  // render IGP Layer Topo Layout
+    igpNodes = cy.filter ('node[group = "igpTunnelLayer"]');
+    console.log("IgpNode: ");
+    console.log(igpNodes);
+
+    function igpLayerMakeLayout( opts ){
+      igpLayerParam.edgeLength = function(e){ return igpLayerParam.edgeLengthVal / e.data('weight'); };
+      for( var i in opts ){
+        igpLayerParam[i] = opts[i];
+      }
+      return cy.elements(igpNodes).layout( igpLayerParam );
+    }
+
+    var igpLayerLayout = igpLayerMakeLayout();
+    igpLayerLayout.run();
+
+
+    //render TransportTunnel Layer Topo Layout
+    var transportTunnelLayerParam = {
+      name: 'cola',
+      nodeSpacing: 70,
+      edgeLength: 10,
+      animate: true,
+      randomize: false,
+      maxSimulationTime: 15
+    };
+
+    transportTunnelNodes = cy.filter ('node[group = "transportTunnelLayer"]');
+    console.log("TransportTunnellNode: ");
+    console.log(transportTunnelNodes);
+
+    function transportTunnelLayerMakeLayout( opts ){
+      transportTunnelLayerParam.edgeLength = function(e){ return transportTunnelLayerParam.edgeLengthVal / e.data('weight'); };
+      for( var i in opts ){
+        transportTunnelLayerParam[i] = opts[i];
+      }
+      return cy.elements(transportTunnelNodes).layout( transportTunnelLayerParam );
+    }
+
+    var transportTunnelLayerLayout = transportTunnelLayerMakeLayout();
+    transportTunnelLayerLayout.run();
+
+
+
+    var elementButton01 = document.createElement("button");
+
+    var objectButton01 = document.getElementById("elementButton01");
+    objectButton01.appendChild(elementButton01);
+    objectButton01.title = "tooltip"
+    objectButton01.className = "fa fa-random"
+    objectButton01.className += " objectButton";
+    objectButton01.textContent = ""
+
+    objectButton01.onclick = function () {
+      alert("Button is clicked");
+    };
+    console.log(elementButton01);
+
+    var elementButton02 = document.createElement("button");
+
+    var objectButton02 = document.getElementById("elementButton02");
+    objectButton02.appendChild(elementButton02);
+    objectButton02.title = "tooltip-button02"
+    objectButton02.className = "fa fa-check-square"
+    objectButton02.className += " objectButton";
+    objectButton02.textContent = ""
+
+    var bgpLuLinkVisibiliy = true
+    bgpLuLink = cy.filter ('edge[group = "bgpLu"]');
+    objectButton02.onclick = function () {
+      if (bgpLuLinkVisibiliy){
+        bgpLuLink.remove()
+        bgpLuLinkVisibiliy = false
+        console.log('bgpLuLinkVisibiliy: ' + bgpLuLinkVisibiliy);
+        objectTextData01.textContent = "BGP-LU Tunnel is Hidden"
+      }
+      else {
+        bgpLuLink.restore()
+        bgpLuLinkVisibiliy = true
+        console.log('bgpLuLinkVisibiliy: ' + bgpLuLinkVisibiliy);
+        objectTextData01.textContent = "BGP-LU Tunnel is Exposed"
+      }
+      
+    };
+    console.log(elementButton02);
+
+    var elementTextData01 = document.createElement("textarea");
+
+    var objectTextData01 = document.getElementById("elementTextData01");
+    objectTextData01.appendChild(elementTextData01);
+    objectTextData01.title = "tooltip-button02"
+    objectTextData01.rows= "45",
+    objectTextData01.cols="35"
+    objectTextData01.className = "objectData";
+    objectTextData01.textContent = "asdasdsadssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+
+    objectTextData01.onclick = function () {
+      alert(elementTextData01);
+    };
+    console.log(elementTextData01);
+
+    cy.on('click', 'node', function(){
+    objectTextData01.textContent = ('clicked ' + this.data('name'))
+    console.log( 'clicked ' + this.id() );
+    });
+
+    cy.on('click', 'edge', function(){
+    objectTextData01.textContent = ('clicked link-' + this.data('name'))
+    console.log( 'clicked ' + this.id() );
+});
+        
+   
+    
+  }); 
+  </script>
+
+</body>
+
+</html>

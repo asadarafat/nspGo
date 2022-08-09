@@ -1,9 +1,97 @@
-<!--index.html-->
+<!-- <!DOCTYPE html> -->
+<!doctype html>
 
-<!--Embed the header.html template at this location-->
-{{ template "header.html" .}}
+<html lang="en">
 
-  <h1>Hello Gin!</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  <link rel="stylesheet" href="/assets/css/next.css">
+  <link rel="stylesheet" href="/assets/css/style.css" />
 
-<!--Embed the footer.html template at this location-->
-{{ template "footer.html" .}}
+  <!-- <title>ContainerLab Topology Asad {{ .Name }}</title> -->
+
+</head>
+
+<body>
+  <div class="bg-white flex relative items-center h-screen w-screen">
+
+    <span class="fa fa-bars config-toggle" id="config-toggle"></span>
+    <div id="config" class="config">
+      <div class="preamble">
+        <span class="label label-info">Topology Viewer Prototype</span>
+        <p>This is a prototype of a graph of Network Topology that Next.js for its
+          graph model and visualisation.
+          Use the controls below to alter the Cola.js layout parameters.</p>
+        <p>
+          data by <a
+            href="https://www.nokia.com/networks/products/network-services-platform/#:~:text=NSP%20is%20a%20comprehensive%20platform,easier%20for%20your%20operations%20team.">Nokia
+            NSP</a><br>
+        </p>
+      </div>
+
+      <form action="/layer" method="POST">
+        <p>Layer Visibility</p>
+        <label for="red">Red</label>
+        <input type="checkbox" name="colors[]" value="red" id="red" />
+        <label for="green">Green</label>
+        <input type="checkbox" name="colors[]" value="green" id="green" />
+        <label for="blue">Blue</label>
+        <input type="checkbox" name="colors[]" value="blue" id="blue" />
+        <input type="submit" />
+      </form>
+      <form action="/transport-tunnel" method="POST">
+        <p>Transport Tunnel</p>
+        <label for="bgp-lu">BGP-LU</label>
+        <input type="checkbox" name="transportTunnel[]" value="bgp-lu" id="bgp-lu" />
+        <input type="submit" />
+      </form>
+      <button type="button" id="a-btn" onclick="autoLayout()"
+        class="w-full border-t border-b border-r border-[#0386d2] text-base font-normal rounded-r-md text-[#0386d2] shadow-md hover:text-white hover:bg-[#0386d2] px-4 py-2">
+        autoLayout
+      </button>
+    </div>
+
+    <div class="container mx-auto px-6 flex flex-col justify-between items-center relative h-full w-full">
+      <!-- Heading -->
+      <div class="flex flex-col">
+        <h1 class="font-thin text-center text-4xl text-gray-500 py-6 w-full">
+          ContainerLab Topology <span class="uppercase font-light text-[#0386d2]">{{ .Name }}</span>
+        </h1>
+        <!-- Layout buttons -->
+        <div class="flex items-center justify-center">
+          <!-- <button type="button" id="h-btn" onclick="horizontal()"
+            class="w-full border border-[#0386d2] text-base font-normal rounded-l-md text-[#0386d2] shadow-md hover:text-white hover:bg-[#0386d2] px-4 py-2">
+            Horizontal
+          </button>
+          <button type="button" id="v-btn" onclick="vertical()"
+            class="w-full border-t border-b border-r border-[#0386d2] text-base font-normal text-[#0386d2] shadow-md hover:text-white hover:bg-[#0386d2] px-4 py-2">
+            Vertical
+          </button>
+          <button type="button" id="a-btn" onclick="asad()"
+            class="w-full border-t border-b border-r border-[#0386d2] text-base font-normal rounded-r-md text-[#0386d2] shadow-md hover:text-white hover:bg-[#0386d2] px-4 py-2">
+            Asad
+          </button> -->
+
+        </div>
+      </div>
+      <!-- Next UI attachment -->
+      <div id="clab-topology" class="mt-6 mb-6 w-full h-full">
+      </div>
+    </div>
+  </div>
+
+  <!-- <script>
+        var data = '{{ .Data }}'
+    </script> -->
+
+  <script src="/assets/js/next.js"></script>
+
+  <script src="/assets/js/nextData.js"></script>
+  <script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>
