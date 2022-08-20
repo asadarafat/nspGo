@@ -16,7 +16,6 @@ require (
 )
 
 require (
-	// github.com/gin-contrib/static v0.0.1
 	github.com/gin-gonic/gin v1.7.7
 	github.com/go-playground/validator/v10 v10.10.1 // indirect
 	github.com/magiconair/properties v1.8.6 // indirect
