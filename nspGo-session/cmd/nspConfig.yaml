@@ -15,10 +15,16 @@ nsp:
   # password:   "NokiaNsp1!"
 
   ### VF-HCO
-  nspOsIP:    "147.75.102.178"    # API gateway
-  nspIprcIP:  "147.75.102.178"   # API gateway
+  # nspOsIP:    "147.75.102.178"    # API gateway
+  # nspIprcIP:  "147.75.102.178"   # API gateway
+  # username:   "admin"
+  # password:   "zkw3VSs6"
+
+  ## Antwerp
+  nspOsIP:    "127.0.0.1"    # API gateway
+  nspIprcIP:  "127.0.0.1"   # API gateway
   username:   "admin"
-  password:   "zkw3VSs6"
+  password:   "NokiaNsp1!"
 
   proxy:   
     enable: "false"

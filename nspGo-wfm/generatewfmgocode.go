@@ -39,13 +39,13 @@ func GenerateWfmGoCode() {
 	type Wfm struct {
 		Payload      []byte
 		ResponseData []byte
+		LogLevel     uint32
 	}
 
-
-	func init() {
+	func (wfm *Wfm) InitLogger() {
 		// init logConfig
 		toolLogger := nspgotools.Tools{}
-		toolLogger.InitLogger("./logs/nspGo-wfm.log")
+		toolLogger.InitLogger("./logs/nspGo-wfm.log", wfm.LogLevel)
 	}
 
 	`); err != nil {
@@ -81,7 +81,9 @@ func GenerateWfmGoCode() {
 	
 	}`)
 
-	jsonFile, err := ioutil.ReadFile("/home/suuser/nspGo/nspGo-wfm/21-11-wfm-swagger.json")
+	// jsonFile, err := ioutil.ReadFile("/home/suuser/nspGo/nspGo-wfm/21-11-wfm-swagger.json")
+	jsonFile, err := ioutil.ReadFile("./nspGo-wfm/21-11-wfm-swagger.json")
+
 	if err != nil {
 		log.Fatalf("unable to read file: %v", err)
 	}

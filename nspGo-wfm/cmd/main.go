@@ -7,6 +7,8 @@ import (
 )
 
 func main() {
+
+	////  for below sourceCode auto generated
 	nspgowfm.GenerateWfmGoCode()
 
 	// init class session
@@ -24,8 +26,10 @@ func main() {
 
 	p.GetRestToken()
 	log.Info("nsp.linetoken_NEW :", p.Token)
-	w := nspgowfm.Wfm{}
 
-	payload := " "
-	w.WfmV1WorkflowGet(p.IpAdressNspOs, p.Token, p.Proxy.Enable, p.Proxy.ProxyAddress, []byte(payload))
+	//// execute auto generated code
+	// w := nspgowfm.Wfm{}
+
+	// payload := " "
+	// w.WfmV1WorkflowGet(p.IpAdressNspOs, p.Token, p.Proxy.Enable, p.Proxy.ProxyAddress, []byte(payload))
 }
