@@ -21,8 +21,8 @@ nsp:
   # password:   "zkw3VSs6"
 
   ## Antwerp
-  nspOsIP:    "127.0.0.1"    # API gateway
-  nspIprcIP:  "127.0.0.1"   # API gateway
+  nspOsIP:    "138.203.40.6"    # API gateway
+  nspIprcIP:  "138.203.40.6"   # API gateway
   username:   "admin"
   password:   "NokiaNsp1!"
 

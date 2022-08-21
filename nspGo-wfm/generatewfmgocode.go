@@ -82,14 +82,18 @@ func GenerateWfmGoCode() {
 	}`)
 
 	// jsonFile, err := ioutil.ReadFile("/home/suuser/nspGo/nspGo-wfm/21-11-wfm-swagger.json")
-	jsonFile, err := ioutil.ReadFile("./nspGo-wfm/21-11-wfm-swagger.json")
+	// jsonFile, err := ioutil.ReadFile("./nspGo-wfm/21-11-wfm-swagger.json")
+
+	// get wfm swagger file
+	// t := nspgotools.Tools{}
+	// t.DownloadFile("./nspGo-wfm/22-06-wfm-swagger.json", "https://network.developer.nokia.com/static/swagger/v2.0/source-json/22.6/wfm-22.6-v1.json ")
+	jsonFile, err := ioutil.ReadFile("./nspGo-wfm/wfm-22.6-v1.json")
 
 	if err != nil {
 		log.Fatalf("unable to read file: %v", err)
 	}
 
 	//fmt.Println(string(body))
-
 	jsonOutPath := gjson.GetBytes(jsonFile, "paths.@keys")
 	for _, path := range jsonOutPath.Array() {
 		jsonOutPathMethod := gjson.GetBytes(jsonFile, "paths."+path.String()+".@keys")

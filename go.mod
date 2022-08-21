@@ -18,6 +18,7 @@ require (
 require (
 	github.com/gin-gonic/gin v1.7.7
 	github.com/go-playground/validator/v10 v10.10.1 // indirect
+	github.com/google/go-cmp v0.5.7 // indirect
 	github.com/magiconair/properties v1.8.6 // indirect
 	github.com/noirbizarre/gonja v0.0.0-20200629003239-4d051fd0be61
 	github.com/patrickmn/go-cache v2.1.0+incompatible
@@ -31,6 +32,7 @@ require (
 	github.com/ugorji/go v1.2.7 // indirect
 	golang.org/x/crypto v0.0.0-20220321153916-2c7772ba3064 // indirect
 	golang.org/x/sys v0.0.0-20220325203850-36772127a21f // indirect
+	golang.org/x/text v0.3.7
 	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/ini.v1 v1.66.4 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
