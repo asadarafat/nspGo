@@ -10,8 +10,8 @@
     // when group property is not set in containerlab
     // we set it to N/A to indicate a missing group assignment
     for (var key in data.nodes) {
-        if (!("group" in data.nodes[key])) {
-            data.nodes[key]["group"] = 'N/A';
+        if (!('group' in data.nodes[key])) {
+            data.nodes[key]['group'] = 'N/A';
         }
     }
     
@@ -174,26 +174,26 @@
                                     content: 'Kind: ',
                                     props: { "class": "font-semibold text-black" },
                                 },
+                                // {
+                                //     tag: 'label',
+                                //     content: 'State: ',
+                                //     props: { "class": "font-semibold text-black" },
+                                // },
+                                {
+                                    tag: 'label',
+                                    content: 'Mgmt. (IPv4): ',
+                                    props: { "class": "font-semibold text-black" },
+                                },
                                 {
                                     tag: 'label',
                                     content: 'Group: ',
                                     props: { "class": "font-semibold text-black" },
                                 },
-                                {
-                                    tag: 'label',
-                                    content: 'State: ',
-                                    props: { "class": "font-semibold text-black" },
-                                },
-                                {
-                                    tag: 'label',
-                                    content: 'IPv4: ',
-                                    props: { "class": "font-semibold text-black" },
-                                },
-                                {
-                                    tag: 'label',
-                                    content: 'IPv6: ',
-                                    props: { "class": "font-semibold text-black" },
-                                },
+                                // {
+                                //     tag: 'label',
+                                //     content: 'Mgmt. (IPv6): ',
+                                //     props: { "class": "font-semibold text-black" },
+                                // },
                             ],
                             props: { "class": "flex flex-col pr-3" },
                         },
@@ -202,34 +202,34 @@
                             content: [
                                 {
                                     tag: 'span',
-                                    content: '{#node.model.image}',
+                                    content: '{#node.model.ExtraData.Image}',
                                     props: { "class": "font-normal text-black pt-2 inline-table" },
                                 },
                                 {
                                     tag: 'span',
-                                    content: '{#node.model.kind}',
+                                    content: '{#node.model.ExtraData.Kind}',
+                                    props: { "class": "font-normal text-black" },
+                                },
+                                // {
+                                //     tag: 'span',
+                                //     content: '{#node.model.state}',
+                                //     props: { "class": "font-normal text-black" },
+                                // },
+                                {
+                                    tag: 'span',
+                                    content: ('{#node.model.ExtraData.MgmtIPv4Address}'),
                                     props: { "class": "font-normal text-black" },
                                 },
                                 {
                                     tag: 'span',
-                                    content: '{#node.model.group}',
+                                    content: '{#node.model.ExtraData.Group}',
                                     props: { "class": "font-normal text-black" },
                                 },
-                                {
-                                    tag: 'span',
-                                    content: '{#node.model.state}',
-                                    props: { "class": "font-normal text-black" },
-                                },
-                                {
-                                    tag: 'span',
-                                    content: '{#node.model.ipv4_address}',
-                                    props: { "class": "font-normal text-black" },
-                                },
-                                {
-                                    tag: 'span',
-                                    content: '{#node.model.ipv6_address}',
-                                    props: { "class": "font-normal text-black" },
-                                },
+                                // {
+                                //     tag: 'span',
+                                //     content: '{#node.model.ExtraData.MgmtIPv6Address}',
+                                //     props: { "class": "font-normal text-black" },
+                                // },
                             ],
                             props: { "class": "flex flex-col" },
                         },
@@ -266,7 +266,7 @@
         dataProcessor: 'force',
         // sort order consists of typical Clos hierarchy levels mixed with numerical values to help achieve auto sorting on arbitrary topologies
         layoutConfig: {
-            sortOrder: ['10', '9', 'superspine', '8', 'dc-gw', '7', '6', 'spine', '5', '4', 'leaf', 'border-leaf', '3', 'server', '2', '1'],
+            sortOrder: ['server', 'leaf', 'border-leaf', 'spine', 'superspine', 'dc-gw', '1', '2', '3', '4', '5', '6', '7', '8','9','10'],
         },
         enableSmartLabel: true,
         enableSmartNode: true,

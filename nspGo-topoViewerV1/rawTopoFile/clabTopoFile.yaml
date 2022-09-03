@@ -1,0 +1,183 @@
+name: Vodafone-CO-HCO
+
+mgmt:
+  network: custom_mgmt             # management network name
+  bridge: br1-private
+  ipv4_subnet: 10.10.10.0/24       # ipv4 range
+  ipv6_subnet: 2001:10:10:10::/80  # ipv6 range (optional)
+
+topology:
+  nodes:
+    R01-PE:
+      kind: vr-sros
+      group: "1"
+      mgmt_ipv4: 10.10.10.101
+      #image: registry.srlinux.dev/pub/vr-sros:20.10.R2
+      image: registry.srlinux.dev/pub/vr-sros:22.7.R1
+      type: "cp: cpu=2 ram=6 chassis=SR-2s slot=A card=cpm-2s ___ lc: cpu=2 ram=4 max_nics=10 chassis=SR-2s slot=1 card=xcm-2s mda/1=s18-100gb-qsfp28"
+      license: license.txt
+    R02-PE:
+      kind: vr-sros
+      group: "1"
+      mgmt_ipv4: 10.10.10.102
+      image: registry.srlinux.dev/pub/vr-sros:21.10.R2
+      #type: sr-1
+      type: "cp: cpu=2 ram=6 chassis=SR-7 slot=A card=cpm5 ___ lc: cpu=2 ram=4 max_nics=10 chassis=SR-7 slot=1 card=imm-2pac-fp3 mda/1=p10-10g-sfp"      
+      license: license.txt
+    R03-P:
+      kind: vr-sros
+      group: "4"
+      mgmt_ipv4: 10.10.10.103
+      image: registry.srlinux.dev/pub/vr-sros:21.10.R2
+      #type: sr-1
+      type: "cp: cpu=2 ram=6 chassis=SR-12 slot=A card=cpm5 ___ lc: cpu=2 ram=4 max_nics=10 chassis=SR-12 slot=1 card=imm-2pac-fp3 mda/1=p10-10g-sfp"
+      license: license.txt
+    R04-P:
+      kind: vr-sros
+      group: "4"
+      mgmt_ipv4: 10.10.10.104
+      image: registry.srlinux.dev/pub/vr-sros:21.10.R2
+      #type: sr-1
+      type: "cp: cpu=2 ram=6 chassis=SR-12 slot=A card=cpm5 ___ lc: cpu=2 ram=4 max_nics=10 chassis=SR-12 slot=1 card=imm-2pac-fp3 mda/1=p10-10g-sfp"
+      license: license.txt
+    R05-PE:
+      kind: vr-sros
+      group: "3"
+      mgmt_ipv4: 10.10.10.105
+      image: vrnetlab/vr-sros:19.10.R12
+      #image: registry.srlinux.dev/pub/vr-sros:21.10.R2      
+      #type: sr-a8
+      type: "cp: cpu=2 ram=6 chassis=SR-a8 slot=A card=cpm-a ___ lc: cpu=2 ram=4 max_nics=10 chassis=SR-a8 slot=1 card=iom-a mda/1=ma20-1gb-tx"
+      license: license.txt
+    R06-PE-ASBR:
+      kind: vr-sros
+      group: "5"
+      mgmt_ipv4: 10.10.10.106
+      image: registry.srlinux.dev/pub/vr-sros:21.10.R2
+      #type: sr-1
+      type: "cp: cpu=2 ram=6 chassis=SR-12 slot=A card=cpm5 ___ lc: cpu=2 ram=4 max_nics=10 chassis=SR-12 slot=1 card=iom4-e-hs mda/1=me40-1gb-csfp"      
+      license: license.txt
+    R07-PE-ASBR:
+      kind: vr-sros
+      group: "5"
+      mgmt_ipv4: 10.10.10.107
+      # image: registry.srlinux.dev/pub/vr-sros:21.10.R2
+      image: registry.srlinux.dev/pub/vr-sros:22.7.R1
+      #type: sr-1
+      type: "cp: cpu=2 ram=6 chassis=SR-12 slot=A card=cpm5 ___ lc: cpu=2 ram=4 max_nics=10 chassis=SR-12 slot=1 card=iom4-e-hs mda/1=me40-1gb-csfp"                      
+      license: license.txt
+    R09-PE-ASBR:
+      kind: vr-sros
+      group: "6"
+      mgmt_ipv4: 10.10.10.109
+      image: registry.srlinux.dev/pub/vr-sros:21.10.R2
+      #type: sr-1
+      type: "cp: cpu=2 ram=6 chassis=SR-7 slot=A card=cpm5 ___ lc: cpu=2 ram=4 max_nics=10 chassis=SR-7 slot=1 card=iom4-e-hs mda/1=me40-1gb-csfp"
+      license: license.txt
+    R10-PE-ASBR:
+      kind: vr-sros
+      group: "6"
+      mgmt_ipv4: 10.10.10.110
+      image: registry.srlinux.dev/pub/vr-sros:21.10.R2
+      #type: sr-1
+      type: "cp: cpu=2 ram=6 chassis=SR-7 slot=A card=cpm5 ___ lc: cpu=2 ram=4 max_nics=10 chassis=SR-7 slot=1 card=iom4-e-hs mda/1=me40-1gb-csfp"
+      license: license.txt
+    R08-PE:
+      kind: vr-sros
+      group: "7"
+      mgmt_ipv4: 10.10.10.108
+      #image: registry.srlinux.dev/pub/vr-sros:19.10.R9
+      #image: registry.srlinux.dev/pub/vr-sros:21.10.R2      
+      #type: sr-1
+      image: vrnetlab/vr-sros:19.10.R12      
+      type: "cp: cpu=2 ram=6 chassis=SR-7 slot=A card=cpm5 ___ lc: cpu=2 ram=4 max_nics=10 chassis=SR-7 slot=1 card=iom4-e-hs mda/1=me40-1gb-csfp"      
+      license: license.txt
+
+    
+    DC-SPINE-01:
+      kind: srl
+      group: "spine"
+      mgmt_ipv4: 10.10.10.121
+      type: ixrd3
+      image: ghcr.io/nokia/srlinux:22.6.1
+
+    DC-SPINE-02:
+      kind: srl
+      group: "spine"
+      mgmt_ipv4: 10.10.10.122
+      type: ixrd3
+      image: ghcr.io/nokia/srlinux:22.6.1
+
+    DC-LEAF-01:
+      kind: srl
+      group: "leaf"
+      mgmt_ipv4: 10.10.10.123
+      type: ixrd2
+      image: ghcr.io/nokia/srlinux:22.6.1
+
+    DC-LEAF-02:
+      kind: srl
+      group: "leaf"
+      mgmt_ipv4: 10.10.10.124
+      type: ixrd2
+      image: ghcr.io/nokia/srlinux:22.6.1
+
+    DC-LEAF-03:
+      kind: srl
+      group: "leaf"
+      mgmt_ipv4: 10.10.10.125
+      type: ixrd2
+      image: ghcr.io/nokia/srlinux:22.6.2
+
+    DC-LEAF-04:
+      kind: srl
+      group: "leaf"
+      mgmt_ipv4: 10.10.10.126
+      type: ixrd2
+      image: ghcr.io/nokia/srlinux:22.6.2
+
+    br1-private:
+      kind: bridge
+      
+  links:
+    - endpoints: ["R01-PE:eth2", "R02-PE:eth2"]
+    - endpoints: ["R01-PE:eth1", "R03-P:eth1"]
+    - endpoints: ["R02-PE:eth1", "R04-P:eth1"]
+
+    - endpoints: ["R03-P:eth3", "R04-P:eth3"]
+    - endpoints: ["R03-P:eth4", "R05-PE:eth2"]
+    - endpoints: ["R03-P:eth2", "R06-PE-ASBR:eth2"]
+    - endpoints: ["R03-P:eth5", "R07-PE-ASBR:eth3"]
+
+    - endpoints: ["R04-P:eth5", "R05-PE:eth5"]
+    - endpoints: ["R04-P:eth2", "R06-PE-ASBR:eth1"]
+    - endpoints: ["R04-P:eth4", "R07-PE-ASBR:eth2"]
+
+    - endpoints: ["R06-PE-ASBR:eth3", "R09-PE-ASBR:eth3"]
+
+    - endpoints: ["R07-PE-ASBR:eth1", "R10-PE-ASBR:eth3"]
+
+    - endpoints: ["R09-PE-ASBR:eth2", "R08-PE:eth5"]
+
+    - endpoints: ["R10-PE-ASBR:eth2", "R08-PE:eth2"]
+
+    - endpoints: ["R07-PE-ASBR:eth4", "br1-private:eth1"]
+    - endpoints: ["R10-PE-ASBR:eth4", "br1-private:eth2"]
+
+
+    - endpoints: ["DC-SPINE-01:e1-1", "R01-PE:eth4"]
+    - endpoints: ["DC-SPINE-01:e1-2", "R02-PE:eth4"]
+    - endpoints: ["DC-SPINE-02:e1-1", "R01-PE:eth5"]
+    - endpoints: ["DC-SPINE-02:e1-2", "R02-PE:eth5"]
+
+    - endpoints: ["DC-LEAF-01:e1-1", "DC-SPINE-01:e1-3"]
+    - endpoints: ["DC-LEAF-01:e1-2", "DC-SPINE-02:e1-3"]
+
+    - endpoints: ["DC-LEAF-02:e1-1", "DC-SPINE-01:e1-4"]
+    - endpoints: ["DC-LEAF-02:e1-2", "DC-SPINE-02:e1-4"]
+
+    - endpoints: ["DC-LEAF-03:e1-1", "DC-SPINE-01:e1-5"]
+    - endpoints: ["DC-LEAF-03:e1-2", "DC-SPINE-02:e1-5"]
+
+    - endpoints: ["DC-LEAF-04:e1-1", "DC-SPINE-01:e1-6"]
+    - endpoints: ["DC-LEAF-04:e1-2", "DC-SPINE-02:e1-6"]
